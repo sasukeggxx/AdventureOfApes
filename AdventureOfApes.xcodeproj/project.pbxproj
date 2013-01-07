@@ -159,6 +159,10 @@
 		AD9DD869169AA3FB002A28BB /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD868169AA3FB002A28BB /* HelloWorldLayer.mm */; };
 		AD9DD86C169AA3FB002A28BB /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD86B169AA3FB002A28BB /* GLES-Render.mm */; };
 		AD9DD86F169AA3FB002A28BB /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD86E169AA3FB002A28BB /* blocks.png */; };
+		AD9DD881169AA4C5002A28BB /* MainScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD880169AA4C5002A28BB /* MainScene.mm */; };
+		AD9DD884169AA4DB002A28BB /* StoreScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD883169AA4DB002A28BB /* StoreScene.mm */; };
+		AD9DD889169AA4FB002A28BB /* BigStageSelectScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD886169AA4FB002A28BB /* BigStageSelectScene.mm */; };
+		AD9DD88A169AA4FB002A28BB /* SecondStageSelectScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD888169AA4FB002A28BB /* SecondStageSelectScene.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -473,6 +477,14 @@
 		AD9DD86B169AA3FB002A28BB /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		AD9DD86D169AA3FB002A28BB /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		AD9DD86E169AA3FB002A28BB /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
+		AD9DD87F169AA4C5002A28BB /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		AD9DD880169AA4C5002A28BB /* MainScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainScene.mm; sourceTree = "<group>"; };
+		AD9DD882169AA4DB002A28BB /* StoreScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreScene.h; sourceTree = "<group>"; };
+		AD9DD883169AA4DB002A28BB /* StoreScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StoreScene.mm; sourceTree = "<group>"; };
+		AD9DD885169AA4FB002A28BB /* BigStageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigStageSelectScene.h; sourceTree = "<group>"; };
+		AD9DD886169AA4FB002A28BB /* BigStageSelectScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BigStageSelectScene.mm; sourceTree = "<group>"; };
+		AD9DD887169AA4FB002A28BB /* SecondStageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondStageSelectScene.h; sourceTree = "<group>"; };
+		AD9DD888169AA4FB002A28BB /* SecondStageSelectScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SecondStageSelectScene.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -529,12 +541,14 @@
 		AD9DD69C169AA3F9002A28BB /* AdventureOfApes */ = {
 			isa = PBXGroup;
 			children = (
+				AD9DD87A169AA441002A28BB /* phyics */,
+				AD9DD879169AA43C002A28BB /* model */,
+				AD9DD878169AA434002A28BB /* util */,
+				AD9DD877169AA41D002A28BB /* layer */,
+				AD9DD876169AA416002A28BB /* scene */,
+				AD9DD875169AA408002A28BB /* unsued */,
 				AD9DD861169AA3FB002A28BB /* AppDelegate.h */,
 				AD9DD862169AA3FB002A28BB /* AppDelegate.mm */,
-				AD9DD864169AA3FB002A28BB /* RootViewController.h */,
-				AD9DD865169AA3FB002A28BB /* RootViewController.m */,
-				AD9DD867169AA3FB002A28BB /* HelloWorldLayer.h */,
-				AD9DD868169AA3FB002A28BB /* HelloWorldLayer.mm */,
 				AD9DD86A169AA3FB002A28BB /* GLES-Render.h */,
 				AD9DD86B169AA3FB002A28BB /* GLES-Render.mm */,
 				AD9DD86D169AA3FB002A28BB /* GameConfig.h */,
@@ -1003,6 +1017,60 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AD9DD875169AA408002A28BB /* unsued */ = {
+			isa = PBXGroup;
+			children = (
+				AD9DD864169AA3FB002A28BB /* RootViewController.h */,
+				AD9DD865169AA3FB002A28BB /* RootViewController.m */,
+				AD9DD867169AA3FB002A28BB /* HelloWorldLayer.h */,
+				AD9DD868169AA3FB002A28BB /* HelloWorldLayer.mm */,
+			);
+			name = unsued;
+			sourceTree = "<group>";
+		};
+		AD9DD876169AA416002A28BB /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				AD9DD885169AA4FB002A28BB /* BigStageSelectScene.h */,
+				AD9DD886169AA4FB002A28BB /* BigStageSelectScene.mm */,
+				AD9DD887169AA4FB002A28BB /* SecondStageSelectScene.h */,
+				AD9DD888169AA4FB002A28BB /* SecondStageSelectScene.mm */,
+				AD9DD882169AA4DB002A28BB /* StoreScene.h */,
+				AD9DD883169AA4DB002A28BB /* StoreScene.mm */,
+				AD9DD87F169AA4C5002A28BB /* MainScene.h */,
+				AD9DD880169AA4C5002A28BB /* MainScene.mm */,
+			);
+			name = scene;
+			sourceTree = "<group>";
+		};
+		AD9DD877169AA41D002A28BB /* layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = layer;
+			sourceTree = "<group>";
+		};
+		AD9DD878169AA434002A28BB /* util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		AD9DD879169AA43C002A28BB /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		AD9DD87A169AA441002A28BB /* phyics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = phyics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1207,6 +1275,10 @@
 				AD9DD866169AA3FB002A28BB /* RootViewController.m in Sources */,
 				AD9DD869169AA3FB002A28BB /* HelloWorldLayer.mm in Sources */,
 				AD9DD86C169AA3FB002A28BB /* GLES-Render.mm in Sources */,
+				AD9DD881169AA4C5002A28BB /* MainScene.mm in Sources */,
+				AD9DD884169AA4DB002A28BB /* StoreScene.mm in Sources */,
+				AD9DD889169AA4FB002A28BB /* BigStageSelectScene.mm in Sources */,
+				AD9DD88A169AA4FB002A28BB /* SecondStageSelectScene.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
