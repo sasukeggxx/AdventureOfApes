@@ -27,7 +27,7 @@
 -(id)init{
     if (self=[super init]) {
         CGSize size = [[CCDirector sharedDirector] winSize];
-        CCLayerColor *bgcol=[CCLayerColor layerWithColor:ccc4(201, 201, 221,255)];//背景色        
+        CCLayerColor *bgcol=[CCLayerColor layerWithColor:ccc4(46, 131, 55,255)];//背景色        
         [self addChild:bgcol z:0];
      
 

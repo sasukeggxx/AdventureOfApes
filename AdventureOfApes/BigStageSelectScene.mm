@@ -26,13 +26,23 @@
         
         CGSize size = [[CCDirector sharedDirector] winSize];
         
-        CCLabelTTF *backLab=[CCLabelTTF labelWithString:@"返回" fontName:@"Marker Felt" fontSize:20];
-        CCMenuItemLabel *backItem = [CCMenuItemLabel itemWithLabel:backLab target:self selector:@selector(backCall:)];
+  
+        
+        
+        CCLabelTTF *ilandLab=[CCLabelTTF labelWithString:@"岛" fontName:@"Marker Felt" fontSize:20];
+        CCMenuItemLabel *ilandItem = [CCMenuItemLabel itemWithLabel:ilandLab target:self selector:@selector(btnCall:)];
+        
+        CCLabelTTF *seaLab=[CCLabelTTF labelWithString:@"海洋" fontName:@"Marker Felt" fontSize:20];
+        CCMenuItemLabel *seaItem = [CCMenuItemLabel itemWithLabel:seaLab target:self selector:@selector(btnCall:)];
+        
+        CCLabelTTF *landLab=[CCLabelTTF labelWithString:@"大陆" fontName:@"Marker Felt" fontSize:20];
+        CCMenuItemLabel *landItem = [CCMenuItemLabel itemWithLabel:landLab target:self selector:@selector(btnCall:)];
         
         CCMenu *menu = [CCMenu menuWithItems:
-                        backItem,nil]; // 1 items.
+                        ilandItem,seaItem,landItem,nil]; // 1 items.
         
-        menu.position=ccp(size.width-backLab.contentSize.width,size.height*0.1);
+        [menu alignItemsHorizontallyWithPadding:50];
+        menu.position=ccp(size.width*0.5,size.height*0.5);
         
      
         CCLayerColor *bgcol=[CCLayerColor layerWithColor:ccc4(46, 131, 55,255)];//背景色

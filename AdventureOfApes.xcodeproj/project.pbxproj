@@ -163,6 +163,18 @@
 		AD9DD884169AA4DB002A28BB /* StoreScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD883169AA4DB002A28BB /* StoreScene.mm */; };
 		AD9DD889169AA4FB002A28BB /* BigStageSelectScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD886169AA4FB002A28BB /* BigStageSelectScene.mm */; };
 		AD9DD88A169AA4FB002A28BB /* SecondStageSelectScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD888169AA4FB002A28BB /* SecondStageSelectScene.mm */; };
+		AD9DD89F169ABFD7002A28BB /* tollgate-0.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD893169ABFD7002A28BB /* tollgate-0.png */; };
+		AD9DD8A0169ABFD7002A28BB /* tollgate-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD894169ABFD7002A28BB /* tollgate-1.png */; };
+		AD9DD8A1169ABFD7002A28BB /* tollgate-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD895169ABFD7002A28BB /* tollgate-2.png */; };
+		AD9DD8A2169ABFD7002A28BB /* tollgate-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD896169ABFD7002A28BB /* tollgate-3.png */; };
+		AD9DD8A3169ABFD7002A28BB /* tollgate-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD897169ABFD7002A28BB /* tollgate-4.png */; };
+		AD9DD8A4169ABFD7002A28BB /* tollgate-5.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD898169ABFD7002A28BB /* tollgate-5.png */; };
+		AD9DD8A5169ABFD7002A28BB /* tollgate-6.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD899169ABFD7002A28BB /* tollgate-6.png */; };
+		AD9DD8A6169ABFD7002A28BB /* tollgate-7.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD89A169ABFD7002A28BB /* tollgate-7.png */; };
+		AD9DD8A7169ABFD7002A28BB /* tollgate-8.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD89B169ABFD7002A28BB /* tollgate-8.png */; };
+		AD9DD8A8169ABFD7002A28BB /* tollgate-9.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD89C169ABFD7002A28BB /* tollgate-9.png */; };
+		AD9DD8A9169ABFD7002A28BB /* tollgate-STAR.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD89D169ABFD7002A28BB /* tollgate-STAR.png */; };
+		AD9DD8AA169ABFD7002A28BB /* tollgate-STONE.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD89E169ABFD7002A28BB /* tollgate-STONE.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -485,6 +497,18 @@
 		AD9DD886169AA4FB002A28BB /* BigStageSelectScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BigStageSelectScene.mm; sourceTree = "<group>"; };
 		AD9DD887169AA4FB002A28BB /* SecondStageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondStageSelectScene.h; sourceTree = "<group>"; };
 		AD9DD888169AA4FB002A28BB /* SecondStageSelectScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SecondStageSelectScene.mm; sourceTree = "<group>"; };
+		AD9DD893169ABFD7002A28BB /* tollgate-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-0.png"; sourceTree = "<group>"; };
+		AD9DD894169ABFD7002A28BB /* tollgate-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-1.png"; sourceTree = "<group>"; };
+		AD9DD895169ABFD7002A28BB /* tollgate-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-2.png"; sourceTree = "<group>"; };
+		AD9DD896169ABFD7002A28BB /* tollgate-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-3.png"; sourceTree = "<group>"; };
+		AD9DD897169ABFD7002A28BB /* tollgate-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-4.png"; sourceTree = "<group>"; };
+		AD9DD898169ABFD7002A28BB /* tollgate-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-5.png"; sourceTree = "<group>"; };
+		AD9DD899169ABFD7002A28BB /* tollgate-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-6.png"; sourceTree = "<group>"; };
+		AD9DD89A169ABFD7002A28BB /* tollgate-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-7.png"; sourceTree = "<group>"; };
+		AD9DD89B169ABFD7002A28BB /* tollgate-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-8.png"; sourceTree = "<group>"; };
+		AD9DD89C169ABFD7002A28BB /* tollgate-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-9.png"; sourceTree = "<group>"; };
+		AD9DD89D169ABFD7002A28BB /* tollgate-STAR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-STAR.png"; sourceTree = "<group>"; };
+		AD9DD89E169ABFD7002A28BB /* tollgate-STONE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-STONE.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -562,6 +586,18 @@
 		AD9DD69D169AA3F9002A28BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD9DD893169ABFD7002A28BB /* tollgate-0.png */,
+				AD9DD894169ABFD7002A28BB /* tollgate-1.png */,
+				AD9DD895169ABFD7002A28BB /* tollgate-2.png */,
+				AD9DD896169ABFD7002A28BB /* tollgate-3.png */,
+				AD9DD897169ABFD7002A28BB /* tollgate-4.png */,
+				AD9DD898169ABFD7002A28BB /* tollgate-5.png */,
+				AD9DD899169ABFD7002A28BB /* tollgate-6.png */,
+				AD9DD89A169ABFD7002A28BB /* tollgate-7.png */,
+				AD9DD89B169ABFD7002A28BB /* tollgate-8.png */,
+				AD9DD89C169ABFD7002A28BB /* tollgate-9.png */,
+				AD9DD89D169ABFD7002A28BB /* tollgate-STAR.png */,
+				AD9DD89E169ABFD7002A28BB /* tollgate-STONE.png */,
 				AD9DD69E169AA3F9002A28BB /* Default.png */,
 				AD9DD6A0169AA3F9002A28BB /* fps_images.png */,
 				AD9DD6A2169AA3F9002A28BB /* Icon-72.png */,
@@ -1131,6 +1167,18 @@
 				AD9DD6AD169AA3F9002A28BB /* Icon@2x.png in Resources */,
 				AD9DD6B0169AA3F9002A28BB /* iTunesArtwork in Resources */,
 				AD9DD86F169AA3FB002A28BB /* blocks.png in Resources */,
+				AD9DD89F169ABFD7002A28BB /* tollgate-0.png in Resources */,
+				AD9DD8A0169ABFD7002A28BB /* tollgate-1.png in Resources */,
+				AD9DD8A1169ABFD7002A28BB /* tollgate-2.png in Resources */,
+				AD9DD8A2169ABFD7002A28BB /* tollgate-3.png in Resources */,
+				AD9DD8A3169ABFD7002A28BB /* tollgate-4.png in Resources */,
+				AD9DD8A4169ABFD7002A28BB /* tollgate-5.png in Resources */,
+				AD9DD8A5169ABFD7002A28BB /* tollgate-6.png in Resources */,
+				AD9DD8A6169ABFD7002A28BB /* tollgate-7.png in Resources */,
+				AD9DD8A7169ABFD7002A28BB /* tollgate-8.png in Resources */,
+				AD9DD8A8169ABFD7002A28BB /* tollgate-9.png in Resources */,
+				AD9DD8A9169ABFD7002A28BB /* tollgate-STAR.png in Resources */,
+				AD9DD8AA169ABFD7002A28BB /* tollgate-STONE.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1374,6 +1422,7 @@
 				AD9DD874169AA3FB002A28BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
