@@ -9,14 +9,15 @@
 #import "MainScene.h"
 #import "StoreScene.h"
 #import "BigStageSelectScene.h"
+#import "SettingScene.h"
 
 
 @implementation MainScene
 
 +(id)scene{
     CCScene *scene=[CCScene node];
-    CCLayer *starLayer=[MainScene node];
-    [scene addChild:starLayer];
+    CCLayer *layer=[MainScene node];
+    [scene addChild:layer];
     return scene;
 }
 
@@ -72,11 +73,11 @@
     
 }
 
-//点击酋长图标
+//点击设置图标
 -(void)settingCall:(id)sender{
     
     
-    
+     [[CCDirector sharedDirector] pushScene:[SettingScene scene]];
     
 }
 

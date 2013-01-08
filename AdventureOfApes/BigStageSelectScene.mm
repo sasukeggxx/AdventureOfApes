@@ -14,8 +14,8 @@
 @implementation BigStageSelectScene
 +(id)scene{
     CCScene *scene=[CCScene node];
-    CCLayer *starLayer=[BigStageSelectScene node];
-    [scene addChild:starLayer];
+    CCLayer *layer=[BigStageSelectScene node];
+    [scene addChild:layer];
     return scene;
 }
 

@@ -8,6 +8,7 @@
 
 #import "SecondStageSelectScene.h"
 #import "MainScene.h"
+#import "GameScene.h"
 
 
 @implementation SecondStageSelectScene
@@ -17,9 +18,9 @@
 +(id)scene{
     CCScene *scene=[CCScene node];
     
-    CCLayer *starLayer=[SecondStageSelectScene node];
+    CCLayer *layer=[SecondStageSelectScene node];
     
-    [scene addChild:starLayer];
+    [scene addChild:layer];
     
     return scene;
 }
@@ -42,6 +43,10 @@
         CCSprite *bgImg=[CCSprite spriteWithFile:@"tollgate-STONE.png"];
         //todo 小关数据需要从配置文件读取
         //以下是临时往scrollview添加上8个小关按钮
+        
+        
+        
+        
         UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
         button1.frame = CGRectMake(size.width*0.1, size.height*0.1, bgImg.contentSize.width,bgImg.contentSize.height);
         [button1 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
@@ -146,7 +151,7 @@
 //点击btn图标
 -(void)btnCall:(id)sender{
     
-  
+   [[CCDirector sharedDirector]replaceScene:[GameScene scene]];
     
 }
 

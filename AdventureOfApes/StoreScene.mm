@@ -13,8 +13,8 @@
 
 +(id)scene{
     CCScene *scene=[CCScene node];
-    CCLayer *starLayer=[StoreScene node];
-    [scene addChild:starLayer];
+    CCLayer *layer=[StoreScene node];
+    [scene addChild:layer];
     return scene;
 }
 
