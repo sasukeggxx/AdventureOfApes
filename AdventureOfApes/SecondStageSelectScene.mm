@@ -85,7 +85,35 @@
         [button6 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
         [scrollview addSubview:button6];
         
-      
+        
+        UIButton *button7 = [UIButton buttonWithType:UIButtonTypeCustom];
+        button7.frame = CGRectMake(size.width*0.5, size.height*0.4, bgImg.contentSize.width, bgImg.contentSize.height);
+        [button7 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
+        [button7 setImage:[UIImage imageNamed:@"tollgate-7.png"] forState:UIControlStateNormal];
+        [button7 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
+        [scrollview addSubview:button7];
+        
+        UIButton *button8 = [UIButton buttonWithType:UIButtonTypeCustom];
+        button8.frame = CGRectMake(size.width*0.7, size.height*0.4, bgImg.contentSize.width, bgImg.contentSize.height);
+        [button8 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
+        [button8 setImage:[UIImage imageNamed:@"tollgate-8.png"] forState:UIControlStateNormal];
+        [button8 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
+        [scrollview addSubview:button8];
+        
+        UIButton *button9 = [UIButton buttonWithType:UIButtonTypeCustom];
+        button9.frame = CGRectMake(size.width*0.1,size.height*0.7,bgImg.contentSize.width, bgImg.contentSize.height);
+        [button9 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
+        [button9 setImage:[UIImage imageNamed:@"tollgate-9.png"] forState:UIControlStateNormal];
+        [button9 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
+        [scrollview addSubview:button9];
+        
+        UIButton *button10 = [UIButton buttonWithType:UIButtonTypeCustom];
+        button10.frame = CGRectMake(size.width*0.3,size.height*0.7,bgImg.contentSize.width, bgImg.contentSize.height);
+        [button10 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
+        [button10 setImage:[UIImage imageNamed:@"tollgate-1.png"] forState:UIControlStateNormal];
+        [button10 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
+        [scrollview addSubview:button10];
+        
         
         
         
@@ -93,7 +121,7 @@
         [[[CCDirector sharedDirector] openGLView] addSubview:scrollview];
         
         //设置分页显示用的小点
-        pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(size.width*0.4,size.height*0.8, 100, 50)];
+        pagecontrol = [[UIPageControl alloc] initWithFrame:CGRectMake(size.width*0.4,size.height*0.87, 100, 50)];
         //pagecontrol.hidesForSinglePage = YES;
         //pagecontrol.userInteractionEnabled = NO;
         pagecontrol.numberOfPages = 1;//1页

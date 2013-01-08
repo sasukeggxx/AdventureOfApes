@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD43578F169BACC2000374E3 /* GameUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD43578E169BACC2000374E3 /* GameUtil.mm */; };
+		AD435795169BACE4000374E3 /* BodyNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD435792169BACE4000374E3 /* BodyNode.mm */; };
+		AD435796169BACE4000374E3 /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD435794169BACE4000374E3 /* GB2ShapeCache.mm */; };
+		AD435799169BACFF000374E3 /* CCBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AD435798169BACFF000374E3 /* CCBReader.m */; };
 		AD9DD68D169AA3F9002A28BB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD68C169AA3F9002A28BB /* QuartzCore.framework */; };
 		AD9DD68F169AA3F9002A28BB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD68E169AA3F9002A28BB /* OpenGLES.framework */; };
 		AD9DD691169AA3F9002A28BB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD690169AA3F9002A28BB /* OpenAL.framework */; };
@@ -178,6 +182,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD43578D169BACC2000374E3 /* GameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameUtil.h; sourceTree = "<group>"; };
+		AD43578E169BACC2000374E3 /* GameUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameUtil.mm; sourceTree = "<group>"; };
+		AD435791169BACE4000374E3 /* BodyNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyNode.h; sourceTree = "<group>"; };
+		AD435792169BACE4000374E3 /* BodyNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BodyNode.mm; sourceTree = "<group>"; };
+		AD435793169BACE4000374E3 /* GB2ShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2ShapeCache.h; sourceTree = "<group>"; };
+		AD435794169BACE4000374E3 /* GB2ShapeCache.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2ShapeCache.mm; sourceTree = "<group>"; };
+		AD435797169BACFF000374E3 /* CCBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBReader.h; sourceTree = "<group>"; };
+		AD435798169BACFF000374E3 /* CCBReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBReader.m; sourceTree = "<group>"; };
 		AD9DD688169AA3F9002A28BB /* AdventureOfApes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureOfApes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9DD68C169AA3F9002A28BB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD9DD68E169AA3F9002A28BB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1082,6 +1094,8 @@
 		AD9DD877169AA41D002A28BB /* layer */ = {
 			isa = PBXGroup;
 			children = (
+				AD435797169BACFF000374E3 /* CCBReader.h */,
+				AD435798169BACFF000374E3 /* CCBReader.m */,
 			);
 			name = layer;
 			sourceTree = "<group>";
@@ -1089,6 +1103,8 @@
 		AD9DD878169AA434002A28BB /* util */ = {
 			isa = PBXGroup;
 			children = (
+				AD43578D169BACC2000374E3 /* GameUtil.h */,
+				AD43578E169BACC2000374E3 /* GameUtil.mm */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -1103,6 +1119,10 @@
 		AD9DD87A169AA441002A28BB /* phyics */ = {
 			isa = PBXGroup;
 			children = (
+				AD435791169BACE4000374E3 /* BodyNode.h */,
+				AD435792169BACE4000374E3 /* BodyNode.mm */,
+				AD435793169BACE4000374E3 /* GB2ShapeCache.h */,
+				AD435794169BACE4000374E3 /* GB2ShapeCache.mm */,
 			);
 			name = phyics;
 			sourceTree = "<group>";
@@ -1327,6 +1347,10 @@
 				AD9DD884169AA4DB002A28BB /* StoreScene.mm in Sources */,
 				AD9DD889169AA4FB002A28BB /* BigStageSelectScene.mm in Sources */,
 				AD9DD88A169AA4FB002A28BB /* SecondStageSelectScene.mm in Sources */,
+				AD43578F169BACC2000374E3 /* GameUtil.mm in Sources */,
+				AD435795169BACE4000374E3 /* BodyNode.mm in Sources */,
+				AD435796169BACE4000374E3 /* GB2ShapeCache.mm in Sources */,
+				AD435799169BACFF000374E3 /* CCBReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
