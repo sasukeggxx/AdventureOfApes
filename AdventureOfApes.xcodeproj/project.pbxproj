@@ -16,6 +16,11 @@
 		AD4357A5169BED00000374E3 /* long.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4357A4169BED00000374E3 /* long.png */; };
 		AD4357AB169BF404000374E3 /* guajian.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4357AA169BF404000374E3 /* guajian.png */; };
 		AD4357B2169BF729000374E3 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4357B1169BF729000374E3 /* ContactListener.mm */; };
+		AD4359B3169C02E7000374E3 /* CreateGroundInWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4359B0169C02E7000374E3 /* CreateGroundInWorld.mm */; };
+		AD4359B4169C02E7000374E3 /* CreateGroundPartInWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4359B2169C02E7000374E3 /* CreateGroundPartInWorld.mm */; };
+		AD4359B7169C04D0000374E3 /* fightingtreel.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B5169C04D0000374E3 /* fightingtreel.png */; };
+		AD4359B8169C04D0000374E3 /* fightingtreer.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B6169C04D0000374E3 /* fightingtreer.png */; };
+		AD4359BA169C0799000374E3 /* groundLayer.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B9169C0799000374E3 /* groundLayer.ccb */; };
 		AD9DD68D169AA3F9002A28BB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD68C169AA3F9002A28BB /* QuartzCore.framework */; };
 		AD9DD68F169AA3F9002A28BB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD68E169AA3F9002A28BB /* OpenGLES.framework */; };
 		AD9DD691169AA3F9002A28BB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD690169AA3F9002A28BB /* OpenAL.framework */; };
@@ -203,6 +208,13 @@
 		AD4357AA169BF404000374E3 /* guajian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guajian.png; sourceTree = "<group>"; };
 		AD4357B0169BF729000374E3 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
 		AD4357B1169BF729000374E3 /* ContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactListener.mm; sourceTree = "<group>"; };
+		AD4359AF169C02E7000374E3 /* CreateGroundInWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroundInWorld.h; sourceTree = "<group>"; };
+		AD4359B0169C02E7000374E3 /* CreateGroundInWorld.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateGroundInWorld.mm; sourceTree = "<group>"; };
+		AD4359B1169C02E7000374E3 /* CreateGroundPartInWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroundPartInWorld.h; sourceTree = "<group>"; };
+		AD4359B2169C02E7000374E3 /* CreateGroundPartInWorld.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateGroundPartInWorld.mm; sourceTree = "<group>"; };
+		AD4359B5169C04D0000374E3 /* fightingtreel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fightingtreel.png; sourceTree = "<group>"; };
+		AD4359B6169C04D0000374E3 /* fightingtreer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fightingtreer.png; sourceTree = "<group>"; };
+		AD4359B9169C0799000374E3 /* groundLayer.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = groundLayer.ccb; sourceTree = "<group>"; };
 		AD9DD688169AA3F9002A28BB /* AdventureOfApes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureOfApes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9DD68C169AA3F9002A28BB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD9DD68E169AA3F9002A28BB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -611,6 +623,9 @@
 		AD9DD69D169AA3F9002A28BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD4359B9169C0799000374E3 /* groundLayer.ccb */,
+				AD4359B5169C04D0000374E3 /* fightingtreel.png */,
+				AD4359B6169C04D0000374E3 /* fightingtreer.png */,
 				AD4357AA169BF404000374E3 /* guajian.png */,
 				AD4357A4169BED00000374E3 /* long.png */,
 				AD9DD893169ABFD7002A28BB /* tollgate-0.png */,
@@ -1138,6 +1153,10 @@
 		AD9DD87A169AA441002A28BB /* phyics */ = {
 			isa = PBXGroup;
 			children = (
+				AD4359AF169C02E7000374E3 /* CreateGroundInWorld.h */,
+				AD4359B0169C02E7000374E3 /* CreateGroundInWorld.mm */,
+				AD4359B1169C02E7000374E3 /* CreateGroundPartInWorld.h */,
+				AD4359B2169C02E7000374E3 /* CreateGroundPartInWorld.mm */,
 				AD4357B0169BF729000374E3 /* ContactListener.h */,
 				AD4357B1169BF729000374E3 /* ContactListener.mm */,
 				AD435791169BACE4000374E3 /* BodyNode.h */,
@@ -1222,6 +1241,9 @@
 				AD9DD8AA169ABFD7002A28BB /* tollgate-STONE.png in Resources */,
 				AD4357A5169BED00000374E3 /* long.png in Resources */,
 				AD4357AB169BF404000374E3 /* guajian.png in Resources */,
+				AD4359B7169C04D0000374E3 /* fightingtreel.png in Resources */,
+				AD4359B8169C04D0000374E3 /* fightingtreer.png in Resources */,
+				AD4359BA169C0799000374E3 /* groundLayer.ccb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1377,6 +1399,8 @@
 				AD43579C169BB28F000374E3 /* GameScene.mm in Sources */,
 				AD43579F169BC06D000374E3 /* SettingScene.mm in Sources */,
 				AD4357B2169BF729000374E3 /* ContactListener.mm in Sources */,
+				AD4359B3169C02E7000374E3 /* CreateGroundInWorld.mm in Sources */,
+				AD4359B4169C02E7000374E3 /* CreateGroundPartInWorld.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,7 @@
         
         CCLayerColor *bgcol=[CCLayerColor layerWithColor:ccc4(46, 131, 55,255)];//背景色
         [self addChild:bgcol z:0];
+        [self isTouchEnabled];
         
         [self initTheWorld];
         
