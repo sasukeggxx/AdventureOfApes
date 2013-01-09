@@ -6,11 +6,11 @@
 //  Copyright 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "CreateGroundPartInWorld.h"
+#import "CCSpritePartInWorld.h"
 #import "GameUtil.h"
 
 
-@implementation CreateGroundPartInWorld
+@implementation CCSpritePartInWorld
 
 
 -(id) initWithWorld:(b2World*)world position:(CGPoint)pos name:(NSString *)name

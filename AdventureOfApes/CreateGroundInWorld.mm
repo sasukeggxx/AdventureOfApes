@@ -7,7 +7,7 @@
 //
 
 #import "CreateGroundInWorld.h"
-#import "CreateGroundPartInWorld.h"
+#import "CCSpritePartInWorld.h"
 #import "CCBReader.h"
 
 @implementation CreateGroundInWorld
@@ -23,13 +23,20 @@
 	if ((self = [super initWithFile:@"image.pvr.ccz" capacity:10]))
 	{
        
-//        [self addChild:[CreateGroundPartInWorld groundPartInWorld:world //第一块地面
-//										  position:ccp(56, 34)
-//											  name:@"fightingground"]];
-//		
-//        [self addChild:[CreateGroundPartInWorld groundPartInWorld:world  //第二块地面
-//                                                         position:ccp(232, 34)
-//                                                             name:@"fightingground"]];
+        [self addChild:[CCSpritePartInWorld groundPartInWorld:world 
+										  position:ccp(7, 135)
+											  name:@"fightingtreel"]];
+		
+        [self addChild:[CCSpritePartInWorld groundPartInWorld:world  
+                                                         position:ccp(483, 130)
+                                                             name:@"fightingtreer"]];
+        
+        [self addChild:[CCSpritePartInWorld groundPartInWorld:world 
+                                                         position:ccp(147, 185)
+                                                             name:@"guajian"]];
+        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
+                                                         position:ccp(333, 188)
+                                                             name:@"guajian"]];
 		
 
 	

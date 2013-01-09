@@ -9,6 +9,8 @@
 #import "GameScene.h"
 #import "BodyNode.h"
 #import "GameUtil.h"
+#import "CCBReader.h"
+#import "CreateGroundInWorld.h"
 
 
 @implementation GameScene
@@ -24,14 +26,27 @@
 
 -(id)init{
     if (self=[super init]) {
+        [self isTouchEnabled];
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"image.plist"];
+        
+        // load physics definitions
+        [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"ground-shape.plist"];
         
         CCLayerColor *bgcol=[CCLayerColor layerWithColor:ccc4(46, 131, 55,255)];//背景色
-        [self addChild:bgcol z:0];
-        [self isTouchEnabled];
+        [self addChild:bgcol z:-4];
+        
+        CCLayer *groundLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"groundLayer.ccb"];
+        [self addChild:groundLayer z:-3];
+        
         
         [self initTheWorld];
         
-        [self enableBox2dDebugDrawing];
+        [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];
+        
+        CreateGroundInWorld *groundShape=[CreateGroundInWorld createGroundWithWorld:world];
+        
+        [self addChild:groundShape z:-2];
         
         [self scheduleUpdate];
     }
@@ -84,10 +99,10 @@
     b2Fixture *rightSide=containerBody->CreateFixture(&screenBoxShape, density);
     
     // set the collision flags: category and mask
-    b2Filter collisonFilter;
-    collisonFilter.groupIndex = 0;
-    collisonFilter.categoryBits = 0x0010; // category = Wall
-    collisonFilter.maskBits = 0x0001;     // mask = bullet
+//    b2Filter collisonFilter;
+//    collisonFilter.groupIndex = 0;
+//    collisonFilter.categoryBits = 0x0010; // category = Wall
+//    collisonFilter.maskBits = 0x0001;     // mask = bullet
     
     
 
@@ -121,21 +136,7 @@
 }
 
 
-//允许显示调试信息
--(void) enableBox2dDebugDrawing
-{
-	// Debug Draw functions
-	debugDraw = new GLESDebugDraw([[CCDirector sharedDirector] contentScaleFactor] * PTM_RATIO);
-	world->SetDebugDraw(debugDraw);
-	
-	uint32 flags = 0;
-	flags |= b2DebugDraw::e_shapeBit;
-	flags |= b2DebugDraw::e_jointBit;
-	//flags |= b2DebugDraw::e_aabbBit;
-	//flags |= b2DebugDraw::e_pairBit;
-	//flags |= b2DebugDraw::e_centerOfMassBit;
-	debugDraw->SetFlags(flags);
-}
+
 
 #ifdef DEBUG
 -(void) draw
@@ -155,6 +156,7 @@
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 }
 #endif
+
 
 -(void)dealloc{
    

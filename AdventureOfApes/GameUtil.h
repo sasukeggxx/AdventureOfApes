@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Box2D.h"
-
+#import "GLES-Render.h"
 @interface GameUtil : CCNode {
     
 }
@@ -22,4 +22,6 @@
 +(CGPoint) locationFromTouches:(NSSet*)touches;
 
 +(CGPoint) screenCenter;
+
++(void) enableBox2dDebugDrawing:(GLESDebugDraw *) debugDraw withWorld:(b2World *) world;
 @end

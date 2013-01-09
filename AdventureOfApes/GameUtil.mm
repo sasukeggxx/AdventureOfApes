@@ -9,6 +9,7 @@
 #import "GameUtil.h"
 
 
+
 @implementation GameUtil
 
 +(CGPoint) locationFromTouch:(UITouch*)touch
@@ -39,6 +40,26 @@
 	CGSize screenSize = [[CCDirector sharedDirector] winSize];
 	return CGPointMake(screenSize.width * 0.5f, screenSize.height * 0.5f);
 }
+
+
+//允许显示调试信息
++(void) enableBox2dDebugDrawing:(GLESDebugDraw *) debugDraw withWorld:(b2World *) world
+{
+	// Debug Draw functions
+	debugDraw = new GLESDebugDraw([[CCDirector sharedDirector] contentScaleFactor] * PTM_RATIO);
+	world->SetDebugDraw(debugDraw);
+	
+	uint32 flags = 0;
+	flags |= b2DebugDraw::e_shapeBit;
+	flags |= b2DebugDraw::e_jointBit;
+	//flags |= b2DebugDraw::e_aabbBit;
+	//flags |= b2DebugDraw::e_pairBit;
+	//flags |= b2DebugDraw::e_centerOfMassBit;
+	debugDraw->SetFlags(flags);
+}
+
+
+
 
 -(void)dealloc{
     [super dealloc];

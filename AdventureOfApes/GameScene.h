@@ -23,5 +23,5 @@
 
 +(id)scene;
 -(void)initTheWorld;
--(void) enableBox2dDebugDrawing;
+
 @end

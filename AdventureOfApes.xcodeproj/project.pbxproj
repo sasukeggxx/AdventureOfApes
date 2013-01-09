@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD362D74169D03DC00A2E26A /* ground-shape.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD362D73169D03DC00A2E26A /* ground-shape.plist */; };
+		AD362D7B169D0FFC00A2E26A /* image.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD362D79169D0FFB00A2E26A /* image.plist */; };
+		AD362D7C169D0FFC00A2E26A /* image.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = AD362D7A169D0FFC00A2E26A /* image.pvr.ccz */; };
 		AD43578F169BACC2000374E3 /* GameUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD43578E169BACC2000374E3 /* GameUtil.mm */; };
 		AD435795169BACE4000374E3 /* BodyNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD435792169BACE4000374E3 /* BodyNode.mm */; };
 		AD435796169BACE4000374E3 /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD435794169BACE4000374E3 /* GB2ShapeCache.mm */; };
@@ -17,7 +20,7 @@
 		AD4357AB169BF404000374E3 /* guajian.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4357AA169BF404000374E3 /* guajian.png */; };
 		AD4357B2169BF729000374E3 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4357B1169BF729000374E3 /* ContactListener.mm */; };
 		AD4359B3169C02E7000374E3 /* CreateGroundInWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4359B0169C02E7000374E3 /* CreateGroundInWorld.mm */; };
-		AD4359B4169C02E7000374E3 /* CreateGroundPartInWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4359B2169C02E7000374E3 /* CreateGroundPartInWorld.mm */; };
+		AD4359B4169C02E7000374E3 /* CCSpritePartInWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4359B2169C02E7000374E3 /* CCSpritePartInWorld.mm */; };
 		AD4359B7169C04D0000374E3 /* fightingtreel.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B5169C04D0000374E3 /* fightingtreel.png */; };
 		AD4359B8169C04D0000374E3 /* fightingtreer.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B6169C04D0000374E3 /* fightingtreer.png */; };
 		AD4359BA169C0799000374E3 /* groundLayer.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B9169C0799000374E3 /* groundLayer.ccb */; };
@@ -192,6 +195,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD362D73169D03DC00A2E26A /* ground-shape.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ground-shape.plist"; sourceTree = "<group>"; };
+		AD362D79169D0FFB00A2E26A /* image.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image.plist; sourceTree = "<group>"; };
+		AD362D7A169D0FFC00A2E26A /* image.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = image.pvr.ccz; sourceTree = "<group>"; };
 		AD43578D169BACC2000374E3 /* GameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameUtil.h; sourceTree = "<group>"; };
 		AD43578E169BACC2000374E3 /* GameUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameUtil.mm; sourceTree = "<group>"; };
 		AD435791169BACE4000374E3 /* BodyNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyNode.h; sourceTree = "<group>"; };
@@ -210,8 +216,8 @@
 		AD4357B1169BF729000374E3 /* ContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactListener.mm; sourceTree = "<group>"; };
 		AD4359AF169C02E7000374E3 /* CreateGroundInWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroundInWorld.h; sourceTree = "<group>"; };
 		AD4359B0169C02E7000374E3 /* CreateGroundInWorld.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateGroundInWorld.mm; sourceTree = "<group>"; };
-		AD4359B1169C02E7000374E3 /* CreateGroundPartInWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroundPartInWorld.h; sourceTree = "<group>"; };
-		AD4359B2169C02E7000374E3 /* CreateGroundPartInWorld.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateGroundPartInWorld.mm; sourceTree = "<group>"; };
+		AD4359B1169C02E7000374E3 /* CCSpritePartInWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSpritePartInWorld.h; sourceTree = "<group>"; };
+		AD4359B2169C02E7000374E3 /* CCSpritePartInWorld.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCSpritePartInWorld.mm; sourceTree = "<group>"; };
 		AD4359B5169C04D0000374E3 /* fightingtreel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fightingtreel.png; sourceTree = "<group>"; };
 		AD4359B6169C04D0000374E3 /* fightingtreer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fightingtreer.png; sourceTree = "<group>"; };
 		AD4359B9169C0799000374E3 /* groundLayer.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = groundLayer.ccb; sourceTree = "<group>"; };
@@ -623,6 +629,9 @@
 		AD9DD69D169AA3F9002A28BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD362D79169D0FFB00A2E26A /* image.plist */,
+				AD362D7A169D0FFC00A2E26A /* image.pvr.ccz */,
+				AD362D73169D03DC00A2E26A /* ground-shape.plist */,
 				AD4359B9169C0799000374E3 /* groundLayer.ccb */,
 				AD4359B5169C04D0000374E3 /* fightingtreel.png */,
 				AD4359B6169C04D0000374E3 /* fightingtreer.png */,
@@ -1155,8 +1164,8 @@
 			children = (
 				AD4359AF169C02E7000374E3 /* CreateGroundInWorld.h */,
 				AD4359B0169C02E7000374E3 /* CreateGroundInWorld.mm */,
-				AD4359B1169C02E7000374E3 /* CreateGroundPartInWorld.h */,
-				AD4359B2169C02E7000374E3 /* CreateGroundPartInWorld.mm */,
+				AD4359B1169C02E7000374E3 /* CCSpritePartInWorld.h */,
+				AD4359B2169C02E7000374E3 /* CCSpritePartInWorld.mm */,
 				AD4357B0169BF729000374E3 /* ContactListener.h */,
 				AD4357B1169BF729000374E3 /* ContactListener.mm */,
 				AD435791169BACE4000374E3 /* BodyNode.h */,
@@ -1244,6 +1253,9 @@
 				AD4359B7169C04D0000374E3 /* fightingtreel.png in Resources */,
 				AD4359B8169C04D0000374E3 /* fightingtreer.png in Resources */,
 				AD4359BA169C0799000374E3 /* groundLayer.ccb in Resources */,
+				AD362D74169D03DC00A2E26A /* ground-shape.plist in Resources */,
+				AD362D7B169D0FFC00A2E26A /* image.plist in Resources */,
+				AD362D7C169D0FFC00A2E26A /* image.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1400,7 +1412,7 @@
 				AD43579F169BC06D000374E3 /* SettingScene.mm in Sources */,
 				AD4357B2169BF729000374E3 /* ContactListener.mm in Sources */,
 				AD4359B3169C02E7000374E3 /* CreateGroundInWorld.mm in Sources */,
-				AD4359B4169C02E7000374E3 /* CreateGroundPartInWorld.mm in Sources */,
+				AD4359B4169C02E7000374E3 /* CCSpritePartInWorld.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

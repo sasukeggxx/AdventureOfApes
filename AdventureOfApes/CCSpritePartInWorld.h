@@ -11,7 +11,7 @@
 #import "BodyNode.h"
 #import "Box2D.h"
 
-@interface CreateGroundPartInWorld : BodyNode {
+@interface CCSpritePartInWorld : BodyNode {
     
 }
 
