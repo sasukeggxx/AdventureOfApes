@@ -10,6 +10,7 @@
 		AD362D74169D03DC00A2E26A /* ground-shape.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD362D73169D03DC00A2E26A /* ground-shape.plist */; };
 		AD362D7B169D0FFC00A2E26A /* image.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD362D79169D0FFB00A2E26A /* image.plist */; };
 		AD362D7C169D0FFC00A2E26A /* image.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = AD362D7A169D0FFC00A2E26A /* image.pvr.ccz */; };
+		AD362D8B169D41F400A2E26A /* PlayerSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD362D8A169D41F400A2E26A /* PlayerSprite.mm */; };
 		AD43578F169BACC2000374E3 /* GameUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD43578E169BACC2000374E3 /* GameUtil.mm */; };
 		AD435795169BACE4000374E3 /* BodyNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD435792169BACE4000374E3 /* BodyNode.mm */; };
 		AD435796169BACE4000374E3 /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD435794169BACE4000374E3 /* GB2ShapeCache.mm */; };
@@ -198,6 +199,8 @@
 		AD362D73169D03DC00A2E26A /* ground-shape.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ground-shape.plist"; sourceTree = "<group>"; };
 		AD362D79169D0FFB00A2E26A /* image.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image.plist; sourceTree = "<group>"; };
 		AD362D7A169D0FFC00A2E26A /* image.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = image.pvr.ccz; sourceTree = "<group>"; };
+		AD362D8A169D41F400A2E26A /* PlayerSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerSprite.mm; sourceTree = "<group>"; };
+		AD362D8C169D422B00A2E26A /* PlayerSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerSprite.h; sourceTree = "<group>"; };
 		AD43578D169BACC2000374E3 /* GameUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameUtil.h; sourceTree = "<group>"; };
 		AD43578E169BACC2000374E3 /* GameUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameUtil.mm; sourceTree = "<group>"; };
 		AD435791169BACE4000374E3 /* BodyNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyNode.h; sourceTree = "<group>"; };
@@ -1155,6 +1158,8 @@
 		AD9DD879169AA43C002A28BB /* model */ = {
 			isa = PBXGroup;
 			children = (
+				AD362D8C169D422B00A2E26A /* PlayerSprite.h */,
+				AD362D8A169D41F400A2E26A /* PlayerSprite.mm */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1413,6 +1418,7 @@
 				AD4357B2169BF729000374E3 /* ContactListener.mm in Sources */,
 				AD4359B3169C02E7000374E3 /* CreateGroundInWorld.mm in Sources */,
 				AD4359B4169C02E7000374E3 /* CCSpritePartInWorld.mm in Sources */,
+				AD362D8B169D41F400A2E26A /* PlayerSprite.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

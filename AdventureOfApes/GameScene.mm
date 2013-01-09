@@ -26,7 +26,8 @@
 
 -(id)init{
     if (self=[super init]) {
-        [self isTouchEnabled];
+        self.isTouchEnabled=YES;
+        
         
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"image.plist"];
         
@@ -40,19 +41,45 @@
         [self addChild:groundLayer z:-3];
         
         
-        [self initTheWorld];
+        [self initTheWorld];//初始化世界
         
-        [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];
+        [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
         
         CreateGroundInWorld *groundShape=[CreateGroundInWorld createGroundWithWorld:world];
         
         [self addChild:groundShape z:-2];
+        
+        [self initThePlayer];
         
         [self scheduleUpdate];
     }
 
     return self;
 }
+
+
+
+-(void)initThePlayer{
+    player=[PlayerSprite addToWorld:world];
+    [self addChild:player z:-1];
+    //world->SetGravity(b2Vec2(0.0, 0.0));//重力为0;
+   
+
+}
+
+-(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint touchLocation =[GameUtil locationFromTouch:touch];//记录该次触摸位置
+    CGPoint screenCenter=[GameUtil screenCenter];
+    if (touchLocation.x>screenCenter.x) {//如果点击的是屏幕右边
+         player.body->ApplyLinearImpulse(b2Vec2(0.8,0.0), player.body->GetPosition());//施加冲量
+    }
+
+
+}
+
 
 
 -(void)initTheWorld{
