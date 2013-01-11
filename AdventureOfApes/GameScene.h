@@ -12,6 +12,7 @@
 #import "GLES-Render.h"
 #import "ContactListener.h"
 #import "PlayerSprite.h"
+#import "CreateGroundInWorld.h"
 
 #define PTM_RATIO 32 //单位常量
 
@@ -19,7 +20,12 @@
     b2World *world; // 定义世界
     ContactListener *listener;
     GLESDebugDraw* debugDraw;
-    PlayerSprite *player;
+   // PlayerSprite *player;
+    CCSprite *player;
+    CreateGroundInWorld *groundShape;
+    CCLayer *groundLayer;
+    
+    BOOL directionNow;
 }
 
 +(id)scene;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0AF74A169E70910049D168 /* CCRoundBy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0AF749169E70910049D168 /* CCRoundBy.m */; };
 		AD362D74169D03DC00A2E26A /* ground-shape.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD362D73169D03DC00A2E26A /* ground-shape.plist */; };
 		AD362D7B169D0FFC00A2E26A /* image.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD362D79169D0FFB00A2E26A /* image.plist */; };
 		AD362D7C169D0FFC00A2E26A /* image.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = AD362D7A169D0FFC00A2E26A /* image.pvr.ccz */; };
@@ -196,6 +197,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD0AF739169E59E50049D168 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		AD0AF73B169E60B30049D168 /* GameObjectTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameObjectTag.h; sourceTree = "<group>"; };
+		AD0AF748169E70910049D168 /* CCRoundBy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRoundBy.h; sourceTree = "<group>"; };
+		AD0AF749169E70910049D168 /* CCRoundBy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRoundBy.m; sourceTree = "<group>"; };
 		AD362D73169D03DC00A2E26A /* ground-shape.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ground-shape.plist"; sourceTree = "<group>"; };
 		AD362D79169D0FFB00A2E26A /* image.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image.plist; sourceTree = "<group>"; };
 		AD362D7A169D0FFC00A2E26A /* image.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = image.pvr.ccz; sourceTree = "<group>"; };
@@ -1149,8 +1154,12 @@
 		AD9DD878169AA434002A28BB /* util */ = {
 			isa = PBXGroup;
 			children = (
+				AD0AF748169E70910049D168 /* CCRoundBy.h */,
+				AD0AF749169E70910049D168 /* CCRoundBy.m */,
+				AD0AF739169E59E50049D168 /* Helpers.h */,
 				AD43578D169BACC2000374E3 /* GameUtil.h */,
 				AD43578E169BACC2000374E3 /* GameUtil.mm */,
+				AD0AF73B169E60B30049D168 /* GameObjectTag.h */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -1419,6 +1428,7 @@
 				AD4359B3169C02E7000374E3 /* CreateGroundInWorld.mm in Sources */,
 				AD4359B4169C02E7000374E3 /* CCSpritePartInWorld.mm in Sources */,
 				AD362D8B169D41F400A2E26A /* PlayerSprite.mm in Sources */,
+				AD0AF74A169E70910049D168 /* CCRoundBy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,12 +31,14 @@
                                                          position:ccp(483, 130)
                                                              name:@"fightingtreer"]];
         
-        [self addChild:[CCSpritePartInWorld groundPartInWorld:world 
+      
+        
+        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
                                                          position:ccp(147, 185)
-                                                             name:@"guajian"]];
+                                                             name:@"guajian"] z:0 tag:0];
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world
                                                          position:ccp(333, 188)
-                                                             name:@"guajian"]];
+                                                             name:@"guajian"] z:0 tag:1];
 		
 
 	
