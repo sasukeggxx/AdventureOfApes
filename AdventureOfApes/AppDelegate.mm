@@ -93,13 +93,13 @@
 	[director setAnimationInterval:1.0/60];
 	[director setDisplayFPS:YES];
 	
-    
-    if ([director enableRetinaDisplay:YES]) {
-        CCLOG(@"Retina is support");
-    }else{
-        CCLOG(@"Retina is not support");
-        
-    }
+    //视网膜屏幕支持
+//    if ([director enableRetinaDisplay:YES]) {
+//        CCLOG(@"Retina is support");
+//    }else{
+//        CCLOG(@"Retina is not support");
+//        
+//    }
 	
 	// make the OpenGLView a child of the view controller
 	[viewController setView:glView];

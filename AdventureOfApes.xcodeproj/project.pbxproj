@@ -26,6 +26,8 @@
 		AD4359B7169C04D0000374E3 /* fightingtreel.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B5169C04D0000374E3 /* fightingtreel.png */; };
 		AD4359B8169C04D0000374E3 /* fightingtreer.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B6169C04D0000374E3 /* fightingtreer.png */; };
 		AD4359BA169C0799000374E3 /* groundLayer.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B9169C0799000374E3 /* groundLayer.ccb */; };
+		AD4DF27816A398E200F59B20 /* PlayerA.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4DF27716A398E200F59B20 /* PlayerA.m */; };
+		AD4DF27C16A3A43700F59B20 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4DF27B16A3A43700F59B20 /* Player.m */; };
 		AD9DD68D169AA3F9002A28BB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD68C169AA3F9002A28BB /* QuartzCore.framework */; };
 		AD9DD68F169AA3F9002A28BB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD68E169AA3F9002A28BB /* OpenGLES.framework */; };
 		AD9DD691169AA3F9002A28BB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD690169AA3F9002A28BB /* OpenAL.framework */; };
@@ -229,6 +231,10 @@
 		AD4359B5169C04D0000374E3 /* fightingtreel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fightingtreel.png; sourceTree = "<group>"; };
 		AD4359B6169C04D0000374E3 /* fightingtreer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fightingtreer.png; sourceTree = "<group>"; };
 		AD4359B9169C0799000374E3 /* groundLayer.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = groundLayer.ccb; sourceTree = "<group>"; };
+		AD4DF27616A398E200F59B20 /* PlayerA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerA.h; sourceTree = "<group>"; };
+		AD4DF27716A398E200F59B20 /* PlayerA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerA.m; sourceTree = "<group>"; };
+		AD4DF27A16A3A43700F59B20 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		AD4DF27B16A3A43700F59B20 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		AD9DD688169AA3F9002A28BB /* AdventureOfApes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureOfApes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9DD68C169AA3F9002A28BB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD9DD68E169AA3F9002A28BB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1169,6 +1175,10 @@
 			children = (
 				AD362D8C169D422B00A2E26A /* PlayerSprite.h */,
 				AD362D8A169D41F400A2E26A /* PlayerSprite.mm */,
+				AD4DF27A16A3A43700F59B20 /* Player.h */,
+				AD4DF27B16A3A43700F59B20 /* Player.m */,
+				AD4DF27616A398E200F59B20 /* PlayerA.h */,
+				AD4DF27716A398E200F59B20 /* PlayerA.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1429,6 +1439,8 @@
 				AD4359B4169C02E7000374E3 /* CCSpritePartInWorld.mm in Sources */,
 				AD362D8B169D41F400A2E26A /* PlayerSprite.mm in Sources */,
 				AD0AF74A169E70910049D168 /* CCRoundBy.m in Sources */,
+				AD4DF27816A398E200F59B20 /* PlayerA.m in Sources */,
+				AD4DF27C16A3A43700F59B20 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1483,6 +1495,7 @@
 				INFOPLIST_FILE = AdventureOfApes/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"AdventureOfApes/libs\"";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1499,6 +1512,7 @@
 				INFOPLIST_FILE = AdventureOfApes/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"AdventureOfApes/libs\"";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

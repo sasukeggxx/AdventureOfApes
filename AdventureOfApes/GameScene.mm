@@ -12,6 +12,7 @@
 #import "CCBReader.h"
 #import "Helpers.h"
 #import "CCRoundBy.h"
+#import "PlayerA.h"
 
 @implementation GameScene
 
@@ -27,9 +28,8 @@
 -(id)init{
     if (self=[super init]) {
         self.isTouchEnabled=YES;
-        
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"image.plist"];
+
+        //[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"image.plist"];
         
         // load physics definitions
        // [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"ground-shape.plist"];
@@ -64,14 +64,15 @@
 //    player=[PlayerSprite addToWorld:world];
 //    [self addChild:player z:-1];
 //    world->SetGravity(b2Vec2(0.0, 0.0));//重力为0;
-      player=[CCSprite spriteWithFile:@"long.png"];
+      player=[PlayerA player];
       directionNow=NO;//精灵顺时针转向
       player.position=ccp(100, 320);
       [self addChild:player z:0 tag:1];
       CCAction *downAction=[CCMoveTo actionWithDuration:2 position:ccp(player.position.x,0)];
       CCAction *easeDownAction=[CCEaseIn actionWithAction:downAction rate:2.0];
-      [player runAction:easeDownAction]; //模拟下落
     
+      [player runAction:easeDownAction]; //模拟下落
+      
 
 }
 
@@ -97,7 +98,7 @@
             if (dis0<dis1) {//离挂件0近,向挂件0做圆周运动
            
                     CCRoundBy *roundAction=[CCRoundBy actionWithDuration:2.0 turn:directionNow startPos:[player position] center:[guanjian0 position] radius:dis0];
-                    roundAction.tag=1;
+                
                     CCRepeatForever *rep=[CCRepeatForever actionWithAction:roundAction];
                     [player runAction:rep];
                
@@ -105,47 +106,65 @@
             }else if(dis0>dis1){//挂件1近,向挂件1做圆周运动
 
                     CCRoundBy *roundAction=[CCRoundBy actionWithDuration:2.0 turn:directionNow startPos:[player position] center:[guanjian1 position] radius:dis1];
-                    roundAction.tag=1;
                     CCRepeatForever *rep=[CCRepeatForever actionWithAction:roundAction];
                     [player runAction:rep];
     
-            }
+            } 
             
-        }
-    }
-    
-    if (touches.count>1) {
-       UITouch *tTwo = [twoTouch objectAtIndex:1];
-       CGPoint secondTouchLocation=[GameUtil locationFromTouch:tTwo];//记录该次触摸点gl位置
+       }else if(firstTouchLocation.x<screenCenter.x){//如果任意一点点击的是屏幕左边边则需要转向
         
-        if (firstTouchLocation.x>screenCenter.x||secondTouchLocation.x>screenCenter.x) {//如果任意一点点击的是屏幕右边
-          
-            if (dis0<dis1) {//离挂件0近,向挂件0做圆周运动
+          [player stopAllActions];
+           directionNow=!directionNow;//反向
+           if (dis0<dis1) {//离挂件0近,向挂件0做圆周运动
+               
+               CCRoundBy *roundAction=[CCRoundBy actionWithDuration:2.0 turn:directionNow startPos:[player position] center:[guanjian0 position] radius:dis0];
+               CCRepeatForever *rep=[CCRepeatForever actionWithAction:roundAction];
+               [player runAction:rep];
+               
+               
+           }else if(dis0>dis1){//挂件1近,向挂件1做圆周运动
+               
+               CCRoundBy *roundAction=[CCRoundBy actionWithDuration:2.0 turn:directionNow startPos:[player position] center:[guanjian1 position] radius:dis1];
+               CCRepeatForever *rep=[CCRepeatForever actionWithAction:roundAction];
+               [player runAction:rep];
+               
+           }
 
-                    CCRoundBy *roundAction=[CCRoundBy actionWithDuration:2.0 turn:directionNow center:[guanjian0 position] radius:dis0];
-                    roundAction.tag=1;
-                    CCRepeatForever *rep=[CCRepeatForever actionWithAction:roundAction];
-                    [player runAction:rep];
-       
-            }else{//挂件1近,向挂件1做圆周运动
-
-                    CCRoundBy *roundAction=[CCRoundBy actionWithDuration:2.0 turn:directionNow center:[guanjian1 position] radius:dis1];
-                    roundAction.tag=1;
-                    CCRepeatForever *rep=[CCRepeatForever actionWithAction:roundAction];
-                    [player runAction:rep];
-   
-            }
-            
-        }else if(firstTouchLocation.x<screenCenter.x||secondTouchLocation.x<screenCenter.x){//如果任意一点点击的是屏幕右边则需要转向
-            
-            [player stopAllActions];
-            CCRoundBy *roundAction=(CCRoundBy *)[player getActionByTag:1];
-            [player runAction:[roundAction reverse]];
-            
-            
         }
     }
-  
+    
+//    if (touches.count==2) {
+//       UITouch *tTwo = [twoTouch objectAtIndex:1];
+//       CGPoint secondTouchLocation=[GameUtil locationFromTouch:tTwo];//记录该次触摸点gl位置
+//        
+//        if (firstTouchLocation.x>screenCenter.x||secondTouchLocation.x>screenCenter.x) {//如果任意一点点击的是屏幕右边
+//          
+//            if (dis0<dis1) {//离挂件0近,向挂件0做圆周运动
+//
+//                    CCRoundBy *roundAction=[CCRoundBy actionWithDuration:2.0 turn:directionNow center:[guanjian0 position] radius:dis0];
+//                    roundAction.tag=1;
+//                    CCRepeatForever *rep=[CCRepeatForever actionWithAction:roundAction];
+//                    [player runAction:rep];
+//       
+//            }else{//挂件1近,向挂件1做圆周运动
+//
+//                    CCRoundBy *roundAction=[CCRoundBy actionWithDuration:2.0 turn:directionNow center:[guanjian1 position] radius:dis1];
+//                    roundAction.tag=1;
+//                    CCRepeatForever *rep=[CCRepeatForever actionWithAction:roundAction];
+//                    [player runAction:rep];
+//   
+//            }
+//            
+//        }else if(firstTouchLocation.x<screenCenter.x||secondTouchLocation.x<screenCenter.x){//如果任意一点点击的是屏幕左边边则需要转向
+//            
+//            [player stopAllActions];
+//            CCRoundBy *roundAction=(CCRoundBy *)[player getActionByTag:1];
+//            [player runAction:[roundAction reverse]];
+//            
+//            
+//        }
+//    }
+//  
 
   
    
