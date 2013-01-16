@@ -11,7 +11,42 @@
 	</dict>
 	<key>bodies</key>
 	<dict>
-		<key>fightingtreel</key>
+		<key>fgtBoy</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.5000,0.5000 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>density</key>
+					<real>0.1</real>
+					<key>friction</key>
+					<real>0</real>
+					<key>restitution</key>
+					<real>0.5</real>
+					<key>filter_categoryBits</key>
+					<integer>1</integer>
+					<key>filter_groupIndex</key>
+					<integer>0</integer>
+					<key>filter_maskBits</key>
+					<integer>65535</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>id</key>
+					<string></string>
+					<key>fixture_type</key>
+					<string>CIRCLE</string>
+					<key>circle</key>
+					<dict>
+						<key>radius</key>
+						<real>19</real>
+						<key>position</key>
+						<string>{ -0.500,-0.500 }</string>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+		<key>fgtRope</key>
 		<dict>
 			<key>anchorpoint</key>
 			<string>{ 0.5000,0.5000 }</string>
@@ -37,77 +72,11 @@
 					<key>fixture_type</key>
 					<string>POLYGON</string>
 					<key>polygons</key>
-					<array>
-						<array>
-							<string>{ 25.000,132.500 }</string>
-							<string>{ -25.000,132.500 }</string>
-							<string>{ 17.000,85.500 }</string>
-						</array>
-						<array>
-							<string>{ 26.000,-132.500 }</string>
-							<string>{ 19.000,-26.500 }</string>
-							<string>{ -25.000,-131.500 }</string>
-						</array>
-						<array>
-							<string>{ 17.000,85.500 }</string>
-							<string>{ -25.000,132.500 }</string>
-							<string>{ -25.000,-131.500 }</string>
-							<string>{ 19.000,-26.500 }</string>
-							<string>{ 21.000,34.500 }</string>
-						</array>
-					</array>
+					<array/>
 				</dict>
 			</array>
 		</dict>
-		<key>fightingtreer</key>
-		<dict>
-			<key>anchorpoint</key>
-			<string>{ 0.5000,0.5000 }</string>
-			<key>fixtures</key>
-			<array>
-				<dict>
-					<key>density</key>
-					<real>2</real>
-					<key>friction</key>
-					<real>0</real>
-					<key>restitution</key>
-					<real>0</real>
-					<key>filter_categoryBits</key>
-					<integer>1</integer>
-					<key>filter_groupIndex</key>
-					<integer>0</integer>
-					<key>filter_maskBits</key>
-					<integer>65535</integer>
-					<key>isSensor</key>
-					<false/>
-					<key>id</key>
-					<string></string>
-					<key>fixture_type</key>
-					<string>POLYGON</string>
-					<key>polygons</key>
-					<array>
-						<array>
-							<string>{ -25.000,132.500 }</string>
-							<string>{ -18.000,58.500 }</string>
-							<string>{ 26.000,132.500 }</string>
-						</array>
-						<array>
-							<string>{ -24.000,-131.500 }</string>
-							<string>{ 25.000,-131.500 }</string>
-							<string>{ 26.000,132.500 }</string>
-							<string>{ -17.000,4.500 }</string>
-						</array>
-						<array>
-							<string>{ -25.000,29.500 }</string>
-							<string>{ -17.000,4.500 }</string>
-							<string>{ 26.000,132.500 }</string>
-							<string>{ -18.000,58.500 }</string>
-						</array>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>guajian</key>
+		<key>fgtTree</key>
 		<dict>
 			<key>anchorpoint</key>
 			<string>{ 0.5000,0.5000 }</string>
@@ -135,14 +104,14 @@
 					<key>circle</key>
 					<dict>
 						<key>radius</key>
-						<real>6</real>
+						<real>6.083</real>
 						<key>position</key>
-						<string>{ 0.500,-0.500 }</string>
+						<string>{ 0.000,-1.000 }</string>
 					</dict>
 				</dict>
 			</array>
 		</dict>
-		<key>long</key>
+		<key>fgtWall</key>
 		<dict>
 			<key>anchorpoint</key>
 			<string>{ 0.5000,0.5000 }</string>
@@ -150,11 +119,11 @@
 			<array>
 				<dict>
 					<key>density</key>
-					<real>0.3</real>
+					<real>2</real>
 					<key>friction</key>
-					<real>0.3</real>
+					<real>0</real>
 					<key>restitution</key>
-					<real>0.6</real>
+					<real>0</real>
 					<key>filter_categoryBits</key>
 					<integer>1</integer>
 					<key>filter_groupIndex</key>
@@ -166,14 +135,90 @@
 					<key>id</key>
 					<string></string>
 					<key>fixture_type</key>
-					<string>CIRCLE</string>
-					<key>circle</key>
-					<dict>
-						<key>radius</key>
-						<real>16</real>
-						<key>position</key>
-						<string>{ 0.000,1.000 }</string>
-					</dict>
+					<string>POLYGON</string>
+					<key>polygons</key>
+					<array>
+						<array>
+							<string>{ 17.000,66.000 }</string>
+							<string>{ -15.000,65.000 }</string>
+							<string>{ -16.000,-64.000 }</string>
+							<string>{ 16.000,-63.000 }</string>
+						</array>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>fgtWall2</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.5000,0.5000 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>density</key>
+					<real>2</real>
+					<key>friction</key>
+					<real>0</real>
+					<key>restitution</key>
+					<real>0</real>
+					<key>filter_categoryBits</key>
+					<integer>1</integer>
+					<key>filter_groupIndex</key>
+					<integer>0</integer>
+					<key>filter_maskBits</key>
+					<integer>65535</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>id</key>
+					<string></string>
+					<key>fixture_type</key>
+					<string>POLYGON</string>
+					<key>polygons</key>
+					<array>
+						<array>
+							<string>{ 18.000,-64.000 }</string>
+							<string>{ 16.000,65.000 }</string>
+							<string>{ -15.000,65.000 }</string>
+							<string>{ -16.000,-64.000 }</string>
+						</array>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>fgtRope2</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.5000,0.5000 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>density</key>
+					<real>0.1</real>
+					<key>friction</key>
+					<real>0</real>
+					<key>restitution</key>
+					<real>0</real>
+					<key>filter_categoryBits</key>
+					<integer>1</integer>
+					<key>filter_groupIndex</key>
+					<integer>0</integer>
+					<key>filter_maskBits</key>
+					<integer>65535</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>id</key>
+					<string></string>
+					<key>fixture_type</key>
+					<string>POLYGON</string>
+					<key>polygons</key>
+					<array>
+						<array>
+							<string>{ -32.000,-2.000 }</string>
+							<string>{ 32.000,-1.000 }</string>
+							<string>{ 32.000,2.000 }</string>
+							<string>{ -32.000,2.000 }</string>
+						</array>
+					</array>
 				</dict>
 			</array>
 		</dict>

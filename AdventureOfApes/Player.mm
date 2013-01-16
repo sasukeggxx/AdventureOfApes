@@ -2,7 +2,7 @@
 //  Player.m
 //  AdventureOfApes
 //
-//  Created by Alex Zen on 13-1-14.
+//  Created by Alex Zen on 13-1-15.
 //  Copyright 2013年 __MyCompanyName__. All rights reserved.
 //
 
@@ -11,10 +11,10 @@
 
 @implementation Player
 
-@synthesize collisionCount,speed,maxRadius,minRadius;
+@synthesize collisionCount;
+@synthesize speed;
+@synthesize maxRadius;
+@synthesize minRadius;
 
--(void)dealloc{
-    [super dealloc];
 
-}
 @end

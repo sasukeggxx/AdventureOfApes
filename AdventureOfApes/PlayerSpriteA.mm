@@ -6,11 +6,11 @@
 //  Copyright 2013年 __MyCompanyName__. All rights reserved.
 //
 
-#import "PlayerSprite.h"
+#import "PlayerSpriteA.h"
 #import "GameUtil.h"
 
 
-@implementation PlayerSprite
+@implementation PlayerSpriteA
 
 
 +(id)addToWorld:(b2World *) world{
@@ -20,9 +20,8 @@
 
 -(id)initwithWorld:(b2World *) world{
 
-    if (self=[super initWithShape:@"long" inWord:world]) {
+    if (self=[super initWithShape:@"fgtBoy" inWord:world withB2Type:b2_dynamicBody]) {
 
-        super.body->SetType(b2_dynamicBody);
         
         super.body->SetAngularDamping(0.9f);
         

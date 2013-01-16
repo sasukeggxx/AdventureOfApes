@@ -58,7 +58,12 @@
 	debugDraw->SetFlags(flags);
 }
 
++(BodyNode *) playerNearToBody:(NSMutableArray *)bodyNodes withPlayer:(BodyNode *)player{
 
+    
+    
+    return [bodyNodes objectAtIndex:0];
+}
 
 
 -(void)dealloc{

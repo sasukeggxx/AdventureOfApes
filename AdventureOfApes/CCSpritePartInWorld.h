@@ -18,4 +18,5 @@
 +(id) groundPartInWorld:(b2World*)world position:(CGPoint)pos name:(NSString*)name;
 
 -(id) initWithWorld:(b2World*)world position:(CGPoint)pos name:(NSString *)name;
+
 @end

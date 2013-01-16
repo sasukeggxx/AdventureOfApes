@@ -11,6 +11,7 @@
 #import "cocos2d.h"
 #import "Box2D.h"
 #import "GLES-Render.h"
+#import "BodyNode.h"
 @interface GameUtil : CCNode {
     
 }
@@ -22,6 +23,11 @@
 +(CGPoint) locationFromTouches:(NSSet*)touches;
 
 +(CGPoint) screenCenter;
+
+//玩家最靠近哪个挂件
+// return 最近的挂件
++(BodyNode *) playerNearToBody:(NSMutableArray *)bodyNodes withPlayer:(BodyNode *)player;
+
 
 +(void) enableBox2dDebugDrawing:(GLESDebugDraw *) debugDraw withWorld:(b2World *) world;
 @end

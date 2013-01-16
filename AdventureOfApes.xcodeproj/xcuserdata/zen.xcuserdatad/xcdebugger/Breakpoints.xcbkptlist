@@ -8,38 +8,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "379843813.983699"
+         timestampString = "380019518.015655"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "173"
-         endingLineNumber = "173"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
          landmarkName = "@implementation GameScene"
          landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "379842883.597588"
+         filePath = "AdventureOfApes/libs/Box2D/Dynamics/b2Body.cpp"
+         timestampString = "380013731.676866"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "87"
-         endingLineNumber = "87"
-         landmarkName = "-ccTouchesBegan:withEvent:"
+         startingLineNumber = "275"
+         endingLineNumber = "275"
+         landmarkName = "b2Body::ResetMassData()"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "379843693.510839"
+         timestampString = "380019518.015655"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "112"
-         endingLineNumber = "112"
-         landmarkName = "-ccTouchesBegan:withEvent:"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
+         landmarkName = "-ccTouchesEnded:withEvent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "AdventureOfApes/RopeSprite.mm"
+         timestampString = "380014700.010958"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "22"
+         endingLineNumber = "22"
+         landmarkName = "-initwithWorld:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

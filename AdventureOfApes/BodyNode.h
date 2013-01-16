@@ -29,7 +29,7 @@
  * @param inWorld: Pointer to the world object to add the sprite to
  * @return BodyNode object
  */
--(id) initWithShape:(NSString*)shapeName inWord:(b2World*)world;
+-(id) initWithShape:(NSString*)shapeName inWord:(b2World*)world withB2Type:(b2BodyType)b2type;
 
 /**
  * Changes the body's shape

@@ -15,13 +15,12 @@
 
 -(id) initWithWorld:(b2World*)world position:(CGPoint)pos name:(NSString *)name
 {
-	if ((self = [super initWithShape:name inWord:world]))
+	if ((self = [super initWithShape:name inWord:world withB2Type:b2_staticBody]))
 	{
         // set the body position
         body->SetTransform([GameUtil toMeters:pos], 0.0f);
         
-        // make the body static
-        body->SetType(b2_staticBody);
+       
 	}
 	return self;
 }

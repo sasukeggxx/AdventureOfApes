@@ -24,22 +24,47 @@
 	{
        
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world 
-										  position:ccp(7, 135)
-											  name:@"fightingtreel"]];
+										  position:ccp(10, 297)
+											  name:@"fgtWall"]];
 		
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world  
-                                                         position:ccp(483, 130)
-                                                             name:@"fightingtreer"]];
+                                                         position:ccp(10, 172)
+                                                             name:@"fgtWall"]];
         
       
         
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                         position:ccp(147, 185)
-                                                             name:@"guajian"] z:0 tag:0];
+                                                         position:ccp(10, 45)
+                                                             name:@"fgtWall"]];
+       
+        
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                         position:ccp(333, 188)
-                                                             name:@"guajian"] z:0 tag:1];
+                                                         position:ccp(476, 298)
+                                                             name:@"fgtWall2"]];
 		
+        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
+                                                     position:ccp(476, 170)
+                                                         name:@"fgtWall2"]];
+
+        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
+                                                     position:ccp(476, 45)
+                                                         name:@"fgtWall2"]];
+        
+        
+        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
+                                                     position:ccp(159, 204)
+                                                         name:@"fgtTree"] z:0 tag:0];
+        
+        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
+                                                     position:ccp(295, 111)
+                                                         name:@"fgtTree"] z:0 tag:1];
+        
+        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
+                                                     position:ccp(382, 238)
+                                                         name:@"fgtTree"] z:0 tag:2];
+        
+        
+
 
 	
     }

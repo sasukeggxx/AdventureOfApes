@@ -15,7 +15,7 @@
 
 @synthesize body;
 
--(id) initWithShape:(NSString*)shapeName inWord:(b2World*)world
+-(id) initWithShape:(NSString*)shapeName inWord:(b2World*)world withB2Type:(b2BodyType)b2type
 {
    
     
@@ -27,7 +27,7 @@
         b2BodyDef bodyDef;
         body = world->CreateBody(&bodyDef);
         body->SetUserData(self);
-        
+        body->SetType(b2type);
         // set the shape
         [self setBodyShape:shapeName];
     }

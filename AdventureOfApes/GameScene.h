@@ -11,7 +11,8 @@
 #import "Box2D.h"
 #import "GLES-Render.h"
 #import "ContactListener.h"
-#import "PlayerSprite.h"
+#import "PlayerSpriteA.h"
+#import "RopeSprite.h"
 #import "CreateGroundInWorld.h"
 
 #define PTM_RATIO 32 //单位常量
@@ -20,12 +21,16 @@
     b2World *world; // 定义世界
     ContactListener *listener;
     GLESDebugDraw* debugDraw;
-   // PlayerSprite *player;
-    CCSprite *player;
+    PlayerSpriteA *player;
+    RopeSprite *rope;
+   // CCSprite *player;
     CreateGroundInWorld *groundShape;
     CCLayer *groundLayer;
-    
-    BOOL directionNow;
+    b2RevoluteJointDef ropeJointDef;  //绳子定位挂件关节
+    b2RevoluteJoint *ropeJoint;
+    b2RevoluteJointDef playerJointDef;//绳子末端关节
+    b2RevoluteJoint *playerJoint;
+
 }
 
 +(id)scene;
