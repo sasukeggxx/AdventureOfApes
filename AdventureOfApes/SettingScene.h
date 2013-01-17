@@ -1,4 +1,4 @@
-//
+//  设置场景
 //  SettingScene.h
 //  AdventureOfApes
 //
