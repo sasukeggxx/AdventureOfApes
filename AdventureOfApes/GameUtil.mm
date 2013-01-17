@@ -8,7 +8,9 @@
 #define PTM_RATIO 32 //单位常量
 #import "GameUtil.h"
 
-
+float distanceBetweenPoints(CGPoint p1, CGPoint p2){
+    return sqrt( pow( (p1.x-p2.x) ,2) + pow( (p1.y-p2.y) ,2) );
+}
 
 @implementation GameUtil
 
@@ -60,9 +62,33 @@
 
 +(BodyNode *) playerNearToBody:(NSMutableArray *)bodyNodes withPlayer:(BodyNode *)player{
 
+    if (bodyNodes.count==0) {
+        return nil;
+    }
+    NSMutableDictionary *distansDic=[NSMutableDictionary dictionaryWithCapacity:bodyNodes.count];
+    NSMutableArray  *distanses=[NSMutableArray arrayWithCapacity:bodyNodes.count];
+    for (int i=0; i<bodyNodes.count; i++) {
+        BodyNode *bodyNode=[bodyNodes objectAtIndex:i];
+//        CGFloat dis=ccpDistance(bodyNode.position, player.position);
+//        [distansDic setObject:bodyNode forKey:[NSString stringWithFormat:@"%f",dis]];
+//        [distanses addObject:[NSNumber numberWithFloat:(float)dis]];
+          float dis=distanceBetweenPoints(bodyNode.position, player.position);
+          [distansDic setObject:bodyNode forKey:[NSString stringWithFormat:@"%d",(int)dis]];
+          [distanses addObject:[NSNumber numberWithInt:(int)dis]];
+    }
+  
     
+    NSNumber *minDistans=[distanses objectAtIndex:0];
     
-    return [bodyNodes objectAtIndex:0];
+    for (int i=0; i<distanses.count; i++) {
+        NSNumber *dis=[distanses objectAtIndex:i];
+        if ([minDistans compare:dis]==NSOrderedDescending) {
+            minDistans=dis;
+        }
+        
+    }
+    
+    return [distansDic objectForKey:[NSString stringWithFormat:@"%d",[minDistans intValue]]];
 }
 
 

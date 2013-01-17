@@ -10,7 +10,6 @@
 #import "BodyNode.h"
 #import "GameUtil.h"
 #import "CCBReader.h"
-#import "Helpers.h"
 #import "CCRoundBy.h"
 
 @implementation GameScene
@@ -68,7 +67,8 @@
     CGPoint screenCenter=[GameUtil screenCenter];
     BodyNode *guanjian0=(BodyNode *)[groundShape getChildByTag:0];
     BodyNode *guanjian1=(BodyNode *)[groundShape getChildByTag:1];
-    NSMutableArray *array=[NSMutableArray arrayWithObjects:guanjian0,guanjian1,nil];
+    BodyNode *guanjian2=(BodyNode *)[groundShape getChildByTag:2];
+    NSMutableArray *array=[NSMutableArray arrayWithObjects:guanjian0,guanjian1,guanjian2,nil];
     BodyNode *nearGuanjian=[GameUtil playerNearToBody:array withPlayer:player];
     
     NSArray *twoTouch = [touches allObjects];
@@ -169,8 +169,8 @@
     float widthInMeters = screenSize.width / PTM_RATIO;//转换成米单位
     float heightInMeters = screenSize.height / PTM_RATIO;
     
-    b2Vec2 lowerLeftCorner = b2Vec2(0, -0.5);//左下角
-    b2Vec2 lowerRightCorner = b2Vec2(widthInMeters, -0.5);//右下角
+    b2Vec2 lowerLeftCorner = b2Vec2(0, -1.0);//左下角
+    b2Vec2 lowerRightCorner = b2Vec2(widthInMeters, -1.0);//右下角
     b2Vec2 upperLeftCorner = b2Vec2(0, heightInMeters+3.0);//左上角
     b2Vec2 upperRightCorner = b2Vec2(widthInMeters, heightInMeters+3.0); //右上角
     

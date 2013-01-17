@@ -27,7 +27,7 @@
         
         [self setSpriteStartPosition];
         
-        //[self scheduleUpdate];
+        [self scheduleUpdate];
         
     }
     return self;
@@ -43,6 +43,18 @@
     body->SetLinearVelocity(b2Vec2_zero);//速度重置
     body->SetAngularVelocity(0.0f);
 }
+
+
+-(void) update:(ccTime)delta{
+    
+    if (self.position.y<-10) {//玩家死了
+        [self setSpriteStartPosition];
+    }
+
+
+
+}
+
 
 -(void)dealloc{
 

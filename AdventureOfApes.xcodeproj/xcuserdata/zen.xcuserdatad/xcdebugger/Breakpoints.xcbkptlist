@@ -8,7 +8,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "380019518.015655"
+         timestampString = "380098735.125169"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "127"
@@ -17,7 +17,7 @@
          landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/libs/Box2D/Dynamics/b2Body.cpp"
@@ -30,11 +30,11 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "380019518.015655"
+         timestampString = "380098735.125169"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "138"
@@ -53,6 +53,19 @@
          startingLineNumber = "22"
          endingLineNumber = "22"
          landmarkName = "-initwithWorld:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "AdventureOfApes/GameUtil.mm"
+         timestampString = "380098473.218153"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
+         landmarkName = "+playerNearToBody:withPlayer:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
