@@ -44,8 +44,7 @@
         //todo 小关数据需要从配置文件读取
         //以下是临时往scrollview添加上8个小关按钮
         
-        
-        
+        //scoreLabel = [CCLabelBMFont labelWithString:@"0" fntFile:@"bitmapfont.fnt"];
         
         UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
         button1.frame = CGRectMake(size.width*0.1, size.height*0.1, bgImg.contentSize.width,bgImg.contentSize.height);

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35B8D20416A7EE0000EBDF43 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8D20316A7EE0000EBDF43 /* MenuScene.m */; };
+		35B8D20716A7EE1100EBDF43 /* RoleSelectionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8D20616A7EE1100EBDF43 /* RoleSelectionScene.m */; };
+		35B8D20A16A7EF2900EBDF43 /* LogoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8D20916A7EF2900EBDF43 /* LogoScene.m */; };
 		AD0AF74A169E70910049D168 /* CCRoundBy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0AF749169E70910049D168 /* CCRoundBy.m */; };
 		AD362D8B169D41F400A2E26A /* PlayerSpriteA.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD362D8A169D41F400A2E26A /* PlayerSpriteA.mm */; };
 		AD43578F169BACC2000374E3 /* GameUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD43578E169BACC2000374E3 /* GameUtil.mm */; };
@@ -214,6 +217,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35B8D20116A7EDF800EBDF43 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		35B8D20316A7EE0000EBDF43 /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
+		35B8D20516A7EE0900EBDF43 /* LogoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoScene.h; sourceTree = "<group>"; };
+		35B8D20616A7EE1100EBDF43 /* RoleSelectionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoleSelectionScene.m; sourceTree = "<group>"; };
+		35B8D20816A7EEBF00EBDF43 /* RoleSelectionScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoleSelectionScene.h; sourceTree = "<group>"; };
+		35B8D20916A7EF2900EBDF43 /* LogoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoScene.m; sourceTree = "<group>"; };
 		AD0AF73B169E60B30049D168 /* GameObjectTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameObjectTag.h; sourceTree = "<group>"; };
 		AD0AF748169E70910049D168 /* CCRoundBy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRoundBy.h; sourceTree = "<group>"; };
 		AD0AF749169E70910049D168 /* CCRoundBy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRoundBy.m; sourceTree = "<group>"; };
@@ -1176,6 +1185,8 @@
 		AD9DD876169AA416002A28BB /* scene */ = {
 			isa = PBXGroup;
 			children = (
+				35B8D20916A7EF2900EBDF43 /* LogoScene.m */,
+				35B8D20816A7EEBF00EBDF43 /* RoleSelectionScene.h */,
 				AD9DD885169AA4FB002A28BB /* BigStageSelectScene.h */,
 				AD9DD886169AA4FB002A28BB /* BigStageSelectScene.mm */,
 				AD9DD887169AA4FB002A28BB /* SecondStageSelectScene.h */,
@@ -1184,9 +1195,13 @@
 				AD9DD883169AA4DB002A28BB /* StoreScene.mm */,
 				AD9DD87F169AA4C5002A28BB /* MainScene.h */,
 				AD9DD880169AA4C5002A28BB /* MainScene.mm */,
+				35B8D20116A7EDF800EBDF43 /* MenuScene.h */,
+				35B8D20616A7EE1100EBDF43 /* RoleSelectionScene.m */,
 				AD43579A169BB28F000374E3 /* GameScene.h */,
 				AD43579B169BB28F000374E3 /* GameScene.mm */,
+				35B8D20316A7EE0000EBDF43 /* MenuScene.m */,
 				AD43579D169BC06D000374E3 /* SettingScene.h */,
+				35B8D20516A7EE0900EBDF43 /* LogoScene.h */,
 				AD43579E169BC06D000374E3 /* SettingScene.mm */,
 			);
 			name = scene;
@@ -1499,6 +1514,9 @@
 				AD0AF74A169E70910049D168 /* CCRoundBy.m in Sources */,
 				ADE56DC616A4E4CF00D91211 /* Player.mm in Sources */,
 				AD86A2B216A4FE1A00078113 /* RopeSprite.mm in Sources */,
+				35B8D20416A7EE0000EBDF43 /* MenuScene.m in Sources */,
+				35B8D20716A7EE1100EBDF43 /* RoleSelectionScene.m in Sources */,
+				35B8D20A16A7EF2900EBDF43 /* LogoScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

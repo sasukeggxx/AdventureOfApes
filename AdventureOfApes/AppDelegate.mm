@@ -12,6 +12,7 @@
 #import "GameConfig.h"
 #import "MainScene.h"
 #import "RootViewController.h"
+#import "LogoScene.h"
 
 @implementation AppDelegate
 
@@ -119,7 +120,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [MainScene scene]];
+	[[CCDirector sharedDirector] runWithScene: [LogoScene scene]];
 }
 
 
