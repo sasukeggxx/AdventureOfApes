@@ -22,6 +22,13 @@
 
     if (self=[super initWithShape:@"fgtBoy" inWord:world withB2Type:b2_dynamicBody]) {
 
+        self.maxRadius=120.0;//最大半径
+        
+        self.minRadius=self.contentSize.width+10.0;//最小半径
+        
+        self.speed=5.0; //初始速度
+        
+        self.collisionCount=0; //初始碰撞次数
         
         super.body->SetAngularDamping(0.9f);
         

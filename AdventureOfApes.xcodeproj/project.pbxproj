@@ -205,6 +205,8 @@
 		ADE1393E16A6320C00428DFE /* image.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = ADE1393C16A6320C00428DFE /* image.pvr.ccz */; };
 		ADE1394216A632F200428DFE /* ground-shape.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADE1394116A632F200428DFE /* ground-shape.plist */; };
 		ADE56DC616A4E4CF00D91211 /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADE56DC516A4E4CF00D91211 /* Player.mm */; };
+		ADEEC07316A93425005AD266 /* backBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEEC07216A93424005AD266 /* backBtn.png */; };
+		ADEEC07716A938DE005AD266 /* InputLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADEEC07616A938DE005AD266 /* InputLayer.mm */; };
 		ADF64B0316A5ABB200B560AA /* bgLayer.ccb in Resources */ = {isa = PBXBuildFile; fileRef = ADF64B0216A5ABB200B560AA /* bgLayer.ccb */; };
 		ADF64B0C16A5ABB200B560AA /* fgtBanana.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF64B0416A5ABB200B560AA /* fgtBanana.png */; };
 		ADF64B0D16A5ABB200B560AA /* fgtBg.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF64B0516A5ABB200B560AA /* fgtBg.png */; };
@@ -595,6 +597,9 @@
 		ADE1394116A632F200428DFE /* ground-shape.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ground-shape.plist"; sourceTree = "<group>"; };
 		ADE56DC416A4E4CF00D91211 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		ADE56DC516A4E4CF00D91211 /* Player.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Player.mm; sourceTree = "<group>"; };
+		ADEEC07216A93424005AD266 /* backBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backBtn.png; sourceTree = "<group>"; };
+		ADEEC07516A938DE005AD266 /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
+		ADEEC07616A938DE005AD266 /* InputLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InputLayer.mm; sourceTree = "<group>"; };
 		ADF64B0216A5ABB200B560AA /* bgLayer.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = bgLayer.ccb; sourceTree = "<group>"; };
 		ADF64B0416A5ABB200B560AA /* fgtBanana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgtBanana.png; sourceTree = "<group>"; };
 		ADF64B0516A5ABB200B560AA /* fgtBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgtBg.png; sourceTree = "<group>"; };
@@ -681,6 +686,7 @@
 		AD9DD69D169AA3F9002A28BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ADEEC07216A93424005AD266 /* backBtn.png */,
 				AD8F2D5016A83A4B006A8D96 /* num.fnt */,
 				AD8F2D5116A83A4B006A8D96 /* num1.png */,
 				AD8F2D5216A83A4B006A8D96 /* num2.png */,
@@ -1212,6 +1218,8 @@
 			children = (
 				AD435797169BACFF000374E3 /* CCBReader.h */,
 				AD435798169BACFF000374E3 /* CCBReader.m */,
+				ADEEC07516A938DE005AD266 /* InputLayer.h */,
+				ADEEC07616A938DE005AD266 /* InputLayer.mm */,
 			);
 			name = layer;
 			sourceTree = "<group>";
@@ -1353,6 +1361,7 @@
 				AD8F2D6116A83A4B006A8D96 /* num7.png in Resources */,
 				AD8F2D6216A83A4B006A8D96 /* num8.png in Resources */,
 				AD8F2D6316A83A4B006A8D96 /* num9.png in Resources */,
+				ADEEC07316A93425005AD266 /* backBtn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1517,6 +1526,7 @@
 				35B8D20416A7EE0000EBDF43 /* MenuScene.m in Sources */,
 				35B8D20716A7EE1100EBDF43 /* RoleSelectionScene.m in Sources */,
 				35B8D20A16A7EF2900EBDF43 /* LogoScene.m in Sources */,
+				ADEEC07716A938DE005AD266 /* InputLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

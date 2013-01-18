@@ -7,6 +7,7 @@
 //
 #define PTM_RATIO 32 //单位常量
 #import "GameUtil.h"
+#import "Player.h"
 
 float distanceBetweenPoints(CGPoint p1, CGPoint p2){
     return sqrt( pow( (p1.x-p2.x) ,2) + pow( (p1.y-p2.y) ,2) );
@@ -88,6 +89,11 @@ float distanceBetweenPoints(CGPoint p1, CGPoint p2){
         
     }
     
+    Player *p=(Player *)player;
+    if ([minDistans floatValue]<p.minRadius||[minDistans floatValue]>p.maxRadius) {
+        CCLOG(@"mindistans  %d is not between %f~%f",[minDistans intValue],[p minRadius],[p maxRadius]);
+        return nil;
+    }
     return [distansDic objectForKey:[NSString stringWithFormat:@"%d",[minDistans intValue]]];
 }
 

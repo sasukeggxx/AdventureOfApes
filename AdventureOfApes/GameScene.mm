@@ -11,6 +11,7 @@
 #import "GameUtil.h"
 #import "CCBReader.h"
 #import "CCRoundBy.h"
+#import "InputLayer.h"
 
 @implementation GameScene
 
@@ -36,11 +37,15 @@
 
         groundLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"bgLayer.ccb"];
         
+        CCLayer *inputLayer=[InputLayer node];
+        
+        [self addChild:inputLayer];
+        
         [self addChild:groundLayer z:-3];
         
         [self initTheWorld];//初始化世界
         
-        [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
+        //[GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
         
         groundShape=[CreateGroundInWorld createGroundWithWorld:world];
         
@@ -69,7 +74,10 @@
     BodyNode *guanjian1=(BodyNode *)[groundShape getChildByTag:1];
     BodyNode *guanjian2=(BodyNode *)[groundShape getChildByTag:2];
     NSMutableArray *array=[NSMutableArray arrayWithObjects:guanjian0,guanjian1,guanjian2,nil];
-    BodyNode *nearGuanjian=[GameUtil playerNearToBody:array withPlayer:player];
+    nearGuanjian=[GameUtil playerNearToBody:array withPlayer:player];
+    if (nearGuanjian==nil) {//如果找不到最近的挂件
+        return;
+    }
     
     NSArray *twoTouch = [touches allObjects];
     
@@ -110,7 +118,12 @@
         
            playerJoint=(b2RevoluteJoint *)nearGuanjian.body->GetWorld()->CreateJoint(&playerJointDef);
         
-           playerJoint->SetMotorSpeed(5.0);
+        if (player.position.x<=nearGuanjian.position.x) {//如果玩家在挂件的左边做逆时针旋转
+              playerJoint->SetMotorSpeed(player.speed);
+        }else{//在挂件右边做顺时针旋转
+             playerJoint->SetMotorSpeed(-player.speed);
+        }
+         
         
     }else if (firstTouchLocation.x<screenCenter.x){//如果点击左边则转向
     
@@ -134,10 +147,16 @@
     UITouch *touch = [touches anyObject];
     CGPoint touchLocation =[GameUtil locationFromTouch:touch];//记录该次触摸位置
     CGPoint screenCenter=[GameUtil screenCenter];
+    if (nearGuanjian==nil) {
+        return;
+    }
     
     if (touchLocation.x>screenCenter.x) {//如果松开的是右边,玩家离开绳子做抛物线
         
-        world->DestroyJoint(playerJoint);
+        if (playerJoint!=NULL) {
+             world->DestroyJoint(playerJoint);
+        }
+       
       
 //        [self removeChild:rope cleanup:NO];
 //        
@@ -232,29 +251,52 @@
 		}
 	}
     
+    
+    //判断是否和香蕉碰撞
+  
+	
+	// If you adjust the factors make sure you also change them in the -(void) draw method.
+	float playerCollisionRadius =player.contentSize.width* 0.4f;
+	
+
+    for (int i=20; i<30; i++) { //香蕉tag区间为
+         CCSprite *bana=(CCSprite *)[groundLayer getChildByTag:i];
+        if (bana!=nil) {
+            float banaCollisionRadius = bana.contentSize.width * 0.4f;
+            float maxCollisionDistance=playerCollisionRadius+banaCollisionRadius;
+            float actualDistance= ccpDistance(player.position, bana.position);
+            if (actualDistance<maxCollisionDistance) {
+               
+                [groundLayer removeChild:bana cleanup:YES];
+            }
+            
+        }
+    }
+    
+    
 }
 
 
 
 
-#ifdef DEBUG
--(void) draw
-{
-	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-	// Needed states:  GL_VERTEX_ARRAY,
-	// Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-	glDisable(GL_TEXTURE_2D);
-	glDisableClientState(GL_COLOR_ARRAY);
-	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-	
-	world->DrawDebugData();
-	
-	// restore default GL states
-	glEnable(GL_TEXTURE_2D);
-	glEnableClientState(GL_COLOR_ARRAY);
-	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-}
-#endif
+//#ifdef DEBUG
+//-(void) draw
+//{
+//	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+//	// Needed states:  GL_VERTEX_ARRAY,
+//	// Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+//	glDisable(GL_TEXTURE_2D);
+//	glDisableClientState(GL_COLOR_ARRAY);
+//	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+//	
+//	world->DrawDebugData();
+//	
+//	// restore default GL states
+//	glEnable(GL_TEXTURE_2D);
+//	glEnableClientState(GL_COLOR_ARRAY);
+//	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+//}
+//#endif
 
 
 -(void)dealloc{

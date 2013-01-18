@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "380098735.125169"
+         timestampString = "380190416.751801"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "127"
-         endingLineNumber = "127"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
          landmarkName = "@implementation GameScene"
          landmarkType = "3">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "380098735.125169"
+         timestampString = "380190416.751801"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "138"
-         endingLineNumber = "138"
+         startingLineNumber = "154"
+         endingLineNumber = "154"
          landmarkName = "-ccTouchesEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,12 +60,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameUtil.mm"
-         timestampString = "380098473.218153"
+         timestampString = "380170141.975466"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
          landmarkName = "+playerNearToBody:withPlayer:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "AdventureOfApes/GameScene.mm"
+         timestampString = "380190416.751801"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
+         landmarkName = "-ccTouchesBegan:withEvent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "AdventureOfApes/GameUtil.mm"
+         timestampString = "380170198.233051"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
+         landmarkName = "+playerNearToBody:withPlayer:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "AdventureOfApes/GameScene.mm"
+         timestampString = "380190416.751801"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "259"
+         endingLineNumber = "259"
+         landmarkName = "-update:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

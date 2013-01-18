@@ -340,7 +340,7 @@
 					<key>spriteFile</key>
 					<string>fgtBanana.png</string>
 					<key>tag</key>
-					<integer>-1</integer>
+					<integer>20</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -395,8 +395,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>225.30078125</real>
-						<real>271.1796875</real>
+						<real>379.8828125</real>
+						<real>190.73828125</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -407,7 +407,7 @@
 					<key>spriteFile</key>
 					<string>fgtBanana.png</string>
 					<key>tag</key>
-					<integer>-1</integer>
+					<integer>21</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -474,7 +474,7 @@
 					<key>spriteFile</key>
 					<string>fgtBanana.png</string>
 					<key>tag</key>
-					<integer>-1</integer>
+					<integer>22</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -541,7 +541,7 @@
 					<key>spriteFile</key>
 					<string>fgtBanana.png</string>
 					<key>tag</key>
-					<integer>-1</integer>
+					<integer>23</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -608,7 +608,7 @@
 					<key>spriteFile</key>
 					<string>fgtBanana.png</string>
 					<key>tag</key>
-					<integer>-1</integer>
+					<integer>24</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -675,7 +675,7 @@
 					<key>spriteFile</key>
 					<string>fgtBanana.png</string>
 					<key>tag</key>
-					<integer>-1</integer>
+					<integer>25</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -742,7 +742,7 @@
 					<key>spriteFile</key>
 					<string>fgtBanana.png</string>
 					<key>tag</key>
-					<integer>-1</integer>
+					<integer>26</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
