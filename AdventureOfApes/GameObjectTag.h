@@ -15,4 +15,9 @@
 
 
 
+typedef enum {
 
+    scoreTag,
+
+
+}BtnTag;

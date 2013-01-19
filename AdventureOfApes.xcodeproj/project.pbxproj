@@ -28,16 +28,6 @@
 		AD4359B4169C02E7000374E3 /* CCSpritePartInWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4359B2169C02E7000374E3 /* CCSpritePartInWorld.mm */; };
 		AD4359BA169C0799000374E3 /* groundLayer.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B9169C0799000374E3 /* groundLayer.ccb */; };
 		AD86A2B216A4FE1A00078113 /* RopeSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD86A2B116A4FE1A00078113 /* RopeSprite.mm */; };
-		AD8F2D5A16A83A4B006A8D96 /* num.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AD8F2D5016A83A4B006A8D96 /* num.fnt */; };
-		AD8F2D5B16A83A4B006A8D96 /* num1.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8F2D5116A83A4B006A8D96 /* num1.png */; };
-		AD8F2D5C16A83A4B006A8D96 /* num2.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8F2D5216A83A4B006A8D96 /* num2.png */; };
-		AD8F2D5D16A83A4B006A8D96 /* num3.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8F2D5316A83A4B006A8D96 /* num3.png */; };
-		AD8F2D5E16A83A4B006A8D96 /* num4.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8F2D5416A83A4B006A8D96 /* num4.png */; };
-		AD8F2D5F16A83A4B006A8D96 /* num5.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8F2D5516A83A4B006A8D96 /* num5.png */; };
-		AD8F2D6016A83A4B006A8D96 /* num6.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8F2D5616A83A4B006A8D96 /* num6.png */; };
-		AD8F2D6116A83A4B006A8D96 /* num7.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8F2D5716A83A4B006A8D96 /* num7.png */; };
-		AD8F2D6216A83A4B006A8D96 /* num8.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8F2D5816A83A4B006A8D96 /* num8.png */; };
-		AD8F2D6316A83A4B006A8D96 /* num9.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8F2D5916A83A4B006A8D96 /* num9.png */; };
 		AD9DD68D169AA3F9002A28BB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD68C169AA3F9002A28BB /* QuartzCore.framework */; };
 		AD9DD68F169AA3F9002A28BB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD68E169AA3F9002A28BB /* OpenGLES.framework */; };
 		AD9DD691169AA3F9002A28BB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD690169AA3F9002A28BB /* OpenAL.framework */; };
@@ -205,6 +195,10 @@
 		AD9DD8A8169ABFD7002A28BB /* tollgate-9.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD89C169ABFD7002A28BB /* tollgate-9.png */; };
 		AD9DD8A9169ABFD7002A28BB /* tollgate-STAR.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD89D169ABFD7002A28BB /* tollgate-STAR.png */; };
 		AD9DD8AA169ABFD7002A28BB /* tollgate-STONE.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9DD89E169ABFD7002A28BB /* tollgate-STONE.png */; };
+		AD9F517F16AA8A47000E41F8 /* 26sizefont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AD9F517B16AA8A47000E41F8 /* 26sizefont.fnt */; };
+		AD9F518016AA8A47000E41F8 /* 26sizefont.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9F517C16AA8A47000E41F8 /* 26sizefont.png */; };
+		AD9F518116AA8A47000E41F8 /* 50sizefont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AD9F517D16AA8A47000E41F8 /* 50sizefont.fnt */; };
+		AD9F518216AA8A47000E41F8 /* 50sizefont.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9F517E16AA8A47000E41F8 /* 50sizefont.png */; };
 		ADE1393D16A6320C00428DFE /* image.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADE1393B16A6320C00428DFE /* image.plist */; };
 		ADE1393E16A6320C00428DFE /* image.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = ADE1393C16A6320C00428DFE /* image.pvr.ccz */; };
 		ADE1394216A632F200428DFE /* ground-shape.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADE1394116A632F200428DFE /* ground-shape.plist */; };
@@ -260,16 +254,6 @@
 		AD4359B9169C0799000374E3 /* groundLayer.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = groundLayer.ccb; sourceTree = "<group>"; };
 		AD86A2B016A4FE1A00078113 /* RopeSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RopeSprite.h; sourceTree = "<group>"; };
 		AD86A2B116A4FE1A00078113 /* RopeSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RopeSprite.mm; sourceTree = "<group>"; };
-		AD8F2D5016A83A4B006A8D96 /* num.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = num.fnt; sourceTree = "<group>"; };
-		AD8F2D5116A83A4B006A8D96 /* num1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num1.png; sourceTree = "<group>"; };
-		AD8F2D5216A83A4B006A8D96 /* num2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num2.png; sourceTree = "<group>"; };
-		AD8F2D5316A83A4B006A8D96 /* num3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num3.png; sourceTree = "<group>"; };
-		AD8F2D5416A83A4B006A8D96 /* num4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num4.png; sourceTree = "<group>"; };
-		AD8F2D5516A83A4B006A8D96 /* num5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num5.png; sourceTree = "<group>"; };
-		AD8F2D5616A83A4B006A8D96 /* num6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num6.png; sourceTree = "<group>"; };
-		AD8F2D5716A83A4B006A8D96 /* num7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num7.png; sourceTree = "<group>"; };
-		AD8F2D5816A83A4B006A8D96 /* num8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num8.png; sourceTree = "<group>"; };
-		AD8F2D5916A83A4B006A8D96 /* num9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num9.png; sourceTree = "<group>"; };
 		AD9DD688169AA3F9002A28BB /* AdventureOfApes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureOfApes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9DD68C169AA3F9002A28BB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD9DD68E169AA3F9002A28BB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -600,6 +584,10 @@
 		AD9DD89C169ABFD7002A28BB /* tollgate-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-9.png"; sourceTree = "<group>"; };
 		AD9DD89D169ABFD7002A28BB /* tollgate-STAR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-STAR.png"; sourceTree = "<group>"; };
 		AD9DD89E169ABFD7002A28BB /* tollgate-STONE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tollgate-STONE.png"; sourceTree = "<group>"; };
+		AD9F517B16AA8A47000E41F8 /* 26sizefont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 26sizefont.fnt; sourceTree = "<group>"; };
+		AD9F517C16AA8A47000E41F8 /* 26sizefont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 26sizefont.png; sourceTree = "<group>"; };
+		AD9F517D16AA8A47000E41F8 /* 50sizefont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 50sizefont.fnt; sourceTree = "<group>"; };
+		AD9F517E16AA8A47000E41F8 /* 50sizefont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50sizefont.png; sourceTree = "<group>"; };
 		ADE1393B16A6320C00428DFE /* image.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image.plist; sourceTree = "<group>"; };
 		ADE1393C16A6320C00428DFE /* image.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = image.pvr.ccz; sourceTree = "<group>"; };
 		ADE1394116A632F200428DFE /* ground-shape.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ground-shape.plist"; sourceTree = "<group>"; };
@@ -706,18 +694,12 @@
 		AD9DD69D169AA3F9002A28BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD9F517B16AA8A47000E41F8 /* 26sizefont.fnt */,
+				AD9F517C16AA8A47000E41F8 /* 26sizefont.png */,
+				AD9F517D16AA8A47000E41F8 /* 50sizefont.fnt */,
+				AD9F517E16AA8A47000E41F8 /* 50sizefont.png */,
 				ADEEC07216A93424005AD266 /* backBtn.png */,
-				AD8F2D5016A83A4B006A8D96 /* num.fnt */,
-				AD8F2D5116A83A4B006A8D96 /* num1.png */,
-				AD8F2D5216A83A4B006A8D96 /* num2.png */,
-				AD8F2D5316A83A4B006A8D96 /* num3.png */,
-				AD8F2D5416A83A4B006A8D96 /* num4.png */,
-				AD8F2D5516A83A4B006A8D96 /* num5.png */,
-				AD8F2D5616A83A4B006A8D96 /* num6.png */,
-				AD8F2D5716A83A4B006A8D96 /* num7.png */,
-				AD8F2D5816A83A4B006A8D96 /* num8.png */,
 				3503D56716AA37F700C627D7 /* img */,
-				AD8F2D5916A83A4B006A8D96 /* num9.png */,
 				ADE1394116A632F200428DFE /* ground-shape.plist */,
 				ADE1393B16A6320C00428DFE /* image.plist */,
 				ADE1393C16A6320C00428DFE /* image.pvr.ccz */,
@@ -1372,21 +1354,15 @@
 				ADE1393D16A6320C00428DFE /* image.plist in Resources */,
 				ADE1393E16A6320C00428DFE /* image.pvr.ccz in Resources */,
 				ADE1394216A632F200428DFE /* ground-shape.plist in Resources */,
-				AD8F2D5A16A83A4B006A8D96 /* num.fnt in Resources */,
-				AD8F2D5B16A83A4B006A8D96 /* num1.png in Resources */,
-				AD8F2D5C16A83A4B006A8D96 /* num2.png in Resources */,
-				AD8F2D5D16A83A4B006A8D96 /* num3.png in Resources */,
-				AD8F2D5E16A83A4B006A8D96 /* num4.png in Resources */,
-				AD8F2D5F16A83A4B006A8D96 /* num5.png in Resources */,
-				AD8F2D6016A83A4B006A8D96 /* num6.png in Resources */,
-				AD8F2D6116A83A4B006A8D96 /* num7.png in Resources */,
-				AD8F2D6216A83A4B006A8D96 /* num8.png in Resources */,
-				AD8F2D6316A83A4B006A8D96 /* num9.png in Resources */,
 				ADEEC07316A93425005AD266 /* backBtn.png in Resources */,
 				3503D56C16AA37F700C627D7 /* 1.png in Resources */,
 				3503D56D16AA37F700C627D7 /* 11.png in Resources */,
 				3503D56E16AA37F700C627D7 /* 2.png in Resources */,
 				3503D56F16AA37F700C627D7 /* 3.png in Resources */,
+				AD9F517F16AA8A47000E41F8 /* 26sizefont.fnt in Resources */,
+				AD9F518016AA8A47000E41F8 /* 26sizefont.png in Resources */,
+				AD9F518116AA8A47000E41F8 /* 50sizefont.fnt in Resources */,
+				AD9F518216AA8A47000E41F8 /* 50sizefont.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

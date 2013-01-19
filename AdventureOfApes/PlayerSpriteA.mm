@@ -36,6 +36,8 @@
         
         [self scheduleUpdate];
         
+         b2Filter collisonFilter;  //设置过滤的碰撞
+        
     }
     return self;
 

@@ -32,6 +32,11 @@
     b2RevoluteJoint *playerJoint;
     
     BodyNode *nearGuanjian;
+    
+    int score;  //分值
+    
+    CCLayer *inputLayer;
+    
 
 }
 

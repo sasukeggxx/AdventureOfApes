@@ -12,6 +12,7 @@
 #import "CCBReader.h"
 #import "CCRoundBy.h"
 #import "InputLayer.h"
+#import "GameObjectTag.h"
 
 @implementation GameScene
 
@@ -27,6 +28,8 @@
 -(id)init{
     if (self=[super init]) {
         
+       
+        
         self.isTouchEnabled=YES;
 
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"image.plist"];
@@ -37,7 +40,7 @@
 
         groundLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"bgLayer.ccb"];
         
-        CCLayer *inputLayer=[InputLayer node];
+         inputLayer=[InputLayer node];
         
         [self addChild:inputLayer];
         
@@ -67,6 +70,8 @@
 
 }
 
+
+//处理玩家的左右点击 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
 
     CGPoint screenCenter=[GameUtil screenCenter];
@@ -252,7 +257,7 @@
 	}
     
     
-    //判断是否和香蕉碰撞
+    //判断是否和香蕉碰撞,并计分
   
 	
 	// If you adjust the factors make sure you also change them in the -(void) draw method.
@@ -268,6 +273,10 @@
             if (actualDistance<maxCollisionDistance) {
                
                 [groundLayer removeChild:bana cleanup:YES];
+                score=score+10;
+                CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:scoreTag];
+                scoreLabel.string=[NSString stringWithFormat:@"%d",score];
+                
             }
             
         }

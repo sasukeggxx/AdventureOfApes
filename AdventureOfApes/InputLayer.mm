@@ -8,7 +8,7 @@
 
 #import "InputLayer.h"
 #import "SecondStageSelectScene.h"
-
+#import "GameObjectTag.h"
 
 @implementation InputLayer
 
@@ -25,9 +25,14 @@
 
         CCMenu *menu = [CCMenu menuWithItems:backItem,nil];
         
-          menu.position=ccp(430.0, 290.0);
+          menu.position=ccp(30, 290.0);
                
         [self addChild:menu];
+        
+        
+        CCLabelBMFont *scoreBMFont=[CCLabelBMFont labelWithString:@"0" fntFile:@"26sizefont.fnt"];
+        [self addChild:scoreBMFont z:0 tag:scoreTag];
+        scoreBMFont.position = ccp(400,290);
         
     }
 
