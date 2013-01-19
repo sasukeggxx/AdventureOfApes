@@ -22,13 +22,13 @@
                                                                   target:self selector:@selector(backBtnTouched:)];
         
       
-        
-        
+
         CCMenu *menu = [CCMenu menuWithItems:backItem,nil];
         
-          menu.position=ccp(60.0, 280.0);
-        
+          menu.position=ccp(430.0, 290.0);
+               
         [self addChild:menu];
+        
     }
 
     return  self;
@@ -36,8 +36,8 @@
 
 -(void) backBtnTouched: (id) sender
 {
-    //  NSLog(@"%d",[sender selectedIndex]);
-    [[CCDirector sharedDirector] replaceScene:[SecondStageSelectScene scene]];
+
+    //[[CCDirector sharedDirector] replaceScene:[SecondStageSelectScene scene]];
 }
 
 
