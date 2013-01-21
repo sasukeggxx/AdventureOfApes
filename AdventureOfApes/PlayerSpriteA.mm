@@ -22,6 +22,8 @@
 
     if (self=[super initWithShape:@"fgtBoy" inWord:world withB2Type:b2_dynamicBody]) {
 
+        self.life=3;
+        
         self.maxRadius=120.0;//最大半径
         
         self.minRadius=self.contentSize.width+5.0;//最小半径
@@ -35,8 +37,8 @@
         [self setSpriteStartPosition];
         
         [self scheduleUpdate];
+
         
-         b2Filter collisonFilter;  //设置过滤的碰撞
         
     }
     return self;
@@ -46,7 +48,9 @@
 -(void) setSpriteStartPosition
 {
     // set the ball's position
-    CGPoint startPos = ccp(80, 280);//精灵出现位置
+    
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    CGPoint startPos = ccp(CCRANDOM_0_1()*size.width, size.height);//精灵出现位置
     
     body->SetTransform([GameUtil toMeters:startPos], 0.0f);//位置,角度
     body->SetLinearVelocity(b2Vec2_zero);//速度重置
@@ -55,6 +59,11 @@
 
 
 -(void) update:(ccTime)delta{
+    
+    
+    
+    
+    
     
     if (self.position.y<-10) {//玩家死了
         [self setSpriteStartPosition];

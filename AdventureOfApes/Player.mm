@@ -11,6 +11,8 @@
 
 @implementation Player
 
+
+@synthesize life;
 @synthesize collisionCount;
 @synthesize speed;
 @synthesize maxRadius;

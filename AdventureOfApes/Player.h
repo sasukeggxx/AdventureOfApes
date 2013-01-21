@@ -12,11 +12,13 @@
 
 @interface Player : BodyNode {
     int collisionCount;  //碰撞次数
+    int life;            //玩家生命值
     float speed;         //玩家速度
     float maxRadius;     //最大半径
     float minRadius;     //最小半径
 }
 @property (nonatomic,assign) int collisionCount;
+@property (nonatomic,assign) int life;
 @property (nonatomic,assign) float speed;
 @property (nonatomic,assign) float maxRadius;
 @property (nonatomic,assign) float minRadius;

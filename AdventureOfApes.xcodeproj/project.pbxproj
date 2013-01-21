@@ -28,6 +28,8 @@
 		AD4359B4169C02E7000374E3 /* CCSpritePartInWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4359B2169C02E7000374E3 /* CCSpritePartInWorld.mm */; };
 		AD4359BA169C0799000374E3 /* groundLayer.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD4359B9169C0799000374E3 /* groundLayer.ccb */; };
 		AD86A2B216A4FE1A00078113 /* RopeSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD86A2B116A4FE1A00078113 /* RopeSprite.mm */; };
+		AD9CD9F516AD3525000194A8 /* ground-shape.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD9CD9F416AD3525000194A8 /* ground-shape.plist */; };
+		AD9CD9F716AD3786000194A8 /* playerAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9CD9F616AD3786000194A8 /* playerAvatar.png */; };
 		AD9DD68D169AA3F9002A28BB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD68C169AA3F9002A28BB /* QuartzCore.framework */; };
 		AD9DD68F169AA3F9002A28BB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD68E169AA3F9002A28BB /* OpenGLES.framework */; };
 		AD9DD691169AA3F9002A28BB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9DD690169AA3F9002A28BB /* OpenAL.framework */; };
@@ -201,7 +203,6 @@
 		AD9F518216AA8A47000E41F8 /* 50sizefont.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9F517E16AA8A47000E41F8 /* 50sizefont.png */; };
 		ADE1393D16A6320C00428DFE /* image.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADE1393B16A6320C00428DFE /* image.plist */; };
 		ADE1393E16A6320C00428DFE /* image.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = ADE1393C16A6320C00428DFE /* image.pvr.ccz */; };
-		ADE1394216A632F200428DFE /* ground-shape.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADE1394116A632F200428DFE /* ground-shape.plist */; };
 		ADE56DC616A4E4CF00D91211 /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADE56DC516A4E4CF00D91211 /* Player.mm */; };
 		ADEEC07316A93425005AD266 /* backBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEEC07216A93424005AD266 /* backBtn.png */; };
 		ADEEC07716A938DE005AD266 /* InputLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADEEC07616A938DE005AD266 /* InputLayer.mm */; };
@@ -254,6 +255,8 @@
 		AD4359B9169C0799000374E3 /* groundLayer.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = groundLayer.ccb; sourceTree = "<group>"; };
 		AD86A2B016A4FE1A00078113 /* RopeSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RopeSprite.h; sourceTree = "<group>"; };
 		AD86A2B116A4FE1A00078113 /* RopeSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RopeSprite.mm; sourceTree = "<group>"; };
+		AD9CD9F416AD3525000194A8 /* ground-shape.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ground-shape.plist"; sourceTree = "<group>"; };
+		AD9CD9F616AD3786000194A8 /* playerAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerAvatar.png; sourceTree = "<group>"; };
 		AD9DD688169AA3F9002A28BB /* AdventureOfApes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureOfApes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9DD68C169AA3F9002A28BB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD9DD68E169AA3F9002A28BB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -590,7 +593,6 @@
 		AD9F517E16AA8A47000E41F8 /* 50sizefont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50sizefont.png; sourceTree = "<group>"; };
 		ADE1393B16A6320C00428DFE /* image.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image.plist; sourceTree = "<group>"; };
 		ADE1393C16A6320C00428DFE /* image.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = image.pvr.ccz; sourceTree = "<group>"; };
-		ADE1394116A632F200428DFE /* ground-shape.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ground-shape.plist"; sourceTree = "<group>"; };
 		ADE56DC416A4E4CF00D91211 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		ADE56DC516A4E4CF00D91211 /* Player.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Player.mm; sourceTree = "<group>"; };
 		ADEEC07216A93424005AD266 /* backBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backBtn.png; sourceTree = "<group>"; };
@@ -694,13 +696,14 @@
 		AD9DD69D169AA3F9002A28BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD9CD9F616AD3786000194A8 /* playerAvatar.png */,
+				AD9CD9F416AD3525000194A8 /* ground-shape.plist */,
 				AD9F517B16AA8A47000E41F8 /* 26sizefont.fnt */,
 				AD9F517C16AA8A47000E41F8 /* 26sizefont.png */,
 				AD9F517D16AA8A47000E41F8 /* 50sizefont.fnt */,
 				AD9F517E16AA8A47000E41F8 /* 50sizefont.png */,
 				ADEEC07216A93424005AD266 /* backBtn.png */,
 				3503D56716AA37F700C627D7 /* img */,
-				ADE1394116A632F200428DFE /* ground-shape.plist */,
 				ADE1393B16A6320C00428DFE /* image.plist */,
 				ADE1393C16A6320C00428DFE /* image.pvr.ccz */,
 				ADF64B0416A5ABB200B560AA /* fgtBanana.png */,
@@ -1353,7 +1356,6 @@
 				ADF64B1316A5ABB200B560AA /* fgtWall2.png in Resources */,
 				ADE1393D16A6320C00428DFE /* image.plist in Resources */,
 				ADE1393E16A6320C00428DFE /* image.pvr.ccz in Resources */,
-				ADE1394216A632F200428DFE /* ground-shape.plist in Resources */,
 				ADEEC07316A93425005AD266 /* backBtn.png in Resources */,
 				3503D56C16AA37F700C627D7 /* 1.png in Resources */,
 				3503D56D16AA37F700C627D7 /* 11.png in Resources */,
@@ -1363,6 +1365,8 @@
 				AD9F518016AA8A47000E41F8 /* 26sizefont.png in Resources */,
 				AD9F518116AA8A47000E41F8 /* 50sizefont.fnt in Resources */,
 				AD9F518216AA8A47000E41F8 /* 50sizefont.png in Resources */,
+				AD9CD9F516AD3525000194A8 /* ground-shape.plist in Resources */,
+				AD9CD9F716AD3786000194A8 /* playerAvatar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

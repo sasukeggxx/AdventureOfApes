@@ -29,7 +29,7 @@
 					<key>filter_groupIndex</key>
 					<integer>0</integer>
 					<key>filter_maskBits</key>
-					<integer>65535</integer>
+					<integer>4294901772</integer>
 					<key>isSensor</key>
 					<false/>
 					<key>id</key>
@@ -90,11 +90,11 @@
 					<key>restitution</key>
 					<real>0</real>
 					<key>filter_categoryBits</key>
-					<integer>1</integer>
+					<integer>0</integer>
 					<key>filter_groupIndex</key>
 					<integer>0</integer>
 					<key>filter_maskBits</key>
-					<integer>65535</integer>
+					<integer>0</integer>
 					<key>isSensor</key>
 					<false/>
 					<key>id</key>
@@ -123,13 +123,13 @@
 					<key>friction</key>
 					<real>0</real>
 					<key>restitution</key>
-					<real>0.8</real>
+					<real>0</real>
 					<key>filter_categoryBits</key>
-					<integer>1</integer>
+					<integer>4</integer>
 					<key>filter_groupIndex</key>
 					<integer>0</integer>
 					<key>filter_maskBits</key>
-					<integer>65535</integer>
+					<integer>1</integer>
 					<key>isSensor</key>
 					<false/>
 					<key>id</key>
@@ -160,13 +160,13 @@
 					<key>friction</key>
 					<real>0</real>
 					<key>restitution</key>
-					<real>0.8</real>
+					<real>0</real>
 					<key>filter_categoryBits</key>
-					<integer>1</integer>
+					<integer>8</integer>
 					<key>filter_groupIndex</key>
 					<integer>0</integer>
 					<key>filter_maskBits</key>
-					<integer>65535</integer>
+					<integer>1</integer>
 					<key>isSensor</key>
 					<false/>
 					<key>id</key>
@@ -193,7 +193,7 @@
 			<array>
 				<dict>
 					<key>density</key>
-					<real>0.1</real>
+					<real>2</real>
 					<key>friction</key>
 					<real>0</real>
 					<key>restitution</key>

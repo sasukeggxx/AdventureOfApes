@@ -17,22 +17,22 @@
 
     if (self=[super init]) {
         
-        CCMenuItemSprite *backItem=[CCMenuItemSprite itemFromNormalSprite:[CCSprite spriteWithFile:@"backBtn.png"]
-                                                          selectedSprite:[CCSprite spriteWithFile:@"backBtn.png"] disabledSprite:[CCSprite spriteWithFile:@"backBtn.png"]
-                                                                  target:self selector:@selector(backBtnTouched:)];
-        
-      
-
-        CCMenu *menu = [CCMenu menuWithItems:backItem,nil];
-        
-          menu.position=ccp(30, 290.0);
-               
-        [self addChild:menu];
+//        CCMenuItemSprite *backItem=[CCMenuItemSprite itemFromNormalSprite:[CCSprite spriteWithFile:@"backBtn.png"]
+//                                                          selectedSprite:[CCSprite spriteWithFile:@"backBtn.png"] disabledSprite:[CCSprite spriteWithFile:@"backBtn.png"]
+//                                                                  target:self selector:@selector(backBtnTouched:)];
+//        
+//      
+//
+//        CCMenu *menu = [CCMenu menuWithItems:backItem,nil];
+//        
+//          menu.position=ccp(30, 290.0);
+//               
+//        [self addChild:menu];
         
         
         CCLabelBMFont *scoreBMFont=[CCLabelBMFont labelWithString:@"0" fntFile:@"26sizefont.fnt"];
         [self addChild:scoreBMFont z:0 tag:scoreTag];
-        scoreBMFont.position = ccp(400,290);
+        scoreBMFont.position = ccp(420,300);
         
     }
 

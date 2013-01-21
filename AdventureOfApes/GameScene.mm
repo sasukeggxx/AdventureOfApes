@@ -252,7 +252,11 @@
 			// update the sprite's position to where their physics bodies are
 			sprite.position = [GameUtil toPixels:body->GetPosition()];
 			float angle = body->GetAngle();
-			sprite.rotation = CC_RADIANS_TO_DEGREES(angle) * -1;
+           
+            if (![sprite isKindOfClass:[PlayerSpriteA class]]) {  //如果是玩家则不需要更新旋转
+                sprite.rotation = CC_RADIANS_TO_DEGREES(angle) * -1;
+            }
+			
 		}
 	}
     
@@ -320,6 +324,19 @@
     delete world;
     world=NULL;
 
+    [player release];
+    [rope release];
+    [groundShape release];
+    [groundLayer release];
+    
+    delete  ropeJoint;
+    
+    delete playerJoint;
+    
+    [nearGuanjian release];
+    
+    [inputLayer release];
+    
     [super dealloc];
     CCLOG(@"GameScene called dealloc");
     
