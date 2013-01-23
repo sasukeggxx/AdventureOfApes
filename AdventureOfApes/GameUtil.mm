@@ -70,9 +70,6 @@ float distanceBetweenPoints(CGPoint p1, CGPoint p2){
     NSMutableArray  *distanses=[NSMutableArray arrayWithCapacity:bodyNodes.count];
     for (int i=0; i<bodyNodes.count; i++) {
         BodyNode *bodyNode=[bodyNodes objectAtIndex:i];
-//        CGFloat dis=ccpDistance(bodyNode.position, player.position);
-//        [distansDic setObject:bodyNode forKey:[NSString stringWithFormat:@"%f",dis]];
-//        [distanses addObject:[NSNumber numberWithFloat:(float)dis]];
           float dis=distanceBetweenPoints(bodyNode.position, player.position);
           [distansDic setObject:bodyNode forKey:[NSString stringWithFormat:@"%d",(int)dis]];
           [distanses addObject:[NSNumber numberWithInt:(int)dis]];

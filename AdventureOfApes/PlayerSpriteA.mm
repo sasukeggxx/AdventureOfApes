@@ -8,6 +8,8 @@
 
 #import "PlayerSpriteA.h"
 #import "GameUtil.h"
+#import "GameObjectTag.h"
+#import "GameScene.h"
 
 
 @implementation PlayerSpriteA
@@ -24,9 +26,9 @@
 
         self.life=3;
         
-        self.maxRadius=120.0;//最大半径
+        self.maxRadius=340.0;//最大半径
         
-        self.minRadius=self.contentSize.width+5.0;//最小半径
+        self.minRadius=self.contentSize.width/2+2.0;//最小半径
         
         self.speed=5.0; //初始速度
         
@@ -45,6 +47,8 @@
 
 }
 
+
+//设置精灵在屏幕出现的位置
 -(void) setSpriteStartPosition
 {
     // set the ball's position
@@ -55,18 +59,44 @@
     body->SetTransform([GameUtil toMeters:startPos], 0.0f);//位置,角度
     body->SetLinearVelocity(b2Vec2_zero);//速度重置
     body->SetAngularVelocity(0.0f);
+    
+    [self schedule:@selector(applyForce:)];
+    
+    body->SetLinearVelocity(b2Vec2(7, 0));//偏移速度
+    
+    
 }
 
 
+//应用力将玩家在屏幕上方悬空
+-(void) applyForce:(ccTime)delta{
+    float m=self.body->GetMass(); //质量
+    b2Vec2 backGravity=-1*self.body->GetWorld()->GetGravity(); //重力加速度
+    self.body->ApplyForce(m*backGravity, self.body->GetPosition());
+    time=time+delta;
+    if (time>3) {//如果超过三秒则取消悬空
+        [self unschedule:_cmd];
+        time=0.0;
+    }
+    
+}
+
 -(void) update:(ccTime)delta{
-    
-    
-    
-    
-    
-    
-    if (self.position.y<-10) {//玩家死了
+        
+    if (self.position.y<-10) {//玩家死了,生命数减1
         [self setSpriteStartPosition];
+        if (self.life>0) {
+            self.life=self.life-1;
+           
+            CCLayer *gameScene=(CCLayer *)[self parent];
+            CCLayer *inputLayer=(CCLayer *)[gameScene getChildByTag:inputLayerTag];
+            CCLabelBMFont *lifeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:1];
+            lifeLabel.string=[NSString stringWithFormat:@"%d",self.life];
+        }
+       
+        if (self.life==0) {
+            NSLog(@"游戏结束");
+        }
     }
 
 

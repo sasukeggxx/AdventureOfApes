@@ -40,9 +40,9 @@
 
         groundLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"bgLayer.ccb"];
         
-         inputLayer=[InputLayer node];
+        inputLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"inputLayer.ccb"];
         
-        [self addChild:inputLayer];
+        [self addChild:inputLayer z:-1 tag:inputLayerTag];
         
         [self addChild:groundLayer z:-3];
         
@@ -57,6 +57,9 @@
         [self initThePlayer];
         
         [self scheduleUpdate];
+        
+        [self schedule:@selector(countDownTime:) interval:1.0];// 倒计时
+        
     }
 
     return self;
@@ -121,18 +124,23 @@
            playerJointDef.enableMotor = true;
            
         
-           playerJoint=(b2RevoluteJoint *)nearGuanjian.body->GetWorld()->CreateJoint(&playerJointDef);
-        
+        playerJoint=(b2RevoluteJoint *)nearGuanjian.body->GetWorld()->CreateJoint(&playerJointDef);
+        CCSprite *boyFaceLeft=[CCSprite spriteWithFile:@"fgtBoy.png"];
+        CCSprite *boyFaceRight=[CCSprite spriteWithFile:@"fgtBoy2.png"];
         if (player.position.x<=nearGuanjian.position.x) {//如果玩家在挂件的左边做逆时针旋转
               playerJoint->SetMotorSpeed(player.speed);
+              
+           
         }else{//在挂件右边做顺时针旋转
              playerJoint->SetMotorSpeed(-player.speed);
+           //player.body->SetUserData(boyFaceLeft);
+            
         }
          
         
     }else if (firstTouchLocation.x<screenCenter.x){//如果点击左边则转向
     
-        //  ropeJoint->SetMotorSpeed(ropeJoint->GetMotorSpeed() * -1);
+          //ropeJoint->SetMotorSpeed(ropeJoint->GetMotorSpeed() * -1);
           playerJoint->SetMotorSpeed(playerJoint->GetMotorSpeed() * -1);
     
     }
@@ -161,8 +169,7 @@
         if (playerJoint!=NULL) {
              world->DestroyJoint(playerJoint);
         }
-       
-      
+             
 //        [self removeChild:rope cleanup:NO];
 //        
 //        rope=nil;
@@ -204,19 +211,19 @@
     
     // bottom
     screenBoxShape.SetAsEdge(lowerLeftCorner, lowerRightCorner);
-    b2Fixture *bottom=containerBody->CreateFixture(&screenBoxShape, density);
+    containerBody->CreateFixture(&screenBoxShape, density);
     
     // top
     screenBoxShape.SetAsEdge(upperLeftCorner, upperRightCorner);
-    b2Fixture *top=containerBody->CreateFixture(&screenBoxShape, density);
+    containerBody->CreateFixture(&screenBoxShape, density);
     
     // left side
     screenBoxShape.SetAsEdge(upperLeftCorner, lowerLeftCorner);
-    b2Fixture *leftSide=containerBody->CreateFixture(&screenBoxShape, density);
+    containerBody->CreateFixture(&screenBoxShape, density);
     
     // right side
     screenBoxShape.SetAsEdge(upperRightCorner, lowerRightCorner);
-    b2Fixture *rightSide=containerBody->CreateFixture(&screenBoxShape, density);
+    containerBody->CreateFixture(&screenBoxShape, density);
     
     // set the collision flags: category and mask
 //    b2Filter collisonFilter;
@@ -262,8 +269,6 @@
     
     
     //判断是否和香蕉碰撞,并计分
-  
-	
 	// If you adjust the factors make sure you also change them in the -(void) draw method.
 	float playerCollisionRadius =player.contentSize.width* 0.4f;
 	
@@ -278,7 +283,7 @@
                
                 [groundLayer removeChild:bana cleanup:YES];
                 score=score+10;
-                CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:scoreTag];
+                CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:4];
                 scoreLabel.string=[NSString stringWithFormat:@"%d",score];
                 
             }
@@ -289,8 +294,16 @@
     
 }
 
+//倒计时
+-(void) countDownTime:(ccTime)delta{
+            CCLabelBMFont *timeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:3];
+            int countTime=[timeLabel.string intValue];
+            if (countTime>0) {
+                countTime=countTime--;
+            }
+            timeLabel.string=[NSString stringWithFormat:@"%d",countTime];
 
-
+}
 
 //#ifdef DEBUG
 //-(void) draw

@@ -30,9 +30,14 @@
 //        [self addChild:menu];
         
         
-        CCLabelBMFont *scoreBMFont=[CCLabelBMFont labelWithString:@"0" fntFile:@"26sizefont.fnt"];
-        [self addChild:scoreBMFont z:0 tag:scoreTag];
-        scoreBMFont.position = ccp(420,300);
+//        CCLabelBMFont *scoreBMFont=[CCLabelBMFont labelWithString:@"0" fntFile:@"26sizefont.fnt"];
+//        [self addChild:scoreBMFont z:0 tag:scoreTag];
+//        scoreBMFont.position = ccp(430,290);
+//        
+//        CCLabelBMFont *timeBMFont=[CCLabelBMFont labelWithString:@"200" fntFile:@"26sizefont.fnt"];
+//        [self addChild:timeBMFont z:0 tag:timeTag];
+//        timeBMFont.position = ccp(240,300);
+        
         
     }
 

@@ -18,6 +18,15 @@
 typedef enum {
 
     scoreTag,
-
+    timeTag,
 
 }BtnTag;
+
+
+
+typedef enum {
+    
+    
+    inputLayerTag,
+    
+}LayerTag;

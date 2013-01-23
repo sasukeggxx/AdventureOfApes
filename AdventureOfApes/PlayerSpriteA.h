@@ -12,7 +12,7 @@
 #import "Player.h"
 
 @interface PlayerSpriteA : Player {
-    
+    float time; //时间计数,用于计算玩家悬空时间
 }
 
 +(id)addToWorld:(b2World *) world;

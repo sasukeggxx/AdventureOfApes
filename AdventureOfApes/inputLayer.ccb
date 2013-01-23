@@ -37,8 +37,8 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>480</real>
-						<real>320</real>
+						<real>25</real>
+						<real>25</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
@@ -60,8 +60,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>239.55078125</real>
-						<real>159.609375</real>
+						<real>44.23828125</real>
+						<real>278.19140625</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -70,7 +70,7 @@
 					<key>scaleY</key>
 					<real>1</real>
 					<key>spriteFile</key>
-					<string>fgtBg.png</string>
+					<string>fgtBanana.png</string>
 					<key>tag</key>
 					<integer>-1</integer>
 					<key>visible</key>
@@ -104,8 +104,8 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>16</real>
-						<real>16</real>
+						<real>26</real>
+						<real>26</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
@@ -127,8 +127,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>382.0625</real>
-						<real>238.0703125</real>
+						<real>42.734375</real>
+						<real>304.92578125</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -137,7 +137,7 @@
 					<key>scaleY</key>
 					<real>1</real>
 					<key>spriteFile</key>
-					<string>fgtTree.png</string>
+					<string>playerAvatar.png</string>
 					<key>tag</key>
 					<integer>-1</integer>
 					<key>visible</key>
@@ -150,18 +150,13 @@
 				<key>children</key>
 				<array/>
 				<key>class</key>
-				<string>CCSprite</string>
+				<string>CCLabelBMFont</string>
 				<key>properties</key>
 				<dict>
 					<key>anchorPoint</key>
 					<array>
 						<real>0.5</real>
 						<real>0.5</real>
-					</array>
-					<key>blendFunc</key>
-					<array>
-						<integer>1</integer>
-						<integer>771</integer>
 					</array>
 					<key>color</key>
 					<array>
@@ -171,15 +166,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>16</real>
-						<real>16</real>
+						<real>57</real>
+						<real>27</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
-					<key>flipX</key>
-					<false/>
-					<key>flipY</key>
-					<false/>
+					<key>fontFile</key>
+					<string>26sizefont.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -194,8 +187,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>159.29296875</real>
-						<real>204.375</real>
+						<real>212.234375</real>
+						<real>282.73046875</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -203,8 +196,68 @@
 					<real>1</real>
 					<key>scaleY</key>
 					<real>1</real>
-					<key>spriteFile</key>
-					<string>fgtTree.png</string>
+					<key>string</key>
+					<string>200</string>
+					<key>tag</key>
+					<integer>3</integer>
+					<key>visible</key>
+					<true/>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+			</dict>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>class</key>
+				<string>CCLabelBMFont</string>
+				<key>properties</key>
+				<dict>
+					<key>anchorPoint</key>
+					<array>
+						<real>0.5</real>
+						<real>0.5</real>
+					</array>
+					<key>color</key>
+					<array>
+						<integer>255</integer>
+						<integer>255</integer>
+						<integer>255</integer>
+					</array>
+					<key>contentSize</key>
+					<array>
+						<real>66</real>
+						<real>27</real>
+					</array>
+					<key>customClass</key>
+					<string></string>
+					<key>fontFile</key>
+					<string>26sizefont.fnt</string>
+					<key>isExpanded</key>
+					<true/>
+					<key>isRelativeAnchorPoint</key>
+					<true/>
+					<key>lockedScaleRatio</key>
+					<true/>
+					<key>memberVarAssignmentName</key>
+					<string></string>
+					<key>memberVarAssignmentType</key>
+					<integer>0</integer>
+					<key>opacity</key>
+					<integer>255</integer>
+					<key>position</key>
+					<array>
+						<real>215.05078125</real>
+						<real>307.83984375</real>
+					</array>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scaleX</key>
+					<real>1</real>
+					<key>scaleY</key>
+					<real>1</real>
+					<key>string</key>
+					<string>time:</string>
 					<key>tag</key>
 					<integer>-1</integer>
 					<key>visible</key>
@@ -217,18 +270,13 @@
 				<key>children</key>
 				<array/>
 				<key>class</key>
-				<string>CCSprite</string>
+				<string>CCLabelBMFont</string>
 				<key>properties</key>
 				<dict>
 					<key>anchorPoint</key>
 					<array>
 						<real>0.5</real>
 						<real>0.5</real>
-					</array>
-					<key>blendFunc</key>
-					<array>
-						<integer>1</integer>
-						<integer>771</integer>
 					</array>
 					<key>color</key>
 					<array>
@@ -239,14 +287,12 @@
 					<key>contentSize</key>
 					<array>
 						<real>16</real>
-						<real>16</real>
+						<real>27</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
-					<key>flipX</key>
-					<false/>
-					<key>flipY</key>
-					<false/>
+					<key>fontFile</key>
+					<string>26sizefont.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -261,8 +307,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>295.08203125</real>
-						<real>111.78125</real>
+						<real>65.83203125</real>
+						<real>307.09765625</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -270,8 +316,8 @@
 					<real>1</real>
 					<key>scaleY</key>
 					<real>1</real>
-					<key>spriteFile</key>
-					<string>fgtTree.png</string>
+					<key>string</key>
+					<string>x</string>
 					<key>tag</key>
 					<integer>-1</integer>
 					<key>visible</key>
@@ -284,18 +330,13 @@
 				<key>children</key>
 				<array/>
 				<key>class</key>
-				<string>CCSprite</string>
+				<string>CCLabelBMFont</string>
 				<key>properties</key>
 				<dict>
 					<key>anchorPoint</key>
 					<array>
 						<real>0.5</real>
 						<real>0.5</real>
-					</array>
-					<key>blendFunc</key>
-					<array>
-						<integer>1</integer>
-						<integer>771</integer>
 					</array>
 					<key>color</key>
 					<array>
@@ -305,15 +346,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>25</real>
-						<real>25</real>
+						<real>16</real>
+						<real>27</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
-					<key>flipX</key>
-					<false/>
-					<key>flipY</key>
-					<false/>
+					<key>fontFile</key>
+					<string>26sizefont.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -328,8 +367,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>264.25</real>
-						<real>223.5390625</real>
+						<real>66.24609375</real>
+						<real>280.6796875</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -337,10 +376,10 @@
 					<real>1</real>
 					<key>scaleY</key>
 					<real>1</real>
-					<key>spriteFile</key>
-					<string>fgtBanana.png</string>
+					<key>string</key>
+					<string>x</string>
 					<key>tag</key>
-					<integer>20</integer>
+					<integer>-1</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -351,18 +390,13 @@
 				<key>children</key>
 				<array/>
 				<key>class</key>
-				<string>CCSprite</string>
+				<string>CCLabelBMFont</string>
 				<key>properties</key>
 				<dict>
 					<key>anchorPoint</key>
 					<array>
 						<real>0.5</real>
 						<real>0.5</real>
-					</array>
-					<key>blendFunc</key>
-					<array>
-						<integer>1</integer>
-						<integer>771</integer>
 					</array>
 					<key>color</key>
 					<array>
@@ -372,15 +406,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>25</real>
-						<real>25</real>
+						<real>78</real>
+						<real>27</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
-					<key>flipX</key>
-					<false/>
-					<key>flipY</key>
-					<false/>
+					<key>fontFile</key>
+					<string>26sizefont.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -395,8 +427,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>379.8828125</real>
-						<real>190.73828125</real>
+						<real>436.91796875</real>
+						<real>308.7890625</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -404,10 +436,10 @@
 					<real>1</real>
 					<key>scaleY</key>
 					<real>1</real>
-					<key>spriteFile</key>
-					<string>fgtBanana.png</string>
+					<key>string</key>
+					<string>score:</string>
 					<key>tag</key>
-					<integer>21</integer>
+					<integer>-1</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -418,18 +450,13 @@
 				<key>children</key>
 				<array/>
 				<key>class</key>
-				<string>CCSprite</string>
+				<string>CCLabelBMFont</string>
 				<key>properties</key>
 				<dict>
 					<key>anchorPoint</key>
 					<array>
 						<real>0.5</real>
 						<real>0.5</real>
-					</array>
-					<key>blendFunc</key>
-					<array>
-						<integer>1</integer>
-						<integer>771</integer>
 					</array>
 					<key>color</key>
 					<array>
@@ -439,15 +466,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>25</real>
-						<real>25</real>
+						<real>19</real>
+						<real>27</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
-					<key>flipX</key>
-					<false/>
-					<key>flipY</key>
-					<false/>
+					<key>fontFile</key>
+					<string>26sizefont.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -462,8 +487,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>361.734375</real>
-						<real>109.30078125</real>
+						<real>83.79296875</real>
+						<real>305.078125</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -471,10 +496,10 @@
 					<real>1</real>
 					<key>scaleY</key>
 					<real>1</real>
-					<key>spriteFile</key>
-					<string>fgtBanana.png</string>
+					<key>string</key>
+					<string>3</string>
 					<key>tag</key>
-					<integer>22</integer>
+					<integer>1</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -485,18 +510,13 @@
 				<key>children</key>
 				<array/>
 				<key>class</key>
-				<string>CCSprite</string>
+				<string>CCLabelBMFont</string>
 				<key>properties</key>
 				<dict>
 					<key>anchorPoint</key>
 					<array>
 						<real>0.5</real>
 						<real>0.5</real>
-					</array>
-					<key>blendFunc</key>
-					<array>
-						<integer>1</integer>
-						<integer>771</integer>
 					</array>
 					<key>color</key>
 					<array>
@@ -506,15 +526,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>25</real>
-						<real>25</real>
+						<real>19</real>
+						<real>27</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
-					<key>flipX</key>
-					<false/>
-					<key>flipY</key>
-					<false/>
+					<key>fontFile</key>
+					<string>26sizefont.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -529,8 +547,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>272.9296875</real>
-						<real>171.54296875</real>
+						<real>84.2734375</real>
+						<real>280.03515625</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -538,10 +556,10 @@
 					<real>1</real>
 					<key>scaleY</key>
 					<real>1</real>
-					<key>spriteFile</key>
-					<string>fgtBanana.png</string>
+					<key>string</key>
+					<string>0</string>
 					<key>tag</key>
-					<integer>23</integer>
+					<integer>2</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -552,18 +570,13 @@
 				<key>children</key>
 				<array/>
 				<key>class</key>
-				<string>CCSprite</string>
+				<string>CCLabelBMFont</string>
 				<key>properties</key>
 				<dict>
 					<key>anchorPoint</key>
 					<array>
 						<real>0.5</real>
 						<real>0.5</real>
-					</array>
-					<key>blendFunc</key>
-					<array>
-						<integer>1</integer>
-						<integer>771</integer>
 					</array>
 					<key>color</key>
 					<array>
@@ -573,15 +586,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>25</real>
-						<real>25</real>
+						<real>19</real>
+						<real>27</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
-					<key>flipX</key>
-					<false/>
-					<key>flipY</key>
-					<false/>
+					<key>fontFile</key>
+					<string>26sizefont.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -596,8 +607,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>264.25</real>
-						<real>223.5390625</real>
+						<real>440.9453125</real>
+						<real>280.04296875</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -605,144 +616,10 @@
 					<real>1</real>
 					<key>scaleY</key>
 					<real>1</real>
-					<key>spriteFile</key>
-					<string>fgtBanana.png</string>
+					<key>string</key>
+					<string>0</string>
 					<key>tag</key>
-					<integer>24</integer>
-					<key>visible</key>
-					<true/>
-					<key>zOrder</key>
-					<integer>0</integer>
-				</dict>
-			</dict>
-			<dict>
-				<key>children</key>
-				<array/>
-				<key>class</key>
-				<string>CCSprite</string>
-				<key>properties</key>
-				<dict>
-					<key>anchorPoint</key>
-					<array>
-						<real>0.5</real>
-						<real>0.5</real>
-					</array>
-					<key>blendFunc</key>
-					<array>
-						<integer>1</integer>
-						<integer>771</integer>
-					</array>
-					<key>color</key>
-					<array>
-						<integer>255</integer>
-						<integer>255</integer>
-						<integer>255</integer>
-					</array>
-					<key>contentSize</key>
-					<array>
-						<real>25</real>
-						<real>25</real>
-					</array>
-					<key>customClass</key>
-					<string></string>
-					<key>flipX</key>
-					<false/>
-					<key>flipY</key>
-					<false/>
-					<key>isExpanded</key>
-					<true/>
-					<key>isRelativeAnchorPoint</key>
-					<true/>
-					<key>lockedScaleRatio</key>
-					<true/>
-					<key>memberVarAssignmentName</key>
-					<string></string>
-					<key>memberVarAssignmentType</key>
-					<integer>0</integer>
-					<key>opacity</key>
-					<integer>255</integer>
-					<key>position</key>
-					<array>
-						<real>297.27734375</real>
-						<real>48.31640625</real>
-					</array>
-					<key>rotation</key>
-					<real>0.0</real>
-					<key>scaleX</key>
-					<real>1</real>
-					<key>scaleY</key>
-					<real>1</real>
-					<key>spriteFile</key>
-					<string>fgtBanana.png</string>
-					<key>tag</key>
-					<integer>25</integer>
-					<key>visible</key>
-					<true/>
-					<key>zOrder</key>
-					<integer>0</integer>
-				</dict>
-			</dict>
-			<dict>
-				<key>children</key>
-				<array/>
-				<key>class</key>
-				<string>CCSprite</string>
-				<key>properties</key>
-				<dict>
-					<key>anchorPoint</key>
-					<array>
-						<real>0.5</real>
-						<real>0.5</real>
-					</array>
-					<key>blendFunc</key>
-					<array>
-						<integer>1</integer>
-						<integer>771</integer>
-					</array>
-					<key>color</key>
-					<array>
-						<integer>255</integer>
-						<integer>255</integer>
-						<integer>255</integer>
-					</array>
-					<key>contentSize</key>
-					<array>
-						<real>25</real>
-						<real>25</real>
-					</array>
-					<key>customClass</key>
-					<string></string>
-					<key>flipX</key>
-					<false/>
-					<key>flipY</key>
-					<false/>
-					<key>isExpanded</key>
-					<true/>
-					<key>isRelativeAnchorPoint</key>
-					<true/>
-					<key>lockedScaleRatio</key>
-					<true/>
-					<key>memberVarAssignmentName</key>
-					<string></string>
-					<key>memberVarAssignmentType</key>
-					<integer>0</integer>
-					<key>opacity</key>
-					<integer>255</integer>
-					<key>position</key>
-					<array>
-						<real>205.40234375</real>
-						<real>102.359375</real>
-					</array>
-					<key>rotation</key>
-					<real>0.0</real>
-					<key>scaleX</key>
-					<real>1</real>
-					<key>scaleY</key>
-					<real>1</real>
-					<key>spriteFile</key>
-					<string>fgtBanana.png</string>
-					<key>tag</key>
-					<integer>26</integer>
+					<integer>4</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
