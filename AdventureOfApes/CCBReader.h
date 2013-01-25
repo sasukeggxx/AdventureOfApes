@@ -1,13 +1,12 @@
 //
 //  CCBReader.h
-//  WormVsBirdsDemo
+//  ccBuilder
 //
-//  Created by Alex Zen on 12-12-26.
-//
+//  Created by Viktor Lidholt on 4/5/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
 #import "cocos2d.h"
 
 enum {
@@ -18,7 +17,7 @@ enum {
 
 @interface CCBReader : NSObject {
 @private
-
+    
 }
 + (CCScene*) sceneWithNodeGraphFromFile:(NSString*) file;
 + (CCScene*) sceneWithNodeGraphFromFile:(NSString *)file owner:(id)owner;

@@ -25,7 +25,7 @@
     RopeSprite *rope;
    // CCSprite *player;
     CreateGroundInWorld *groundShape;
-    CCLayer *groundLayer;
+    
     b2RevoluteJointDef ropeJointDef;  //绳子定位挂件关节
     b2RevoluteJoint *ropeJoint;
     b2RevoluteJointDef playerJointDef;//绳子末端关节
@@ -34,8 +34,9 @@
     BodyNode *nearGuanjian;
     
     int score;  //分值
-    
+    CCLayer *bgLayer;
     CCLayer *inputLayer;
+    CCLayer *gameObjectLayer;
     
 
 }

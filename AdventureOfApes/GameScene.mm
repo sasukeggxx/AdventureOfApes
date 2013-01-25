@@ -13,6 +13,7 @@
 #import "CCRoundBy.h"
 #import "InputLayer.h"
 #import "GameObjectTag.h"
+#import "Banana.h"
 
 @implementation GameScene
 
@@ -38,13 +39,17 @@
         [[GB2ShapeCache sharedShapeCache] addShapesWithFile:@"ground-shape.plist"];
         
 
-        groundLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"bgLayer.ccb"];
+        bgLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"bgLayer.ccb"];  //背景
         
-        inputLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"inputLayer.ccb"];
+        inputLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"inputLayer.ccb"];  //分值
         
-        [self addChild:inputLayer z:-1 tag:inputLayerTag];
+        gameObjectLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"GameObjectLayer.ccb"]; 
         
-        [self addChild:groundLayer z:-3];
+        [self addChild:inputLayer z:0 tag:inputLayerTag];
+        
+        [self addChild:bgLayer z:-3];
+        
+        [self addChild:gameObjectLayer z:-1];
         
         [self initTheWorld];//初始化世界
         
@@ -267,29 +272,40 @@
 		}
 	}
     
-    
     //判断是否和香蕉碰撞,并计分
 	// If you adjust the factors make sure you also change them in the -(void) draw method.
 	float playerCollisionRadius =player.contentSize.width* 0.4f;
 	
 
-    for (int i=20; i<30; i++) { //香蕉tag区间为
-         CCSprite *bana=(CCSprite *)[groundLayer getChildByTag:i];
-        if (bana!=nil) {
-            float banaCollisionRadius = bana.contentSize.width * 0.4f;
-            float maxCollisionDistance=playerCollisionRadius+banaCollisionRadius;
-            float actualDistance= ccpDistance(player.position, bana.position);
-            if (actualDistance<maxCollisionDistance) {
-               
-                [groundLayer removeChild:bana cleanup:YES];
-                score=score+10;
-                CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:4];
-                scoreLabel.string=[NSString stringWithFormat:@"%d",score];
-                
-            }
-            
+//    for (int i=17; i<30; i++) { //香蕉tag区间为
+//         Fruit *fruit=(Fruit *)[bgLayer getChildByTag:i];
+//
+//        if (fruit!=nil) {
+//            float banaCollisionRadius = fruit.contentSize.width * 0.4f;
+//            float maxCollisionDistance=playerCollisionRadius+banaCollisionRadius;
+//            float actualDistance= ccpDistance(player.position, fruit.position);
+//            if (actualDistance<maxCollisionDistance) {
+//               
+//                [bgLayer removeChild:fruit cleanup:YES];
+//                score=score+10;
+//                CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:4];
+//                scoreLabel.string=[NSString stringWithFormat:@"%d",score];
+//                
+//            }
+//            
+//        }
+//    }
+    CCNode* child;
+    CCARRAY_FOREACH(gameObjectLayer.children,child){
+        Fruit *fruit=(Fruit *)child;
+        NSLog(@"%@",[fruit class]);
+        if ([fruit isKindOfClass:[Banana  class]]) {
+            NSLog(@"ok");
         }
+    
     }
+    
+    
     
     
 }
@@ -340,7 +356,7 @@
     [player release];
     [rope release];
     [groundShape release];
-    [groundLayer release];
+    [bgLayer release];
     
     delete  ropeJoint;
     

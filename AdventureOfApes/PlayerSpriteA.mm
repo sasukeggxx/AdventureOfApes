@@ -28,7 +28,7 @@
         
         self.maxRadius=340.0;//最大半径
         
-        self.minRadius=self.contentSize.width/2+2.0;//最小半径
+        self.minRadius=30.0;//最小半径
         
         self.speed=5.0; //初始速度
         

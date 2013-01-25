@@ -1,15 +1,16 @@
 //
 //  CCBReader.m
-//  WormVsBirdsDemo
+//  ccBuilder
 //
-//  Created by Alex Zen on 12-12-26.
-//
+//  Created by Viktor Lidholt on 4/5/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import "CCBReader.h"
 #import <objc/runtime.h>
 
 @implementation CCBReader
+
 - (id)init
 {
     self = [super init];
@@ -386,7 +387,7 @@
             int targetType = [[props objectForKey:@"target"] intValue];
             if (targetType == kCCBMemberVarAssignmentTypeDocumentRoot) target = root;
             else if (targetType == kCCBMemberVarAssignmentTypeOwner) target = owner;
-            
+
             NSString* selectorName = [props objectForKey:@"selector"];
             if (selectorName && ![selectorName isEqualToString:@""] && target)
             {

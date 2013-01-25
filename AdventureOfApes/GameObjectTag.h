@@ -30,3 +30,12 @@ typedef enum {
     inputLayerTag,
     
 }LayerTag;
+
+
+typedef enum {
+    BananaType,
+    CarambolaType,
+    GrapeType,
+    TomatoType,
+    
+}FruitType;

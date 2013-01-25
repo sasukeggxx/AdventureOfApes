@@ -52,16 +52,14 @@
         
         
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                     position:ccp(159, 204)
+                                                     position:ccp(126, 192)
                                                          name:@"fgtTree"] z:0 tag:0];
         
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                     position:ccp(295, 111)
+                                                     position:ccp(345, 196)
                                                          name:@"fgtTree"] z:0 tag:1];
         
-        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                     position:ccp(382, 238)
-                                                         name:@"fgtTree"] z:0 tag:2];
+     
         
         
 
