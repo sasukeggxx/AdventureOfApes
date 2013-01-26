@@ -22,6 +22,11 @@
 		AD0DDF4416AFC58B005E0029 /* fgtCara.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0DDF4116AFC58B005E0029 /* fgtCara.png */; };
 		AD0DDF4516AFC58B005E0029 /* fgtGrape.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0DDF4216AFC58B005E0029 /* fgtGrape.png */; };
 		AD0DDF4616AFC58B005E0029 /* fgtTomato.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0DDF4316AFC58B005E0029 /* fgtTomato.png */; };
+		AD0FD76216B3D42300EB1C0A /* CCBAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FD75916B3D42200EB1C0A /* CCBAnimationManager.m */; };
+		AD0FD76316B3D42300EB1C0A /* CCBKeyframe.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FD75B16B3D42200EB1C0A /* CCBKeyframe.m */; };
+		AD0FD76416B3D42300EB1C0A /* CCBsequence.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FD75D16B3D42200EB1C0A /* CCBsequence.m */; };
+		AD0FD76516B3D42300EB1C0A /* CCBSequenceProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FD75F16B3D42200EB1C0A /* CCBSequenceProperty.m */; };
+		AD0FD76616B3D42300EB1C0A /* CCNode+CCBRelativePositioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0FD76116B3D42200EB1C0A /* CCNode+CCBRelativePositioning.m */; };
 		AD2BD21A16AE2DBC00DCA258 /* inputLayer.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD2BD21916AE2DBC00DCA258 /* inputLayer.ccb */; };
 		AD2BD22616AE433E00DCA258 /* fgtBoy2.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2BD22416AE433D00DCA258 /* fgtBoy2.png */; };
 		AD2BD22716AE433E00DCA258 /* tail.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2BD22516AE433D00DCA258 /* tail.png */; };
@@ -251,6 +256,16 @@
 		AD0DDF4116AFC58B005E0029 /* fgtCara.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgtCara.png; sourceTree = "<group>"; };
 		AD0DDF4216AFC58B005E0029 /* fgtGrape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgtGrape.png; sourceTree = "<group>"; };
 		AD0DDF4316AFC58B005E0029 /* fgtTomato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgtTomato.png; sourceTree = "<group>"; };
+		AD0FD75816B3D42200EB1C0A /* CCBAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBAnimationManager.h; sourceTree = "<group>"; };
+		AD0FD75916B3D42200EB1C0A /* CCBAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBAnimationManager.m; sourceTree = "<group>"; };
+		AD0FD75A16B3D42200EB1C0A /* CCBKeyframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBKeyframe.h; sourceTree = "<group>"; };
+		AD0FD75B16B3D42200EB1C0A /* CCBKeyframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBKeyframe.m; sourceTree = "<group>"; };
+		AD0FD75C16B3D42200EB1C0A /* CCBSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBSequence.h; sourceTree = "<group>"; };
+		AD0FD75D16B3D42200EB1C0A /* CCBsequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBsequence.m; sourceTree = "<group>"; };
+		AD0FD75E16B3D42200EB1C0A /* CCBSequenceProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBSequenceProperty.h; sourceTree = "<group>"; };
+		AD0FD75F16B3D42200EB1C0A /* CCBSequenceProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBSequenceProperty.m; sourceTree = "<group>"; };
+		AD0FD76016B3D42200EB1C0A /* CCNode+CCBRelativePositioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+CCBRelativePositioning.h"; sourceTree = "<group>"; };
+		AD0FD76116B3D42200EB1C0A /* CCNode+CCBRelativePositioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+CCBRelativePositioning.m"; sourceTree = "<group>"; };
 		AD2BD21916AE2DBC00DCA258 /* inputLayer.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = inputLayer.ccb; sourceTree = "<group>"; };
 		AD2BD22416AE433D00DCA258 /* fgtBoy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgtBoy2.png; sourceTree = "<group>"; };
 		AD2BD22516AE433D00DCA258 /* tail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tail.png; sourceTree = "<group>"; };
@@ -1318,6 +1333,16 @@
 		ADED6C2316B12696001D5443 /* CCBReader */ = {
 			isa = PBXGroup;
 			children = (
+				AD0FD75816B3D42200EB1C0A /* CCBAnimationManager.h */,
+				AD0FD75916B3D42200EB1C0A /* CCBAnimationManager.m */,
+				AD0FD75A16B3D42200EB1C0A /* CCBKeyframe.h */,
+				AD0FD75B16B3D42200EB1C0A /* CCBKeyframe.m */,
+				AD0FD75C16B3D42200EB1C0A /* CCBSequence.h */,
+				AD0FD75D16B3D42200EB1C0A /* CCBsequence.m */,
+				AD0FD75E16B3D42200EB1C0A /* CCBSequenceProperty.h */,
+				AD0FD75F16B3D42200EB1C0A /* CCBSequenceProperty.m */,
+				AD0FD76016B3D42200EB1C0A /* CCNode+CCBRelativePositioning.h */,
+				AD0FD76116B3D42200EB1C0A /* CCNode+CCBRelativePositioning.m */,
 				ADED6C3616B12A44001D5443 /* CCBReader.h */,
 				ADED6C3716B12A44001D5443 /* CCBReader.m */,
 			);
@@ -1594,6 +1619,11 @@
 				AD0DDF4016AFC14B005E0029 /* Fruit.mm in Sources */,
 				AD086EF416B0CC7B008833F6 /* Tomato.m in Sources */,
 				ADED6C3816B12A44001D5443 /* CCBReader.m in Sources */,
+				AD0FD76216B3D42300EB1C0A /* CCBAnimationManager.m in Sources */,
+				AD0FD76316B3D42300EB1C0A /* CCBKeyframe.m in Sources */,
+				AD0FD76416B3D42300EB1C0A /* CCBsequence.m in Sources */,
+				AD0FD76516B3D42300EB1C0A /* CCBSequenceProperty.m in Sources */,
+				AD0FD76616B3D42300EB1C0A /* CCNode+CCBRelativePositioning.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
