@@ -10,12 +10,18 @@
 #import "cocos2d.h"
 #import "BodyNode.h"
 #import "Player.h"
+#define lifeTag 1
+
+
 
 @interface PlayerSpriteA : Player {
     float time; //时间计数,用于计算玩家悬空时间
+   
 }
 
 +(id)addToWorld:(b2World *) world;
 -(void)setSpriteStartPosition;
 -(id)initwithWorld:(b2World *) world;
+-(void)initTheTailWithLayer:(CCLayer *)layer;
+
 @end

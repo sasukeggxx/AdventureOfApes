@@ -16,20 +16,18 @@
 
 
 typedef enum {
-
     scoreTag,
     timeTag,
-
 }BtnTag;
 
 
 
 typedef enum {
-    
-    
     inputLayerTag,
-    
-}LayerTag;
+    ParallaxSceneTagRibbon,
+}GameSceneObjectTag;
+
+
 
 
 typedef enum {
@@ -39,3 +37,5 @@ typedef enum {
     TomatoType,
     
 }FruitType;
+
+

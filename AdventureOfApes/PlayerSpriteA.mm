@@ -30,9 +30,11 @@
         
         self.minRadius=30.0;//最小半径
         
-        self.speed=5.0; //初始速度
+        self.speed=4.0; //初始速度
         
         self.collisionCount=0; //初始碰撞次数
+        
+        self.tailName=@"tail.png";
         
         super.body->SetAngularDamping(0.9f);
         
@@ -40,13 +42,26 @@
         
         [self scheduleUpdate];
 
-        
+       
         
     }
     return self;
 
 }
 
+-(void)initTheTailWithLayer:(CCLayer *)layer{
+
+    CCSprite *tailSprite=[CCSprite spriteWithFile:self.tailName];
+    CCMotionStreak* streak = [CCMotionStreak streakWithFade:0.5f
+                                                     minSeg:10.f
+                                                      image:self.tailName
+                                                      width:tailSprite.contentSize.width
+                                                      length:tailSprite.contentSize.height
+                                                      color:ccc4(255, 0, 255, 255)];
+	[layer addChild:streak z:-2 tag:ParallaxSceneTagRibbon];
+    
+    
+}
 
 //设置精灵在屏幕出现的位置
 -(void) setSpriteStartPosition
@@ -83,6 +98,9 @@
 
 -(void) update:(ccTime)delta{
         
+    
+    
+    
     if (self.position.y<-10) {//玩家死了,生命数减1
         [self setSpriteStartPosition];
         if (self.life>0) {
@@ -90,18 +108,22 @@
            
             CCLayer *gameScene=(CCLayer *)[self parent];
             CCLayer *inputLayer=(CCLayer *)[gameScene getChildByTag:inputLayerTag];
-            CCLabelBMFont *lifeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:1];
+            NSAssert([inputLayer isKindOfClass:[CCLayer class]], @"inputlayer is not cclayer,check tag is right?");
+            CCLabelBMFont *lifeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:lifeTag];
             lifeLabel.string=[NSString stringWithFormat:@"%d",self.life];
+            
         }
-       
         if (self.life==0) {
             NSLog(@"游戏结束");
         }
+     
     }
 
-
+   
 
 }
+
+
 
 
 -(void)dealloc{

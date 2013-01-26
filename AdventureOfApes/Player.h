@@ -16,12 +16,15 @@
     float speed;         //玩家速度
     float maxRadius;     //最大半径
     float minRadius;     //最小半径
+     NSString *tailName;  //玩家尾巴
 }
 @property (nonatomic,assign) int collisionCount;
 @property (nonatomic,assign) int life;
 @property (nonatomic,assign) float speed;
 @property (nonatomic,assign) float maxRadius;
 @property (nonatomic,assign) float minRadius;
+@property (nonatomic,retain) NSString *tailName;
+
 
 
 @end

@@ -53,7 +53,7 @@
         
         [self initTheWorld];//初始化世界
         
-        //[GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
+        [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
         
         groundShape=[CreateGroundInWorld createGroundWithWorld:world];
         
@@ -72,9 +72,27 @@
 
 
 
+
+-(void) addMotionStreakPoint:(CGPoint)point
+{
+	CCMotionStreak* streak = [self getMotionStreak];
+	[streak.ribbon addPointAt:point width:20];
+}
+
+-(CCMotionStreak*) getMotionStreak
+{
+	CCNode* node = [self getChildByTag:ParallaxSceneTagRibbon];
+	NSAssert([node isKindOfClass:[CCMotionStreak class]], @"node is not a CCMotionStreak");
+	return (CCMotionStreak*)node;
+}
+
+
+
+
 -(void)initThePlayer{
     player=[PlayerSpriteA addToWorld:world];
-    [self addChild:player z:-1];
+    [player initTheTailWithLayer:self];
+    [self addChild:player];
 
 }
 
@@ -98,50 +116,37 @@
     UITouch *tOne = [twoTouch objectAtIndex:0];
     CGPoint firstTouchLocation =[GameUtil locationFromTouch:tOne];//记录该次触摸点gl位置
     
+    BodyNode *midGuanJian=nearGuanjian;
     if (firstTouchLocation.x>screenCenter.x) {//如果点击右边
     
-        
-//        rope=[RopeSprite addToWorld:world];
-//        [rope setRopeSpritePosition:ccp(nearGuanjian.position.x-rope.contentSize.width/2, nearGuanjian.position.y)];//设置绳子与挂件平行
-//        [self addChild:rope z:-1];
+        float actualDistance= ccpDistance(player.position, nearGuanjian.position);
+        CCSprite *midRope=[CCSprite spriteWithFile:@"fgtRope.png"];
+        int ropeCount=actualDistance/(midRope.contentSize.height);
+        b2RevoluteJointDef ropeJointDef;
+//        for (int i=0; i<ropeCount; i++) {
+//            RopeSprite *ropeSp=[RopeSprite addToWorld:world];
+//            [self addChild:ropeSp];
+//            
+//            ropeJointDef.Initialize(midGuanJian.body,ropeSp.body,midGuanJian.body->GetWorldCenter());
+//            world->CreateJoint(&ropeJointDef);
+//            midGuanJian=ropeSp;
+//            
+//        }
+//           playerJointDef.Initialize(nearGuanjian.body,player.body,nearGuanjian.body->GetWorldCenter());
+//           playerJointDef.maxMotorTorque = 10.0f;
+//           playerJointDef.enableMotor = true;
+//           playerJoint=(b2RevoluteJoint *)nearGuanjian.body->GetWorld()->CreateJoint(&playerJointDef);
 //        
-//        ropeJointDef.Initialize(nearGuanjian.body, rope.body,nearGuanjian.body->GetWorldCenter());
-//        
-//        
-//        ropeJointDef.maxMotorTorque = 10.0f;
-//     
-//        ropeJointDef.enableMotor = true;
-//        
-//        ropeJoint=(b2RevoluteJoint *)nearGuanjian.body->GetWorld()->CreateJoint(&ropeJointDef);
-//        
-//        ropeJoint->SetMotorSpeed(6.0);
-//        
-//        
-//       
-//        playerJointDef.Initialize(rope.body,player.body,rope.body->GetWorldCenter());
-//        playerJointDef.enableLimit=true;
-//        
-//        playerJoint=(b2RevoluteJoint *)rope.body->GetWorld()->CreateJoint(&playerJointDef);
-        
-           playerJointDef.Initialize(nearGuanjian.body,player.body,nearGuanjian.body->GetWorldCenter());
-          
-           playerJointDef.maxMotorTorque = 10.0f;
-           playerJointDef.enableMotor = true;
-           
-        
-        playerJoint=(b2RevoluteJoint *)nearGuanjian.body->GetWorld()->CreateJoint(&playerJointDef);
-        CCSprite *boyFaceLeft=[CCSprite spriteWithFile:@"fgtBoy.png"];
-        CCSprite *boyFaceRight=[CCSprite spriteWithFile:@"fgtBoy2.png"];
-        if (player.position.x<=nearGuanjian.position.x) {//如果玩家在挂件的左边做逆时针旋转
-              playerJoint->SetMotorSpeed(player.speed);
-              
-           
-        }else{//在挂件右边做顺时针旋转
-             playerJoint->SetMotorSpeed(-player.speed);
-           //player.body->SetUserData(boyFaceLeft);
-            
-        }
+//        if (player.position.x<=nearGuanjian.position.x) {//如果玩家在挂件的左边做逆时针旋转
+//              playerJoint->SetMotorSpeed(player.speed);
+//
+//        }else{//在挂件右边做顺时针旋转
+//              playerJoint->SetMotorSpeed(-player.speed);            
+//        }
          
+        
+        
+        
         
     }else if (firstTouchLocation.x<screenCenter.x){//如果点击左边则转向
     
@@ -187,6 +192,125 @@
 
 
 
+
+
+
+
+//处理每帧的物理变化
+-(void) update:(ccTime)delta{
+    
+    // The number of iterations influence the accuracy of the physics simulation. With higher values the
+	// body's velocity and position are more accurately tracked but at the cost of speed.
+	// Usually for games only 1 position iteration is necessary to achieve good results.
+	float timeStep = 0.03f;
+    float capedDelta=fminf(delta, 0.08f);//安全上限
+	int32 velocityIterations = 8;
+	int32 positionIterations = 1;
+	world->Step(capedDelta, velocityIterations, positionIterations);
+	
+	// for each body, get its assigned sprite and update the sprite's position
+	for (b2Body* body = world->GetBodyList(); body != nil; body = body->GetNext())
+	{
+		BodyNode* sprite = (BodyNode*)body->GetUserData();
+		if (sprite != NULL)
+		{
+			// update the sprite's position to where their physics bodies are
+			sprite.position = [GameUtil toPixels:body->GetPosition()];
+			float angle = body->GetAngle();
+           
+            if (![sprite isKindOfClass:[PlayerSpriteA class]]) {  //如果是玩家则不需要更新旋转
+                sprite.rotation = CC_RADIANS_TO_DEGREES(angle) * -1;
+            }
+			
+		}
+	}
+    
+  
+    [self addMotionStreakPoint:player.position];
+    //判断是否和香蕉碰撞,并计分
+	// If you adjust the factors make sure you also change them in the -(void) draw method.
+	float playerCollisionRadius =player.contentSize.width* 0.35f;    
+
+//    for (int i=17; i<30; i++) { //香蕉tag区间为
+//         Fruit *fruit=(Fruit *)[bgLayer getChildByTag:i];
+//
+//        if (fruit!=nil) {
+//            float banaCollisionRadius = fruit.contentSize.width * 0.4f;
+//            float maxCollisionDistance=playerCollisionRadius+banaCollisionRadius;
+//            float actualDistance= ccpDistance(player.position, fruit.position);
+//            if (actualDistance<maxCollisionDistance) {
+//               
+//                [bgLayer removeChild:fruit cleanup:YES];
+//                score=score+10;
+//                CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:4];
+//                scoreLabel.string=[NSString stringWithFormat:@"%d",score];
+//                
+//            }
+//            
+//        }
+//    }
+    CCNode* child;
+    CCARRAY_FOREACH(gameObjectLayer.children,child){
+        Fruit *fruit=(Fruit *)child;
+        
+                  if (fruit!=nil) {
+                      float banaCollisionRadius = fruit.contentSize.width * 0.35f;
+                      float maxCollisionDistance=playerCollisionRadius+banaCollisionRadius;
+                        float actualDistance= ccpDistance(player.position, fruit.position);
+                        if (actualDistance<maxCollisionDistance) {
+            
+                            [gameObjectLayer removeChild:fruit cleanup:YES];
+                             score=score+10;
+                            CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:4];
+                            scoreLabel.string=[NSString stringWithFormat:@"%d",score];
+                            
+                        }
+                        
+                    }
+
+    
+    }
+    
+    
+    
+    
+}
+
+//倒计时
+-(void) countDownTime:(ccTime)delta{
+            CCLabelBMFont *timeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:3];
+            int countTime=[timeLabel.string intValue];
+            if (countTime>0) {
+                countTime=countTime--;
+                timeLabel.string=[NSString stringWithFormat:@"%d",countTime];
+            }else{
+                [self unschedule:_cmd];
+            
+            }
+            
+
+}
+
+#ifdef DEBUG
+-(void) draw
+{
+	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+	// Needed states:  GL_VERTEX_ARRAY,
+	// Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+	glDisable(GL_TEXTURE_2D);
+	glDisableClientState(GL_COLOR_ARRAY);
+	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+	
+	world->DrawDebugData();
+	
+	// restore default GL states
+	glEnable(GL_TEXTURE_2D);
+	glEnableClientState(GL_COLOR_ARRAY);
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+}
+#endif
+
+
 -(void)initTheWorld{
     
     //初始化世界
@@ -230,116 +354,9 @@
     screenBoxShape.SetAsEdge(upperRightCorner, lowerRightCorner);
     containerBody->CreateFixture(&screenBoxShape, density);
     
-    // set the collision flags: category and mask
-//    b2Filter collisonFilter;
-//    collisonFilter.groupIndex = 0;
-//    collisonFilter.categoryBits = 0x0010; // category = Wall
-//    collisonFilter.maskBits = 0x0001;     // mask = bullet
-    
-    
-
+   
     
 }
-
-
-
-//处理每帧的物理变化
--(void) update:(ccTime)delta{
-    
-    // The number of iterations influence the accuracy of the physics simulation. With higher values the
-	// body's velocity and position are more accurately tracked but at the cost of speed.
-	// Usually for games only 1 position iteration is necessary to achieve good results.
-	float timeStep = 0.03f;
-    float capedDelta=fminf(delta, 0.08f);//安全上限
-	int32 velocityIterations = 8;
-	int32 positionIterations = 1;
-	world->Step(capedDelta, velocityIterations, positionIterations);
-	
-	// for each body, get its assigned sprite and update the sprite's position
-	for (b2Body* body = world->GetBodyList(); body != nil; body = body->GetNext())
-	{
-		BodyNode* sprite = (BodyNode*)body->GetUserData();
-		if (sprite != NULL)
-		{
-			// update the sprite's position to where their physics bodies are
-			sprite.position = [GameUtil toPixels:body->GetPosition()];
-			float angle = body->GetAngle();
-           
-            if (![sprite isKindOfClass:[PlayerSpriteA class]]) {  //如果是玩家则不需要更新旋转
-                sprite.rotation = CC_RADIANS_TO_DEGREES(angle) * -1;
-            }
-			
-		}
-	}
-    
-    //判断是否和香蕉碰撞,并计分
-	// If you adjust the factors make sure you also change them in the -(void) draw method.
-	float playerCollisionRadius =player.contentSize.width* 0.4f;
-	
-
-//    for (int i=17; i<30; i++) { //香蕉tag区间为
-//         Fruit *fruit=(Fruit *)[bgLayer getChildByTag:i];
-//
-//        if (fruit!=nil) {
-//            float banaCollisionRadius = fruit.contentSize.width * 0.4f;
-//            float maxCollisionDistance=playerCollisionRadius+banaCollisionRadius;
-//            float actualDistance= ccpDistance(player.position, fruit.position);
-//            if (actualDistance<maxCollisionDistance) {
-//               
-//                [bgLayer removeChild:fruit cleanup:YES];
-//                score=score+10;
-//                CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:4];
-//                scoreLabel.string=[NSString stringWithFormat:@"%d",score];
-//                
-//            }
-//            
-//        }
-//    }
-    CCNode* child;
-    CCARRAY_FOREACH(gameObjectLayer.children,child){
-        Fruit *fruit=(Fruit *)child;
-        NSLog(@"%@",[fruit class]);
-        if ([fruit isKindOfClass:[Banana  class]]) {
-            NSLog(@"ok");
-        }
-    
-    }
-    
-    
-    
-    
-}
-
-//倒计时
--(void) countDownTime:(ccTime)delta{
-            CCLabelBMFont *timeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:3];
-            int countTime=[timeLabel.string intValue];
-            if (countTime>0) {
-                countTime=countTime--;
-            }
-            timeLabel.string=[NSString stringWithFormat:@"%d",countTime];
-
-}
-
-//#ifdef DEBUG
-//-(void) draw
-//{
-//	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-//	// Needed states:  GL_VERTEX_ARRAY,
-//	// Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-//	glDisable(GL_TEXTURE_2D);
-//	glDisableClientState(GL_COLOR_ARRAY);
-//	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-//	
-//	world->DrawDebugData();
-//	
-//	// restore default GL states
-//	glEnable(GL_TEXTURE_2D);
-//	glEnableClientState(GL_COLOR_ARRAY);
-//	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-//}
-//#endif
-
 
 -(void)dealloc{
    
@@ -358,7 +375,7 @@
     [groundShape release];
     [bgLayer release];
     
-    delete  ropeJoint;
+   // delete  ropeJoint;
     
     delete playerJoint;
     

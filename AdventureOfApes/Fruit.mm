@@ -14,4 +14,10 @@
 @synthesize fruitType;
 @synthesize scoreValue;
 
+-(void)dealloc{
+
+    [super dealloc];
+
+}
+
 @end

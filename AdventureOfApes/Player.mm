@@ -17,6 +17,14 @@
 @synthesize speed;
 @synthesize maxRadius;
 @synthesize minRadius;
+@synthesize tailName;
 
+
+
+-(void)dealloc{
+    [tailName release];
+    [super dealloc];
+
+}
 
 @end

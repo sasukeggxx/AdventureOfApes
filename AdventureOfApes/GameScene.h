@@ -26,8 +26,8 @@
    // CCSprite *player;
     CreateGroundInWorld *groundShape;
     
-    b2RevoluteJointDef ropeJointDef;  //绳子定位挂件关节
-    b2RevoluteJoint *ropeJoint;
+//    b2RevoluteJointDef ropeJointDef;  //绳子定位挂件关节
+//    b2RevoluteJoint *ropeJoint;
     b2RevoluteJointDef playerJointDef;//绳子末端关节
     b2RevoluteJoint *playerJoint;
     

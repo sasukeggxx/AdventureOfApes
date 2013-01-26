@@ -19,9 +19,9 @@
 
 -(id)initwithWorld:(b2World *) world{
     
-    if (self=[super initWithShape:@"fgtRope2" inWord:world withB2Type:b2_dynamicBody]) {
+    if (self=[super initWithShape:@"fgtRope" inWord:world withB2Type:b2_dynamicBody]) {
              
-        super.body->SetAngularDamping(0.9f); //旋转阻尼
+       
         
       
         
