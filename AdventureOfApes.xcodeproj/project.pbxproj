@@ -14,7 +14,7 @@
 		3503D56F16AA37F700C627D7 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3503D56B16AA37F700C627D7 /* 3.png */; };
 		35B8D20416A7EE0000EBDF43 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8D20316A7EE0000EBDF43 /* MenuScene.m */; };
 		35B8D20716A7EE1100EBDF43 /* RoleSelectionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8D20616A7EE1100EBDF43 /* RoleSelectionScene.m */; };
-		35B8D20A16A7EF2900EBDF43 /* LogoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8D20916A7EF2900EBDF43 /* LogoScene.m */; };
+		35B8D20A16A7EF2900EBDF43 /* LogoScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35B8D20916A7EF2900EBDF43 /* LogoScene.mm */; };
 		AD086EF416B0CC7B008833F6 /* Tomato.m in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF316B0CC7B008833F6 /* Tomato.m */; };
 		AD0AF74A169E70910049D168 /* CCRoundBy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0AF749169E70910049D168 /* CCRoundBy.m */; };
 		AD0DDF3C16AFC0FF005E0029 /* Banana.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0DDF3B16AFC0FF005E0029 /* Banana.m */; };
@@ -238,7 +238,7 @@
 		35B8D20516A7EE0900EBDF43 /* LogoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoScene.h; sourceTree = "<group>"; };
 		35B8D20616A7EE1100EBDF43 /* RoleSelectionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoleSelectionScene.m; sourceTree = "<group>"; };
 		35B8D20816A7EEBF00EBDF43 /* RoleSelectionScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoleSelectionScene.h; sourceTree = "<group>"; };
-		35B8D20916A7EF2900EBDF43 /* LogoScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoScene.m; sourceTree = "<group>"; };
+		35B8D20916A7EF2900EBDF43 /* LogoScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LogoScene.mm; sourceTree = "<group>"; };
 		AD086EF216B0CC7B008833F6 /* Tomato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tomato.h; sourceTree = "<group>"; };
 		AD086EF316B0CC7B008833F6 /* Tomato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tomato.m; sourceTree = "<group>"; };
 		AD0AF73B169E60B30049D168 /* GameObjectTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameObjectTag.h; sourceTree = "<group>"; };
@@ -1241,7 +1241,7 @@
 		AD9DD876169AA416002A28BB /* scene */ = {
 			isa = PBXGroup;
 			children = (
-				35B8D20916A7EF2900EBDF43 /* LogoScene.m */,
+				35B8D20916A7EF2900EBDF43 /* LogoScene.mm */,
 				35B8D20816A7EEBF00EBDF43 /* RoleSelectionScene.h */,
 				AD9DD885169AA4FB002A28BB /* BigStageSelectScene.h */,
 				3503D56516AA37E400C627D7 /* BigStageSelectScene.mm */,
@@ -1587,7 +1587,7 @@
 				AD86A2B216A4FE1A00078113 /* RopeSprite.mm in Sources */,
 				35B8D20416A7EE0000EBDF43 /* MenuScene.m in Sources */,
 				35B8D20716A7EE1100EBDF43 /* RoleSelectionScene.m in Sources */,
-				35B8D20A16A7EF2900EBDF43 /* LogoScene.m in Sources */,
+				35B8D20A16A7EF2900EBDF43 /* LogoScene.mm in Sources */,
 				ADEEC07716A938DE005AD266 /* InputLayer.mm in Sources */,
 				3503D56616AA37E400C627D7 /* BigStageSelectScene.mm in Sources */,
 				AD0DDF3C16AFC0FF005E0029 /* Banana.m in Sources */,

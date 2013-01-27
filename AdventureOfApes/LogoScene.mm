@@ -8,6 +8,7 @@
 
 #import "LogoScene.h"
 #import "RoleSelectionScene.h"
+#import "GameScene.h"
 
 @implementation LogoScene
 
@@ -42,7 +43,7 @@
 
 -(void) startItemTouched: (id)sender
 {
-     [[CCDirector sharedDirector]replaceScene:[RoleSelectionScene scene]];
+     [[CCDirector sharedDirector]replaceScene:[GameScene scene]];
 }
 -(void)dealloc{
     
