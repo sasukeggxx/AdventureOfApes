@@ -33,6 +33,19 @@
             <key>fgtBoy</key>
             <dict>
                 <key>frame</key>
+                <string>{{45,454},{41,41}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{41,41}}</string>
+                <key>sourceSize</key>
+                <string>{41,41}</string>
+            </dict>
+            <key>fgtBoy2</key>
+            <dict>
+                <key>frame</key>
                 <string>{{2,454},{41,41}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
@@ -131,7 +144,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:023ce3a9eb3fe7a0b09bf03db1523561$</string>
+            <string>$TexturePacker:SmartUpdate:16f7728543bde78a7cc044485030ee66$</string>
             <key>textureFileName</key>
             <string>image.pvr.ccz</string>
         </dict>

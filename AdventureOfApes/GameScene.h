@@ -23,7 +23,7 @@
     GLESDebugDraw* debugDraw;
     PlayerSpriteA *player;
     RopeSprite *rope;
-   // CCSprite *player;
+   
     CreateGroundInWorld *groundShape;
     
     b2RevoluteJointDef ropeJointDef;  //绳子定位挂件关节

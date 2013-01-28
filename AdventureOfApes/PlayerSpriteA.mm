@@ -40,7 +40,7 @@
         
         [self setSpriteStartPosition];
         
-        [self scheduleUpdate];
+        //[self scheduleUpdate];
 
        
         

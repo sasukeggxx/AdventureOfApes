@@ -120,43 +120,133 @@
     if (firstTouchLocation.x>screenCenter.x) {//如果点击右边
         
         float duibian=player.position.y-nearGuanjian.position.y;  //三角对边
- 
+        
         float actualDistance=ccpDistance(player.position, nearGuanjian.position); //三角斜边
         
         float hudu=asinf(duibian/actualDistance);
         
-        float angel=hudu*180/b2_pi;
         
-        NSLog(@"%f",angel);
-        
+             
         b2BodyDef bodyDef;
-        bodyDef.type = b2_dynamicBody;
-        //bodyDef.angle=hudu;
-        // position must be converted to meters
+        
+        bodyDef.type = b2_dynamicBody;              
+        CCSprite *sprite=[CCSprite spriteWithFile:@"fgtRope3.png"  rect:CGRectMake(0, 0, actualDistance, 4)];
+        
+        sprite.anchorPoint=ccp(0.0, 0.5);
+        sprite.position=nearGuanjian.position;
+        
+        [self addChild:sprite];
         bodyDef.position=[GameUtil toMeters:nearGuanjian.position];
+        bodyDef.userData = sprite;
+         b2Body* body = world->CreateBody(&bodyDef);
         
-        // bodyDef.position = [GameUtil toMeters:ccp(nearGuanjian.position.x-actualDistance*0.5, nearGuanjian.position.y)];
+       
+          if (player.position.x<nearGuanjian.position.x&&player.position.y>nearGuanjian.position.y) {//第二象限
+                body->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi-hudu);
+          }else if (player.position.x<nearGuanjian.position.x&&player.position.y<nearGuanjian.position.y){ //第三象限
+                body->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi+hudu);
+            
+          }else{  //第1,4象限
+                body->SetTransform([GameUtil toMeters:nearGuanjian.position],hudu);
+            
+            }
+                // Define another box shape for our dynamic body.
+                b2PolygonShape dynamicBox;
+            // dynamicBox.SetAsBox(64/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f);
+               dynamicBox.SetAsBox(actualDistance/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f,[GameUtil toMeters:ccp(actualDistance*0.5, 0.0)],0.0);
         
-        // assign the sprite as userdata so it's easy to get to the sprite when working with the body
-        //bodyDef.userData = sprite;
-        b2Body* body = world->CreateBody(&bodyDef);
+                // Define the dynamic body fixture.
+                b2FixtureDef fixtureDef;
+                fixtureDef.shape = &dynamicBox;
+                fixtureDef.density = 0.3f;
+                fixtureDef.friction = 0.0f;
+                fixtureDef.restitution = 0.0f;
+                body->CreateFixture(&fixtureDef);
+                
+                
+                ropeJointDef.Initialize(nearGuanjian.body, body, nearGuanjian.body->GetWorldCenter());
+                ropeJoint=(b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
+               
         
-        // Define another box shape for our dynamic body.
-        b2PolygonShape dynamicBox;
-        
-        dynamicBox.SetAsBox(actualDistance/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f);
-        
-        // Define the dynamic body fixture.
-        b2FixtureDef fixtureDef;
-        fixtureDef.shape = &dynamicBox;
-        fixtureDef.density = 0.3f;
-        fixtureDef.friction = 0.0f;
-        fixtureDef.restitution = 0.0f;
-        body->CreateFixture(&fixtureDef);
+        /* 绳子定位左边
+        rope=[RopeSprite addToWorld:world];
         
         
-        ropeJointDef.Initialize(nearGuanjian.body, body, nearGuanjian.body->GetWorldCenter());
-        ropeJoint=(b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
+        //90*b2_pi/180 角度转弧度
+        if (player.position.x<nearGuanjian.position.x&&player.position.y>nearGuanjian.position.y) {//第二象限
+           rope.body->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi-hudu); 
+        }else if (player.position.x<nearGuanjian.position.x&&player.position.y<nearGuanjian.position.y){ //第三象限
+           rope.body->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi+hudu);
+        
+        }else{  //第1,4象限
+            rope.body->SetTransform([GameUtil toMeters:nearGuanjian.position],hudu);
+
+        }
+        
+        
+        [self addChild:rope];
+        
+        
+        
+        playerJointDef.Initialize(rope.body,player.body,player.body->GetWorldCenter());
+
+        playerJoint=(b2RevoluteJoint *)world->CreateJoint(&playerJointDef);
+        
+        
+        ropeJointDef.Initialize(nearGuanjian.body, rope.body, nearGuanjian.body->GetWorldCenter());
+        ropeJoint= (b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
+        
+        ropeJointDef.maxMotorTorque = 10.0f;
+        ropeJointDef.enableMotor = true;
+        
+        if (player.position.x<=nearGuanjian.position.x) {//如果玩家在挂件的左边做逆时针旋转
+            ropeJoint->SetMotorSpeed(player.speed);
+        
+         }else{//在挂件右边做顺时针旋转
+            ropeJoint->SetMotorSpeed(-player.speed);
+
+         }
+       */
+                
+//        float duibian=player.position.y-nearGuanjian.position.y;  //三角对边
+// 
+//        float actualDistance=ccpDistance(player.position, nearGuanjian.position); //三角斜边
+//        
+//        float hudu=asinf(duibian/actualDistance);
+//        
+//        float angle=hudu*180/b2_pi;
+//        
+//        NSLog(@"%f",angle);
+//        
+//        b2BodyDef bodyDef;
+//        
+//        bodyDef.type = b2_dynamicBody;
+//        bodyDef.angle=hudu;
+//        // position must be converted to meters
+//        bodyDef.position=[GameUtil toMeters:nearGuanjian.position];
+// 
+//        // assign the sprite as userdata so it's easy to get to the sprite when working with the body
+//        //bodyDef.userData = sprite;
+//        b2Body* body = world->CreateBody(&bodyDef);
+//        
+//        // Define another box shape for our dynamic body.
+//        b2PolygonShape dynamicBox;
+//        
+//        dynamicBox.SetAsBox(actualDistance/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f);
+//        
+//        // Define the dynamic body fixture.
+//        b2FixtureDef fixtureDef;
+//        fixtureDef.shape = &dynamicBox;
+//        fixtureDef.density = 0.3f;
+//        fixtureDef.friction = 0.0f;
+//        fixtureDef.restitution = 0.0f;
+//        body->CreateFixture(&fixtureDef);
+//        
+//        
+//        ropeJointDef.Initialize(nearGuanjian.body, body, nearGuanjian.body->GetWorldCenter());
+//        ropeJoint=(b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
+        
+        
         
         
         
