@@ -16,8 +16,7 @@
 +(id) createGroundWithWorld:(b2World*)world;
 -(id) initGroundWithWorld:(b2World*)world;
 
-+(id) createGroundWithWorld:(b2World*)world withCCBFile:(NSString *)ccbFile;
--(id) initGroundWithWorld:(b2World*)world withCCBFile:(NSString *)ccbFile;
+
 
 
 @end

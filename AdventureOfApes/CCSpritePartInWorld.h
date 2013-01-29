@@ -15,7 +15,10 @@
     
 }
 
+//用精灵名称创建一个静态刚体
 +(id) groundPartInWorld:(b2World*)world position:(CGPoint)pos name:(NSString*)name;
+
+
 
 -(id) initWithWorld:(b2World*)world position:(CGPoint)pos name:(NSString *)name;
 

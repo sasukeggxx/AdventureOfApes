@@ -25,6 +25,7 @@ typedef enum {
 typedef enum {
     inputLayerTag,
     ParallaxSceneTagRibbon,
+    ropeTag,
 }GameSceneObjectTag;
 
 

@@ -30,7 +30,7 @@
         
         self.minRadius=30.0;//最小半径
         
-        self.speed=4.0; //初始速度
+        self.speed=5.0; //初始速度
         
         self.collisionCount=0; //初始碰撞次数
         
@@ -40,7 +40,7 @@
         
         [self setSpriteStartPosition];
         
-        //[self scheduleUpdate];
+    
 
        
         
@@ -101,23 +101,7 @@
     
     
     
-    if (self.position.y<-10) {//玩家死了,生命数减1
-        [self setSpriteStartPosition];
-        if (self.life>0) {
-            self.life=self.life-1;
-           
-            CCLayer *gameScene=(CCLayer *)[self parent];
-            CCLayer *inputLayer=(CCLayer *)[gameScene getChildByTag:inputLayerTag];
-            NSAssert([inputLayer isKindOfClass:[CCLayer class]], @"inputlayer is not cclayer,check tag is right?");
-            CCLabelBMFont *lifeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:lifeTag];
-            lifeLabel.string=[NSString stringWithFormat:@"%d",self.life];
-            
-        }
-        if (self.life==0) {
-            NSLog(@"游戏结束");
-        }
-     
-    }
+   
 
    
 

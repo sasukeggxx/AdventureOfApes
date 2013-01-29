@@ -187,8 +187,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>217.40234375</real>
-						<real>304.17578125</real>
+						<real>239.01171875</real>
+						<real>306.6875</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -318,66 +318,6 @@
 					<real>1</real>
 					<key>string</key>
 					<string>x</string>
-					<key>tag</key>
-					<integer>-1</integer>
-					<key>visible</key>
-					<true/>
-					<key>zOrder</key>
-					<integer>0</integer>
-				</dict>
-			</dict>
-			<dict>
-				<key>children</key>
-				<array/>
-				<key>class</key>
-				<string>CCLabelBMFont</string>
-				<key>properties</key>
-				<dict>
-					<key>anchorPoint</key>
-					<array>
-						<real>0.5</real>
-						<real>0.5</real>
-					</array>
-					<key>color</key>
-					<array>
-						<integer>255</integer>
-						<integer>255</integer>
-						<integer>255</integer>
-					</array>
-					<key>contentSize</key>
-					<array>
-						<real>78</real>
-						<real>27</real>
-					</array>
-					<key>customClass</key>
-					<string></string>
-					<key>fontFile</key>
-					<string>26sizefont.fnt</string>
-					<key>isExpanded</key>
-					<true/>
-					<key>isRelativeAnchorPoint</key>
-					<true/>
-					<key>lockedScaleRatio</key>
-					<true/>
-					<key>memberVarAssignmentName</key>
-					<string></string>
-					<key>memberVarAssignmentType</key>
-					<integer>0</integer>
-					<key>opacity</key>
-					<integer>255</integer>
-					<key>position</key>
-					<array>
-						<real>436.91796875</real>
-						<real>308.7890625</real>
-					</array>
-					<key>rotation</key>
-					<real>0.0</real>
-					<key>scaleX</key>
-					<real>1</real>
-					<key>scaleY</key>
-					<real>1</real>
-					<key>string</key>
-					<string>score:</string>
 					<key>tag</key>
 					<integer>-1</integer>
 					<key>visible</key>
@@ -547,8 +487,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>440.9453125</real>
-						<real>280.04296875</real>
+						<real>448.80859375</real>
+						<real>308.140625</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>

@@ -9,6 +9,7 @@
 #import "CreateGroundInWorld.h"
 #import "CCSpritePartInWorld.h"
 #import "CCBReader.h"
+#import "GameUtil.h"
 
 @implementation CreateGroundInWorld
 
@@ -51,18 +52,28 @@
                                                          name:@"fgtWall2"]];
         
         
-        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                     position:ccp(126, 192)
-                                                         name:@"fgtTree"] z:0 tag:0];
+//        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
+//                                                     position:ccp(122, 231)
+//                                                         name:@"fgtTree"] z:0 tag:0];
+//        
+//        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
+//                                                     position:ccp(353, 231)
+//                                                         name:@"fgtTree"] z:0 tag:1];
+//        
+//        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
+//                                                     position:ccp(217, 92)
+//                                                         name:@"fgtTree"] z:0 tag:2];
         
-        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                     position:ccp(345, 196)
-                                                         name:@"fgtTree"] z:0 tag:1];
-        
-     
-        
-        
+        CCLayer *gameObjectLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"GameObjectLayer.ccb"];
+        for (int i=0; i<5; i++) {
+             CCSprite *tree=(CCSprite *)[gameObjectLayer getChildByTag:i];
+            if (tree!=nil) {
+                [self addChild:[CCSpritePartInWorld groundPartInWorld:world
+                                                             position:tree.position
+                                                                 name:@"fgtTree"] z:0 tag:i];
+            }
 
+        }
 
 	
     }
@@ -73,27 +84,6 @@
 
 
 
-
-+(id) createGroundWithWorld:(b2World*)world withCCBFile:(NSString *)ccbFile{
-    
-    
-    return [[self alloc] initGroundWithWorld:world withCCBFile:ccbFile];
-    
-}
-
--(id) initGroundWithWorld:(b2World*)world withCCBFile:(NSString *)ccbFile{
-    CCLayer *ground=(CCLayer *)[CCBReader nodeGraphFromFile:@"backGround.ccb"];//最
-    CCArray *array=ground.children;
-    for (int i=0; i<array.count; i++) {
-        CCSprite *sprite=[array objectAtIndex:i];
-
-        
-    }
-    
-    
-    
-    return self;
-}
 
 
 

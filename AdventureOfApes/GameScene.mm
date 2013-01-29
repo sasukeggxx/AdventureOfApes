@@ -15,6 +15,7 @@
 #import "GameObjectTag.h"
 #import "Banana.h"
 
+
 @implementation GameScene
 
 
@@ -56,6 +57,7 @@
         [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
         
         groundShape=[CreateGroundInWorld createGroundWithWorld:world];
+
         
         [self addChild:groundShape z:-2];
         
@@ -110,146 +112,77 @@
         return;
     }
     
-    NSArray *twoTouch = [touches allObjects];
+    NSArray *touchs = [touches allObjects];
+    if (touches.count>=2) { //同时两点不支持
+        return;
+    }
     
     //Get both touches
-    UITouch *tOne = [twoTouch objectAtIndex:0];
+    UITouch *tOne = [touchs objectAtIndex:0];
     CGPoint firstTouchLocation =[GameUtil locationFromTouch:tOne];//记录该次触摸点gl位置
     
    
     if (firstTouchLocation.x>screenCenter.x) {//如果点击右边
         
-        float duibian=player.position.y-nearGuanjian.position.y;  //三角对边
+        float duibian=abs(player.position.y-nearGuanjian.position.y) ;  //三角对边
         
         float actualDistance=ccpDistance(player.position, nearGuanjian.position); //三角斜边
         
-        float hudu=asinf(duibian/actualDistance);
+        float hudu=asinf(duibian/actualDistance);  //绳子摆放位置需要的弧度
+    
+  
+        b2BodyDef ropeBodyDef;
         
-        
-             
-        b2BodyDef bodyDef;
-        
-        bodyDef.type = b2_dynamicBody;              
+        ropeBodyDef.type = b2_dynamicBody;              
         CCSprite *sprite=[CCSprite spriteWithFile:@"fgtRope3.png"  rect:CGRectMake(0, 0, actualDistance, 4)];
         
         sprite.anchorPoint=ccp(0.0, 0.5);
         sprite.position=nearGuanjian.position;
         
-        [self addChild:sprite];
-        bodyDef.position=[GameUtil toMeters:nearGuanjian.position];
-        bodyDef.userData = sprite;
-         b2Body* body = world->CreateBody(&bodyDef);
-        
-       
-          if (player.position.x<nearGuanjian.position.x&&player.position.y>nearGuanjian.position.y) {//第二象限
-                body->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi-hudu);
-          }else if (player.position.x<nearGuanjian.position.x&&player.position.y<nearGuanjian.position.y){ //第三象限
-                body->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi+hudu);
-            
-          }else{  //第1,4象限
-                body->SetTransform([GameUtil toMeters:nearGuanjian.position],hudu);
-            
-            }
-                // Define another box shape for our dynamic body.
-                b2PolygonShape dynamicBox;
-            // dynamicBox.SetAsBox(64/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f);
-               dynamicBox.SetAsBox(actualDistance/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f,[GameUtil toMeters:ccp(actualDistance*0.5, 0.0)],0.0);
+        [self addChild:sprite z:-1 tag:ropeTag];
+        ropeBodyDef.position=[GameUtil toMeters:nearGuanjian.position];
+        ropeBodyDef.userData = sprite;
+        ropeBody = world->CreateBody(&ropeBodyDef);
+        if (player.position.x>=nearGuanjian.position.x&&player.position.y>=nearGuanjian.position.y) {//第一象限
+            ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],hudu);
+        }else if(player.position.x<nearGuanjian.position.x&&player.position.y>nearGuanjian.position.y) {//第二象限
+             ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi-hudu);
+        }else if (player.position.x<=nearGuanjian.position.x&&player.position.y<=nearGuanjian.position.y){ //第三象限
+             ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi+hudu);
+        }else{  //第4象限
+            ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],2*b2_pi-hudu);
+
+          }
+        // Define another box shape for our dynamic body.
+        b2PolygonShape dynamicBox;
+   
+        dynamicBox.SetAsBox(actualDistance/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f,[GameUtil toMeters:ccp(actualDistance*0.5, 0.0)],0.0);
         
                 // Define the dynamic body fixture.
-                b2FixtureDef fixtureDef;
-                fixtureDef.shape = &dynamicBox;
-                fixtureDef.density = 0.3f;
-                fixtureDef.friction = 0.0f;
-                fixtureDef.restitution = 0.0f;
-                body->CreateFixture(&fixtureDef);
+        b2FixtureDef fixtureDef;
+        fixtureDef.shape = &dynamicBox;
+        fixtureDef.density = 0.05f;
+        fixtureDef.friction = 0.0f;
+        fixtureDef.restitution = 0.0f;
+        ropeBody->CreateFixture(&fixtureDef);
                 
-                
-                ropeJointDef.Initialize(nearGuanjian.body, body, nearGuanjian.body->GetWorldCenter());
-                ropeJoint=(b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
-               
-        
-        /* 绳子定位左边
-        rope=[RopeSprite addToWorld:world];
-        
-        
-        //90*b2_pi/180 角度转弧度
-        if (player.position.x<nearGuanjian.position.x&&player.position.y>nearGuanjian.position.y) {//第二象限
-           rope.body->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi-hudu); 
-        }else if (player.position.x<nearGuanjian.position.x&&player.position.y<nearGuanjian.position.y){ //第三象限
-           rope.body->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi+hudu);
-        
-        }else{  //第1,4象限
-            rope.body->SetTransform([GameUtil toMeters:nearGuanjian.position],hudu);
-
-        }
-        
-        
-        [self addChild:rope];
-        
-        
-        
-        playerJointDef.Initialize(rope.body,player.body,player.body->GetWorldCenter());
-
+        playerJointDef.Initialize(player.body, ropeBody, player.body->GetWorldCenter());
         playerJoint=(b2RevoluteJoint *)world->CreateJoint(&playerJointDef);
-        
-        
-        ropeJointDef.Initialize(nearGuanjian.body, rope.body, nearGuanjian.body->GetWorldCenter());
-        ropeJoint= (b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
-        
+            
+        ropeJointDef.Initialize(nearGuanjian.body, ropeBody, nearGuanjian.body->GetWorldCenter());
+        ropeJoint=(b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
         ropeJointDef.maxMotorTorque = 10.0f;
         ropeJointDef.enableMotor = true;
-        
         if (player.position.x<=nearGuanjian.position.x) {//如果玩家在挂件的左边做逆时针旋转
             ropeJoint->SetMotorSpeed(player.speed);
-        
-         }else{//在挂件右边做顺时针旋转
+            [player setFlipX:YES];//玩家转脸
+            
+        }else{//在挂件右边做顺时针旋转
             ropeJoint->SetMotorSpeed(-player.speed);
-
-         }
-       */
-                
-//        float duibian=player.position.y-nearGuanjian.position.y;  //三角对边
-// 
-//        float actualDistance=ccpDistance(player.position, nearGuanjian.position); //三角斜边
-//        
-//        float hudu=asinf(duibian/actualDistance);
-//        
-//        float angle=hudu*180/b2_pi;
-//        
-//        NSLog(@"%f",angle);
-//        
-//        b2BodyDef bodyDef;
-//        
-//        bodyDef.type = b2_dynamicBody;
-//        bodyDef.angle=hudu;
-//        // position must be converted to meters
-//        bodyDef.position=[GameUtil toMeters:nearGuanjian.position];
-// 
-//        // assign the sprite as userdata so it's easy to get to the sprite when working with the body
-//        //bodyDef.userData = sprite;
-//        b2Body* body = world->CreateBody(&bodyDef);
-//        
-//        // Define another box shape for our dynamic body.
-//        b2PolygonShape dynamicBox;
-//        
-//        dynamicBox.SetAsBox(actualDistance/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f);
-//        
-//        // Define the dynamic body fixture.
-//        b2FixtureDef fixtureDef;
-//        fixtureDef.shape = &dynamicBox;
-//        fixtureDef.density = 0.3f;
-//        fixtureDef.friction = 0.0f;
-//        fixtureDef.restitution = 0.0f;
-//        body->CreateFixture(&fixtureDef);
-//        
-//        
-//        ropeJointDef.Initialize(nearGuanjian.body, body, nearGuanjian.body->GetWorldCenter());
-//        ropeJoint=(b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
-        
-        
-        
-        
-        
+            [player setFlipX:NO];//玩家转脸
+        }
+     
+     
 
 //           playerJointDef.Initialize(nearGuanjian.body,player.body,nearGuanjian.body->GetWorldCenter());
 //           playerJointDef.maxMotorTorque = 10.0f;
@@ -296,12 +229,17 @@
     if (touchLocation.x>screenCenter.x) {//如果松开的是右边,玩家离开绳子做抛物线
         
         if (playerJoint!=NULL) {
-             world->DestroyJoint(playerJoint);
+            world->DestroyJoint(playerJoint);
+        }
+        if (ropeJoint!=NULL) {
+             world->DestroyJoint(ropeJoint);
+             ropeBody->SetTransform(b2Vec2(0,0),0);
+            world->DestroyBody(ropeBody);
+            [self removeChildByTag:ropeTag cleanup:YES];
+            
         }
              
-//        [self removeChild:rope cleanup:NO];
-//        
-//        rope=nil;
+
         
     }
    
@@ -345,29 +283,41 @@
 	}
     
   
-    [self addMotionStreakPoint:player.position];
+    [self addMotionStreakPoint:player.position];//添加拖尾
+    
+    //判断玩家生命值
+    if (player.position.y<-10) {//玩家死了,生命数减1
+//        if (playerJoint!=NULL) {
+//            world->DestroyJoint(playerJoint);
+//        }
+//        if (ropeJoint!=NULL) {
+//            world->DestroyJoint(ropeJoint);
+//            ropeBody->SetTransform(b2Vec2(0,0),0);
+//            world->DestroyBody(ropeBody);
+//            [self removeChildByTag:ropeTag cleanup:YES];
+//            
+//        }
+        [player setSpriteStartPosition];
+        
+        if (player.life>0) {
+            player.life=player.life-1;
+            CCLabelBMFont *lifeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:lifeTag];
+            lifeLabel.string=[NSString stringWithFormat:@"%d",player.life];
+            
+        }
+        if (player.life==0) {
+            NSLog(@"游戏结束");
+        }
+        
+    }
+    
+    
     //判断是否和香蕉碰撞,并计分
 	// If you adjust the factors make sure you also change them in the -(void) draw method.
 	float playerCollisionRadius =player.contentSize.width* 0.35f;    
 
-//    for (int i=17; i<30; i++) { //香蕉tag区间为
-//         Fruit *fruit=(Fruit *)[bgLayer getChildByTag:i];
-//
-//        if (fruit!=nil) {
-//            float banaCollisionRadius = fruit.contentSize.width * 0.4f;
-//            float maxCollisionDistance=playerCollisionRadius+banaCollisionRadius;
-//            float actualDistance= ccpDistance(player.position, fruit.position);
-//            if (actualDistance<maxCollisionDistance) {
-//               
-//                [bgLayer removeChild:fruit cleanup:YES];
-//                score=score+10;
-//                CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:4];
-//                scoreLabel.string=[NSString stringWithFormat:@"%d",score];
-//                
-//            }
-//            
-//        }
-//    }
+    
+    //todo bug,木桩也能吃分
     CCNode* child;
     CCARRAY_FOREACH(gameObjectLayer.children,child){
         Fruit *fruit=(Fruit *)child;
@@ -448,8 +398,8 @@
     float widthInMeters = screenSize.width / PTM_RATIO;//转换成米单位
     float heightInMeters = screenSize.height / PTM_RATIO;
     
-    b2Vec2 lowerLeftCorner = b2Vec2(0, -1.0);//左下角
-    b2Vec2 lowerRightCorner = b2Vec2(widthInMeters, -1.0);//右下角
+    b2Vec2 lowerLeftCorner = b2Vec2(0, -2.0);//左下角
+    b2Vec2 lowerRightCorner = b2Vec2(widthInMeters, -2.0);//右下角
     b2Vec2 upperLeftCorner = b2Vec2(0, heightInMeters+3.0);//左上角
     b2Vec2 upperRightCorner = b2Vec2(widthInMeters, heightInMeters+3.0); //右上角
     
@@ -479,6 +429,8 @@
 
 -(void)dealloc{
    
+    world->DestroyBody(ropeBody);
+    world->DestroyBody(player.body);
     
     delete listener;
     listener=NULL;
@@ -490,13 +442,11 @@
     world=NULL;
 
     [player release];
-    [rope release];
     [groundShape release];
     [bgLayer release];
     
-   // delete  ropeJoint;
     
-    delete playerJoint;
+    
     
     [nearGuanjian release];
     
