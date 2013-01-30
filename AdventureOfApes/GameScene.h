@@ -14,6 +14,7 @@
 #import "PlayerSpriteA.h"
 #import "RopeSprite.h"
 #import "CreateGroundInWorld.h"
+#import "GameObjectTag.h"
 
 #define PTM_RATIO 32 //单位常量
 
@@ -37,7 +38,7 @@
     CCLayer *bgLayer;
     CCLayer *inputLayer;
     CCLayer *gameObjectLayer;
-    
+    GameOverType gameOverType;
 
 }
 

@@ -108,73 +108,6 @@
 						<real>25</real>
 					</array>
 					<key>customClass</key>
-					<string>Banana</string>
-					<key>flipX</key>
-					<false/>
-					<key>flipY</key>
-					<false/>
-					<key>isExpanded</key>
-					<true/>
-					<key>isRelativeAnchorPoint</key>
-					<true/>
-					<key>lockedScaleRatio</key>
-					<true/>
-					<key>memberVarAssignmentName</key>
-					<string></string>
-					<key>memberVarAssignmentType</key>
-					<integer>0</integer>
-					<key>opacity</key>
-					<integer>255</integer>
-					<key>position</key>
-					<array>
-						<real>178.47265625</real>
-						<real>232.734375</real>
-					</array>
-					<key>rotation</key>
-					<real>0.0</real>
-					<key>scaleX</key>
-					<real>1</real>
-					<key>scaleY</key>
-					<real>1</real>
-					<key>spriteFile</key>
-					<string>fgtBanana.png</string>
-					<key>tag</key>
-					<integer>-1</integer>
-					<key>visible</key>
-					<true/>
-					<key>zOrder</key>
-					<integer>0</integer>
-				</dict>
-			</dict>
-			<dict>
-				<key>children</key>
-				<array/>
-				<key>class</key>
-				<string>CCSprite</string>
-				<key>properties</key>
-				<dict>
-					<key>anchorPoint</key>
-					<array>
-						<real>0.5</real>
-						<real>0.5</real>
-					</array>
-					<key>blendFunc</key>
-					<array>
-						<integer>1</integer>
-						<integer>771</integer>
-					</array>
-					<key>color</key>
-					<array>
-						<integer>255</integer>
-						<integer>255</integer>
-						<integer>255</integer>
-					</array>
-					<key>contentSize</key>
-					<array>
-						<real>25</real>
-						<real>25</real>
-					</array>
-					<key>customClass</key>
 					<string>Tomato</string>
 					<key>flipX</key>
 					<false/>
@@ -713,7 +646,7 @@
 					<key>customClass</key>
 					<string>Banana</string>
 					<key>flipX</key>
-					<false/>
+					<true/>
 					<key>flipY</key>
 					<false/>
 					<key>isExpanded</key>
@@ -998,8 +931,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>217</real>
-						<real>92</real>
+						<real>230</real>
+						<real>100</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -1011,6 +944,73 @@
 					<string>fgtTree.png</string>
 					<key>tag</key>
 					<integer>2</integer>
+					<key>visible</key>
+					<true/>
+					<key>zOrder</key>
+					<integer>0</integer>
+				</dict>
+			</dict>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>class</key>
+				<string>CCSprite</string>
+				<key>properties</key>
+				<dict>
+					<key>anchorPoint</key>
+					<array>
+						<real>0.5</real>
+						<real>0.5</real>
+					</array>
+					<key>blendFunc</key>
+					<array>
+						<integer>1</integer>
+						<integer>771</integer>
+					</array>
+					<key>color</key>
+					<array>
+						<integer>255</integer>
+						<integer>255</integer>
+						<integer>255</integer>
+					</array>
+					<key>contentSize</key>
+					<array>
+						<real>25</real>
+						<real>25</real>
+					</array>
+					<key>customClass</key>
+					<string>Banana</string>
+					<key>flipX</key>
+					<false/>
+					<key>flipY</key>
+					<false/>
+					<key>isExpanded</key>
+					<true/>
+					<key>isRelativeAnchorPoint</key>
+					<true/>
+					<key>lockedScaleRatio</key>
+					<true/>
+					<key>memberVarAssignmentName</key>
+					<string></string>
+					<key>memberVarAssignmentType</key>
+					<integer>0</integer>
+					<key>opacity</key>
+					<integer>255</integer>
+					<key>position</key>
+					<array>
+						<real>186.20703125</real>
+						<real>228.0859375</real>
+					</array>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scaleX</key>
+					<real>1</real>
+					<key>scaleY</key>
+					<real>1</real>
+					<key>spriteFile</key>
+					<string>fgtBanana.png</string>
+					<key>tag</key>
+					<integer>-1</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>

@@ -40,3 +40,9 @@ typedef enum {
 }FruitType;
 
 
+typedef enum {
+   winType,
+   lifeOverType,
+   timeUpType,
+    
+}GameOverType;

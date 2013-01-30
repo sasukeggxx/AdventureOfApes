@@ -52,19 +52,10 @@
                                                          name:@"fgtWall2"]];
         
         
-//        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-//                                                     position:ccp(122, 231)
-//                                                         name:@"fgtTree"] z:0 tag:0];
-//        
-//        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-//                                                     position:ccp(353, 231)
-//                                                         name:@"fgtTree"] z:0 tag:1];
-//        
-//        [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-//                                                     position:ccp(217, 92)
-//                                                         name:@"fgtTree"] z:0 tag:2];
+
         
-        CCLayer *gameObjectLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"GameObjectLayer.ccb"];
+        //tree tag区间 0~5
+        CCLayer *gameObjectLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"GameObjectLayer.ccb"];                                                                                                                                                                                                                                                                                                                                                                                                                                                      
         for (int i=0; i<5; i++) {
              CCSprite *tree=(CCSprite *)[gameObjectLayer getChildByTag:i];
             if (tree!=nil) {

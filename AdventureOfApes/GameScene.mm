@@ -12,7 +12,6 @@
 #import "CCBReader.h"
 #import "CCRoundBy.h"
 #import "InputLayer.h"
-#import "GameObjectTag.h"
 #import "Banana.h"
 
 
@@ -54,7 +53,7 @@
         
         [self initTheWorld];//初始化世界
         
-        [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
+       // [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
         
         groundShape=[CreateGroundInWorld createGroundWithWorld:world];
 
@@ -146,9 +145,9 @@
         if (player.position.x>=nearGuanjian.position.x&&player.position.y>=nearGuanjian.position.y) {//第一象限
             ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],hudu);
         }else if(player.position.x<nearGuanjian.position.x&&player.position.y>nearGuanjian.position.y) {//第二象限
-             ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi-hudu);
+            ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi-hudu);
         }else if (player.position.x<=nearGuanjian.position.x&&player.position.y<=nearGuanjian.position.y){ //第三象限
-             ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi+hudu);
+            ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],b2_pi+hudu);
         }else{  //第4象限
             ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],2*b2_pi-hudu);
 
@@ -182,27 +181,9 @@
             [player setFlipX:NO];//玩家转脸
         }
      
-     
-
-//           playerJointDef.Initialize(nearGuanjian.body,player.body,nearGuanjian.body->GetWorldCenter());
-//           playerJointDef.maxMotorTorque = 10.0f;
-//           playerJointDef.enableMotor = true;
-//           playerJoint=(b2RevoluteJoint *)nearGuanjian.body->GetWorld()->CreateJoint(&playerJointDef);
-//        
-//        if (player.position.x<=nearGuanjian.position.x) {//如果玩家在挂件的左边做逆时针旋转
-//              playerJoint->SetMotorSpeed(player.speed);
-//
-//        }else{//在挂件右边做顺时针旋转
-//              playerJoint->SetMotorSpeed(-player.speed);            
-//        }
-         
-        
-        
-        
-        
+       
     }else if (firstTouchLocation.x<screenCenter.x){//如果点击左边则转向
-    
-          //ropeJoint->SetMotorSpeed(ropeJoint->GetMotorSpeed() * -1);
+
           playerJoint->SetMotorSpeed(playerJoint->GetMotorSpeed() * -1);
     
     }
@@ -234,16 +215,11 @@
         if (ropeJoint!=NULL) {
              world->DestroyJoint(ropeJoint);
              ropeBody->SetTransform(b2Vec2(0,0),0);
-            world->DestroyBody(ropeBody);
+             world->DestroyBody(ropeBody);
             [self removeChildByTag:ropeTag cleanup:YES];
             
         }
-             
-
-        
     }
-   
-
 
 }
 
@@ -306,17 +282,14 @@
             
         }
         if (player.life==0) {
+            gameOverType=lifeOverType; //游戏结束类型为玩家生命数为0
             NSLog(@"游戏结束");
         }
         
     }
-    
-    
-    //判断是否和香蕉碰撞,并计分
-	// If you adjust the factors make sure you also change them in the -(void) draw method.
-	float playerCollisionRadius =player.contentSize.width* 0.35f;    
 
-    
+    //判断是否和香蕉碰撞,并计分
+	float playerCollisionRadius =player.contentSize.width* 0.35f;
     //todo bug,木桩也能吃分
     CCNode* child;
     CCARRAY_FOREACH(gameObjectLayer.children,child){
@@ -337,10 +310,18 @@
                         
                     }
 
-    
     }
     
-    
+    //如果水果吃完了,只剩3个木桩了.游戏win
+    if (gameObjectLayer.children.count<=3) {
+        CCParticleSystem* system=[CCParticleSystemQuad particleWithFile:@"treeParticle.plist"];
+        system.positionType = kCCPositionTypeFree;
+        CCSprite *guanJian=(CCSprite *)[gameObjectLayer getChildByTag:2];
+        system.position=guanJian.position;
+        [gameObjectLayer addChild:system];
+        gameOverType=winType;//游戏结束类型为胜利
+    }
+   
     
     
 }
@@ -353,6 +334,7 @@
                 countTime=countTime--;
                 timeLabel.string=[NSString stringWithFormat:@"%d",countTime];
             }else{
+                gameOverType=timeUpType;//游戏结束类型为时间到期
                 [self unschedule:_cmd];
             
             }
@@ -451,6 +433,8 @@
     [nearGuanjian release];
     
     [inputLayer release];
+    
+    [gameObjectLayer release];
     
     [super dealloc];
     CCLOG(@"GameScene called dealloc");

@@ -215,6 +215,7 @@
 		ADE56DC616A4E4CF00D91211 /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADE56DC516A4E4CF00D91211 /* Player.mm */; };
 		ADED6C2216B11D10001D5443 /* GameObjectLayer.ccb in Resources */ = {isa = PBXBuildFile; fileRef = ADED6C2116B11D10001D5443 /* GameObjectLayer.ccb */; };
 		ADED6C3816B12A44001D5443 /* CCBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED6C3716B12A44001D5443 /* CCBReader.m */; };
+		ADEDF78916B8C3DA00E29C46 /* treeParticle.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEDF78816B8C3DA00E29C46 /* treeParticle.plist */; };
 		ADEEC07316A93425005AD266 /* backBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEEC07216A93424005AD266 /* backBtn.png */; };
 		ADEEC07716A938DE005AD266 /* InputLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADEEC07616A938DE005AD266 /* InputLayer.mm */; };
 		ADF547E916B75D1500479084 /* ground-shape.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADF547E816B75D1500479084 /* ground-shape.plist */; };
@@ -622,6 +623,7 @@
 		ADED6C2116B11D10001D5443 /* GameObjectLayer.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameObjectLayer.ccb; sourceTree = "<group>"; };
 		ADED6C3616B12A44001D5443 /* CCBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBReader.h; sourceTree = "<group>"; };
 		ADED6C3716B12A44001D5443 /* CCBReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBReader.m; sourceTree = "<group>"; };
+		ADEDF78816B8C3DA00E29C46 /* treeParticle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = treeParticle.plist; sourceTree = "<group>"; };
 		ADEEC07216A93424005AD266 /* backBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backBtn.png; sourceTree = "<group>"; };
 		ADEEC07516A938DE005AD266 /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
 		ADEEC07616A938DE005AD266 /* InputLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InputLayer.mm; sourceTree = "<group>"; };
@@ -740,6 +742,7 @@
 		AD9DD69D169AA3F9002A28BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ADEDF78816B8C3DA00E29C46 /* treeParticle.plist */,
 				ADF547E816B75D1500479084 /* ground-shape.plist */,
 				AD48765A16B677EF006B2943 /* fgtRope3.png */,
 				AD48765716B668AC006B2943 /* fgtRope2.png */,
@@ -1439,6 +1442,7 @@
 				AD48765816B668AC006B2943 /* fgtRope2.png in Resources */,
 				AD48765B16B677EF006B2943 /* fgtRope3.png in Resources */,
 				ADF547E916B75D1500479084 /* ground-shape.plist in Resources */,
+				ADEDF78916B8C3DA00E29C46 /* treeParticle.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
