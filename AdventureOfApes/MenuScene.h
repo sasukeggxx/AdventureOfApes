@@ -10,7 +10,15 @@
 #import "cocos2d.h"
 
 @interface MenuScene : CCLayer {
-    
-}
+    CCSprite *settingSprite;
+    CCMenuItem* shakeOnItem;
+    CCMenuItem* shakeOffItem;
+    CCMenuItem* soundOnItem;
+    CCMenuItem* soundOffItem;
+    CCMenuItem* languageChItem;
+    CCMenuItem* languageEnItem;
+    int mode;
+    float currentShowRect;//当前可视区域的大小
+    }
 +(id) scene;
 @end

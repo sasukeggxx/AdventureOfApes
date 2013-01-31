@@ -7,9 +7,7 @@
 //
 
 #import "MainScene.h"
-#import "StoreScene.h"
 #import "BigStageSelectScene.h"
-#import "SettingScene.h"
 
 
 @implementation MainScene
@@ -71,21 +69,7 @@
     
 }
 
-//点击设置图标
--(void)settingCall:(id)sender{
-    
-    
-     [[CCDirector sharedDirector] pushScene:[SettingScene scene]];
-    
-}
 
-//点击商店图标
--(void)storeSceneCall:(id)sender{
-    
-    [[CCDirector sharedDirector]replaceScene:[StoreScene scene]];
-    
-    
-}
 
 
 -(void)dealloc{

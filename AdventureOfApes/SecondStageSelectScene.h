@@ -12,6 +12,8 @@
 @interface SecondStageSelectScene : CCLayer <UIScrollViewDelegate>{
     UIPageControl *pagecontrol;
     UIScrollView *scrollview;
+    BOOL *buttonState;
+    float height;
 }
 +(id)scene;
 @end

@@ -7,13 +7,9 @@
 //
 
 #import "SecondStageSelectScene.h"
-#import "MainScene.h"
 #import "GameScene.h"
-
-
+#import "BigStageSelectScene.h"
 @implementation SecondStageSelectScene
-
-
 
 +(id)scene{
     CCScene *scene=[CCScene node];
@@ -28,99 +24,98 @@
 -(id)init{
     if (self=[super init]) {
         CGSize size = [[CCDirector sharedDirector] winSize];
-        CCLayerColor *bgcol=[CCLayerColor layerWithColor:ccc4(46, 131, 55,255)];//背景色        
-        [self addChild:bgcol z:0];
-     
-
-        scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];//设置scrollview的可视界面大小，这里设置为全屏
+        buttonState = NO;
+        CCSprite *bg = [CCSprite spriteWithFile:@"smallBg.png"];
+        bg.position = ccp(size.width/2, size.height/2);
+        [self addChild:bg z:-1];
+        //添加返回按钮
+        CCSprite  *backSprite = [CCSprite spriteWithFile:@"smallBack.png"];
+        CCSprite  *sbackSprite = [CCSprite spriteWithFile:@"ssmallBack.png"];
+        CCMenuItemSprite *backItem = [CCMenuItemSprite itemFromNormalSprite:backSprite selectedSprite:sbackSprite disabledSprite:nil target:self selector:@selector(backCall:)];
+        backItem.isEnabled = YES;
+        CCMenu *backMenu = [CCMenu menuWithItems:
+                            backItem,nil];
+        backMenu.position=ccp(backSprite.contentSize.width/2+5,size.height-backSprite.contentSize.height/2-5);
+        [bg addChild:backMenu z:0];
+        
+        scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(backSprite.contentSize.width, 0, size.width-backSprite.contentSize.width, size.height)];//设置scrollview的可视界面大小，这里设置为全屏
         scrollview.pagingEnabled =  YES;//滚动时，自动滚动到子视图subview的边界
         scrollview.contentSize = CGSizeMake(size.width*1, size.height);//设置scrollview的滚动范围，因为有1个界面，所以是480*1
         scrollview.alwaysBounceHorizontal = YES;//在水平方向滚到头的时候有反弹的效果
         [scrollview setShowsHorizontalScrollIndicator:YES];//隐藏滚动条
         scrollview.delegate=self;//设置代理
         
-        
-        CCSprite *bgImg=[CCSprite spriteWithFile:@"tollgate-STONE.png"];
+        CCSprite *bgImg=[CCSprite spriteWithFile:@"smallCupBg.png"];
+        CCSprite *image= [CCSprite spriteWithFile:@"threeMonkey.png"];
         //todo 小关数据需要从配置文件读取
-        //以下是临时往scrollview添加上8个小关按钮
         
-        //scoreLabel = [CCLabelBMFont labelWithString:@"0" fntFile:@"bitmapfont.fnt"];
+        //以下是临时往scrollview添加上12个小关按钮
         
-        UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button1.frame = CGRectMake(size.width*0.1, size.height*0.1, bgImg.contentSize.width,bgImg.contentSize.height);
-        [button1 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
-        [button1 setImage:[UIImage imageNamed:@"tollgate-1.png"] forState:UIControlStateNormal];
-        [button1 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollview addSubview:button1];
+        for(int i=1;i<5;i++)
+        {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.frame = CGRectMake(size.width*0.03+size.width*(i-1)*0.2,size.height*0.12,bgImg.contentSize.width, bgImg.contentSize.height);
+            //button.adjustsImageWhenDisabled = YES;
+            //[button setEnabled:NO];
+            [button setBackgroundImage:[UIImage imageNamed:@"smallCupBgLock.png"] forState:UIControlStateDisabled];
+            [button setBackgroundImage:[UIImage imageNamed:@"smallCupBg.png"] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage imageNamed:@"ssmallCupBg.png"] forState:UIControlStateHighlighted];
+            //if(buttonState)
+            //{
+                [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"small-%d.png",i]]forState:UIControlStateNormal];
+            //}
+            [button addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
+            UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"threeMonkey.png"]];
+            [scrollview addSubview:imgView];
+            imgView.frame =CGRectMake(size.width*0.03+size.width*(i-1)*0.2, size.height*0.12+bgImg.contentSize.height, image.contentSize.width, image.contentSize.height);
+            [imgView release];
+            [scrollview addSubview:button];
+        }
+        for(int i=5;i<9;i++)
+        {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.frame = CGRectMake(size.width*0.03+size.width*(i-5)*0.2,size.height*0.4,bgImg.contentSize.width, bgImg.contentSize.height);
+            button.adjustsImageWhenDisabled = YES;
+            [button setEnabled:NO];
+            [button setBackgroundImage:[UIImage imageNamed:@"smallCupBgLock.png"] forState:UIControlStateDisabled];
+            [button setBackgroundImage:[UIImage imageNamed:@"smallCupBg.png"] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage imageNamed:@"ssmallCupBg.png"] forState:UIControlStateHighlighted];
+            if(buttonState)
+            {
+                [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"small-%d.png",i]]forState:UIControlStateNormal];
+            }
+               [button addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
+            
+               
+            UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"threeMonkey.png"]];
+            [scrollview addSubview:imgView];
+            imgView.frame =CGRectMake(size.width*0.03+size.width*(i-5)*0.2, size.height*0.4+bgImg.contentSize.height, image.contentSize.width, image.contentSize.height);
+            [imgView release];
+
+            [scrollview addSubview:button];
+        }
         
-        
-        UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button2.frame = CGRectMake(size.width*0.3,size.height*0.1,bgImg.contentSize.width, bgImg.contentSize.height);
-        [button2 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
-        [button2 setImage:[UIImage imageNamed:@"tollgate-2.png"] forState:UIControlStateNormal];
-        [button2 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollview addSubview:button2];
-        
-        UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button3.frame = CGRectMake(size.width*0.5, size.height*0.1,bgImg.contentSize.width, bgImg.contentSize.height);
-        [button3 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
-        [button3 setImage:[UIImage imageNamed:@"tollgate-3.png"] forState:UIControlStateNormal];
-        [button3 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollview addSubview:button3];
-        
-        UIButton *button4 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button4.frame = CGRectMake(size.width*0.7, size.height*0.1, bgImg.contentSize.width, bgImg.contentSize.height);
-        [button4 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
-        [button4 setImage:[UIImage imageNamed:@"tollgate-4.png"] forState:UIControlStateNormal];
-        [button4 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollview addSubview:button4];
-        
-        UIButton *button5 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button5.frame = CGRectMake(size.width*0.1, size.height*0.4, bgImg.contentSize.width, bgImg.contentSize.height);
-        [button5 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
-        [button5 setImage:[UIImage imageNamed:@"tollgate-5.png"] forState:UIControlStateNormal];
-        [button5 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollview addSubview:button5];
-        
-        UIButton *button6 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button6.frame = CGRectMake(size.width*0.3,size.height*0.4,bgImg.contentSize.width, bgImg.contentSize.height);
-        [button6 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
-        [button6 setImage:[UIImage imageNamed:@"tollgate-6.png"] forState:UIControlStateNormal];
-        [button6 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollview addSubview:button6];
-        
-        
-        UIButton *button7 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button7.frame = CGRectMake(size.width*0.5, size.height*0.4, bgImg.contentSize.width, bgImg.contentSize.height);
-        [button7 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
-        [button7 setImage:[UIImage imageNamed:@"tollgate-7.png"] forState:UIControlStateNormal];
-        [button7 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollview addSubview:button7];
-        
-        UIButton *button8 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button8.frame = CGRectMake(size.width*0.7, size.height*0.4, bgImg.contentSize.width, bgImg.contentSize.height);
-        [button8 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
-        [button8 setImage:[UIImage imageNamed:@"tollgate-8.png"] forState:UIControlStateNormal];
-        [button8 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollview addSubview:button8];
-        
-        UIButton *button9 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button9.frame = CGRectMake(size.width*0.1,size.height*0.7,bgImg.contentSize.width, bgImg.contentSize.height);
-        [button9 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
-        [button9 setImage:[UIImage imageNamed:@"tollgate-9.png"] forState:UIControlStateNormal];
-        [button9 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollview addSubview:button9];
-        
-        UIButton *button10 = [UIButton buttonWithType:UIButtonTypeCustom];
-        button10.frame = CGRectMake(size.width*0.3,size.height*0.7,bgImg.contentSize.width, bgImg.contentSize.height);
-        [button10 setBackgroundImage:[UIImage imageNamed:@"tollgate-STONE.png"] forState:UIControlStateNormal];
-        [button10 setImage:[UIImage imageNamed:@"tollgate-1.png"] forState:UIControlStateNormal];
-        [button10 addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollview addSubview:button10];
-        
-        
-        
-        
+        for(int i=9;i<=12;i++)
+        {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.frame = CGRectMake(size.width*0.03+size.width*(i-9)*0.2,size.height*0.68,bgImg.contentSize.width, bgImg.contentSize.height);
+            button.adjustsImageWhenDisabled = YES;
+            [button setEnabled:NO];
+            [button setBackgroundImage:[UIImage imageNamed:@"smallCupBgLock.png"] forState:UIControlStateDisabled];            [button setBackgroundImage:[UIImage imageNamed:@"smallCupBg.png"] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage imageNamed:@"ssmallCupBg.png"] forState:UIControlStateHighlighted];
+            if(buttonState)
+            {
+                [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"small-%d.png",i]]forState:UIControlStateNormal];
+            }
+            
+            [button addTarget:self action:@selector(btnCall:) forControlEvents:UIControlEventTouchUpInside];
+            UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"threeMonkey.png"]];
+            [scrollview addSubview:imgView];
+            imgView.frame =CGRectMake(size.width*0.03+size.width*(i-9)*0.2, size.height*0.68+bgImg.contentSize.height, image.contentSize.width, image.contentSize.height);
+            [imgView release];
+            [scrollview addSubview:button];
+            
+        }
         
         [[[CCDirector sharedDirector] openGLView] addSubview:scrollview];
         
@@ -131,7 +126,7 @@
         pagecontrol.numberOfPages = 1;//1页
         
         [[[CCDirector sharedDirector] openGLView] addSubview:pagecontrol];
-
+        
         
     }
     return self;
@@ -150,17 +145,18 @@
 //点击btn图标
 -(void)btnCall:(id)sender{
     
-   [[CCDirector sharedDirector]replaceScene:[GameScene scene]];
+   [[CCDirector sharedDirector]replaceScene:[CCTransitionFade transitionWithDuration:0.2 scene:[GameScene scene]]];
     
 }
 
 //点击返回图标
 -(void)backCall:(id)sender{
+   
+        [[CCDirector sharedDirector]replaceScene:[CCTransitionFade transitionWithDuration:0.2 scene:[BigStageSelectScene scene]]];
+        
+    }
     
-    [[CCDirector sharedDirector]replaceScene:[MainScene scene]];
-    
-    
-}
+
 
 
 -(void)dealloc{
