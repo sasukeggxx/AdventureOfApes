@@ -29,7 +29,7 @@
 -(id)init{
     if (self=[super init]) {
         
-       
+        gameOverType=notOverType;
         
         self.isTouchEnabled=YES;
 
@@ -65,6 +65,10 @@
         [self scheduleUpdate];
         
         [self schedule:@selector(countDownTime:) interval:1.0];// 倒计时
+        
+        [self schedule:@selector(lifeCheck:)];  //生命值检查
+        
+        [self schedule:@selector(gameOverCheck:)];  //gameOver检查        
         
     }
 
@@ -142,6 +146,7 @@
         ropeBodyDef.position=[GameUtil toMeters:nearGuanjian.position];
         ropeBodyDef.userData = sprite;
         ropeBody = world->CreateBody(&ropeBodyDef);
+        //设置绳子偏移弧度
         if (player.position.x>=nearGuanjian.position.x&&player.position.y>=nearGuanjian.position.y) {//第一象限
             ropeBody->SetTransform([GameUtil toMeters:nearGuanjian.position],hudu);
         }else if(player.position.x<nearGuanjian.position.x&&player.position.y>nearGuanjian.position.y) {//第二象限
@@ -157,7 +162,7 @@
    
         dynamicBox.SetAsBox(actualDistance/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f,[GameUtil toMeters:ccp(actualDistance*0.5, 0.0)],0.0);
         
-                // Define the dynamic body fixture.
+        // Define the dynamic body fixture.
         b2FixtureDef fixtureDef;
         fixtureDef.shape = &dynamicBox;
         fixtureDef.density = 0.05f;
@@ -174,24 +179,20 @@
         ropeJointDef.enableMotor = true;
         if (player.position.x<=nearGuanjian.position.x) {//如果玩家在挂件的左边做逆时针旋转
             ropeJoint->SetMotorSpeed(player.speed);
+            [player setIsCircle:YES];
             [player setFlipX:YES];//玩家转脸
             
         }else{//在挂件右边做顺时针旋转
             ropeJoint->SetMotorSpeed(-player.speed);
+            [player setIsCircle:YES];
             [player setFlipX:NO];//玩家转脸
         }
      
        
     }else if (firstTouchLocation.x<screenCenter.x){//如果点击左边则转向
-
-          playerJoint->SetMotorSpeed(playerJoint->GetMotorSpeed() * -1);
-    
+          ropeJoint->SetMotorSpeed(ropeJoint->GetMotorSpeed() * -1);          
     }
     
-    
-    
- 
-
 }
    
 
@@ -208,10 +209,7 @@
     }
     
     if (touchLocation.x>screenCenter.x) {//如果松开的是右边,玩家离开绳子做抛物线
-        
-        if (playerJoint!=NULL) {
-            world->DestroyJoint(playerJoint);
-        }
+        [player setIsCircle:NO];
         if (ropeJoint!=NULL) {
              world->DestroyJoint(ropeJoint);
              ropeBody->SetTransform(b2Vec2(0,0),0);
@@ -226,16 +224,9 @@
 
 
 
-
-
-
 //处理每帧的物理变化
 -(void) update:(ccTime)delta{
     
-    // The number of iterations influence the accuracy of the physics simulation. With higher values the
-	// body's velocity and position are more accurately tracked but at the cost of speed.
-	// Usually for games only 1 position iteration is necessary to achieve good results.
-	float timeStep = 0.03f;
     float capedDelta=fminf(delta, 0.08f);//安全上限
 	int32 velocityIterations = 8;
 	int32 positionIterations = 1;
@@ -261,33 +252,7 @@
   
     [self addMotionStreakPoint:player.position];//添加拖尾
     
-    //判断玩家生命值
-    if (player.position.y<-10) {//玩家死了,生命数减1
-//        if (playerJoint!=NULL) {
-//            world->DestroyJoint(playerJoint);
-//        }
-//        if (ropeJoint!=NULL) {
-//            world->DestroyJoint(ropeJoint);
-//            ropeBody->SetTransform(b2Vec2(0,0),0);
-//            world->DestroyBody(ropeBody);
-//            [self removeChildByTag:ropeTag cleanup:YES];
-//            
-//        }
-        [player setSpriteStartPosition];
-        
-        if (player.life>0) {
-            player.life=player.life-1;
-            CCLabelBMFont *lifeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:lifeTag];
-            lifeLabel.string=[NSString stringWithFormat:@"%d",player.life];
-            
-        }
-        if (player.life==0) {
-            gameOverType=lifeOverType; //游戏结束类型为玩家生命数为0
-            NSLog(@"游戏结束");
-        }
-        
-    }
-
+    
     //判断是否和香蕉碰撞,并计分
 	float playerCollisionRadius =player.contentSize.width* 0.35f;
     //todo bug,木桩也能吃分
@@ -303,7 +268,7 @@
             
                             [gameObjectLayer removeChild:fruit cleanup:YES];
                              score=score+10;
-                            CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:4];
+                            CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:scoreTag];
                             scoreLabel.string=[NSString stringWithFormat:@"%d",score];
                             
                         }
@@ -326,17 +291,65 @@
     
 }
 
+
+//判断玩家生命值
+-(void) lifeCheck:(ccTime)delta{
+    //判断玩家生命值
+    if (player.position.y<-20) {//玩家死了,生命数减1
+        
+        [player setSpriteStartPosition];
+        
+        if (player.life>0) {
+            player.life=player.life-1;
+            CCLabelBMFont *lifeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:lifeTag];
+            lifeLabel.string=[NSString stringWithFormat:@"%d",player.life];
+            
+        }
+        if (player.life==0) {
+            gameOverType=lifeOverType; //游戏结束类型为玩家生命数为0
+            
+        }
+        
+    }
+
+
+}
+
+
+//游戏结束类型检查
+-(void)gameOverCheck:(ccTime)delta{
+    switch (gameOverType) {
+        case winType:
+           
+            //[self unscheduleAllSelectors];
+            break;
+        case lifeOverType:
+            NSLog(@"生命值为0");
+            
+            //[self unscheduleAllSelectors];
+            break;
+        case timeUpType:
+            NSLog(@"时间到");
+            //[self unscheduleAllSelectors];
+            break;
+        default:
+            break;
+    }
+
+
+}
+
+
 //倒计时
 -(void) countDownTime:(ccTime)delta{
-            CCLabelBMFont *timeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:3];
+            CCLabelBMFont *timeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:timeTag];
             int countTime=[timeLabel.string intValue];
             if (countTime>0) {
                 countTime=countTime--;
                 timeLabel.string=[NSString stringWithFormat:@"%d",countTime];
             }else{
                 gameOverType=timeUpType;//游戏结束类型为时间到期
-                [self unschedule:_cmd];
-            
+                [self unschedule:_cmd];            
             }
             
 
@@ -424,11 +437,10 @@
     world=NULL;
 
     [player release];
+    
     [groundShape release];
+    
     [bgLayer release];
-    
-    
-    
     
     [nearGuanjian release];
     

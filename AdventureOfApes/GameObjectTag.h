@@ -16,19 +16,18 @@
 
 
 typedef enum {
-    scoreTag,
-    timeTag,
-}BtnTag;
-
-
-
-typedef enum {
     inputLayerTag,
     ParallaxSceneTagRibbon,
     ropeTag,
 }GameSceneObjectTag;
 
-
+typedef enum {
+    lifeTag,
+    seriesFruitTag,
+    timeTag,
+    scoreTag,
+    
+}InputLayerObjectTag;
 
 
 typedef enum {
@@ -44,5 +43,6 @@ typedef enum {
    winType,
    lifeOverType,
    timeUpType,
+   notOverType,
     
 }GameOverType;

@@ -229,6 +229,7 @@
 		ADF64B1216A5ABB200B560AA /* fgtWall.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF64B0A16A5ABB200B560AA /* fgtWall.png */; };
 		ADF64B1316A5ABB200B560AA /* fgtWall2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF64B0B16A5ABB200B560AA /* fgtWall2.png */; };
 		ADF908C716B7B545008200F2 /* CreateGroundWithCCB.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADF908C616B7B545008200F2 /* CreateGroundWithCCB.mm */; };
+		ADFCD03A16BA133A0064CF48 /* stageData.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADFCD03916BA133A0064CF48 /* stageData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -639,6 +640,7 @@
 		ADF64B0B16A5ABB200B560AA /* fgtWall2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgtWall2.png; sourceTree = "<group>"; };
 		ADF908C516B7B545008200F2 /* CreateGroundWithCCB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroundWithCCB.h; sourceTree = "<group>"; };
 		ADF908C616B7B545008200F2 /* CreateGroundWithCCB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateGroundWithCCB.mm; sourceTree = "<group>"; };
+		ADFCD03916BA133A0064CF48 /* stageData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stageData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -795,6 +797,7 @@
 				AD9DD6AE169AA3F9002A28BB /* Info.plist */,
 				AD9DD6AF169AA3F9002A28BB /* iTunesArtwork */,
 				AD9DD86E169AA3FB002A28BB /* blocks.png */,
+				ADFCD03916BA133A0064CF48 /* stageData.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1443,6 +1446,7 @@
 				AD48765B16B677EF006B2943 /* fgtRope3.png in Resources */,
 				ADF547E916B75D1500479084 /* ground-shape.plist in Resources */,
 				ADEDF78916B8C3DA00E29C46 /* treeParticle.plist in Resources */,
+				ADFCD03A16BA133A0064CF48 /* stageData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

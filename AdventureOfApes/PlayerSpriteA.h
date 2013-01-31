@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "BodyNode.h"
 #import "Player.h"
-#define lifeTag 1
+
 
 
 

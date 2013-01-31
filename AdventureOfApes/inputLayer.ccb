@@ -199,7 +199,7 @@
 					<key>string</key>
 					<string>200</string>
 					<key>tag</key>
-					<integer>3</integer>
+					<integer>2</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -379,7 +379,7 @@
 					<key>string</key>
 					<string>3</string>
 					<key>tag</key>
-					<integer>1</integer>
+					<integer>0</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -439,7 +439,7 @@
 					<key>string</key>
 					<string>0</string>
 					<key>tag</key>
-					<integer>2</integer>
+					<integer>1</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>
@@ -487,8 +487,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>448.80859375</real>
-						<real>308.140625</real>
+						<real>444.640625</real>
+						<real>304.66796875</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -499,7 +499,7 @@
 					<key>string</key>
 					<string>0</string>
 					<key>tag</key>
-					<integer>4</integer>
+					<integer>3</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>

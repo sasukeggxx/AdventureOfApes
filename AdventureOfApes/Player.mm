@@ -18,7 +18,7 @@
 @synthesize maxRadius;
 @synthesize minRadius;
 @synthesize tailName;
-
+@synthesize isCircle;
 
 
 -(void)dealloc{
