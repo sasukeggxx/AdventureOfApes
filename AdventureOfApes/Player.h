@@ -18,6 +18,7 @@
     float minRadius;     //最小半径
     NSString *tailName;  //玩家尾巴
     bool isCircle;       //玩家是否在转圈
+    BodyNode *cirleWithGuanjian;   //玩家围着哪个挂件转圈
 }
 @property (nonatomic,assign) int collisionCount;
 @property (nonatomic,assign) int life;
@@ -26,7 +27,7 @@
 @property (nonatomic,assign) float minRadius;
 @property (nonatomic,retain) NSString *tailName;
 @property (nonatomic,assign) bool isCircle;
-
+@property (nonatomic,retain) BodyNode *cirleWithGuanjian; 
 
 
 @end

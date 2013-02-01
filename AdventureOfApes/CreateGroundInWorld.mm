@@ -25,30 +25,30 @@
 	{
        
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world 
-										  position:ccp(10, 297)
+										  position:ccp(8, 297)
 											  name:@"fgtWall"]];
 		
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world  
-                                                         position:ccp(10, 172)
+                                                         position:ccp(8, 172)
                                                              name:@"fgtWall"]];
         
       
         
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                         position:ccp(10, 45)
+                                                         position:ccp(8, 45)
                                                              name:@"fgtWall"]];
        
         
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                         position:ccp(476, 298)
+                                                         position:ccp(473, 298)
                                                              name:@"fgtWall2"]];
 		
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                     position:ccp(476, 170)
+                                                     position:ccp(473, 170)
                                                          name:@"fgtWall2"]];
 
         [self addChild:[CCSpritePartInWorld groundPartInWorld:world
-                                                     position:ccp(476, 45)
+                                                     position:ccp(473, 45)
                                                          name:@"fgtWall2"]];
         
         

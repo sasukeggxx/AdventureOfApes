@@ -33,59 +33,20 @@
             <key>fgtBoy</key>
             <dict>
                 <key>frame</key>
-                <string>{{45,454},{41,41}}</string>
+                <string>{{2,324},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{41,41}}</string>
+                <string>{{0,0},{32,32}}</string>
                 <key>sourceSize</key>
-                <string>{41,41}</string>
-            </dict>
-            <key>fgtBoy2</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,454},{41,41}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{41,41}}</string>
-                <key>sourceSize</key>
-                <string>{41,41}</string>
-            </dict>
-            <key>fgtRope</key>
-            <dict>
-                <key>frame</key>
-                <string>{{484,43},{4,16}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{4,16}}</string>
-                <key>sourceSize</key>
-                <string>{4,16}</string>
-            </dict>
-            <key>fgtRope2</key>
-            <dict>
-                <key>frame</key>
-                <string>{{502,27},{64,4}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{64,4}}</string>
-                <key>sourceSize</key>
-                <string>{64,4}</string>
+                <string>{32,32}</string>
             </dict>
             <key>fgtSign</key>
             <dict>
                 <key>frame</key>
-                <string>{{484,49},{14,14}}</string>
+                <string>{{484,303},{14,14}}</string>
                 <key>offset</key>
                 <string>{-1,-1}</string>
                 <key>rotated</key>
@@ -98,7 +59,7 @@
             <key>fgtTree</key>
             <dict>
                 <key>frame</key>
-                <string>{{484,27},{16,14}}</string>
+                <string>{{484,287},{16,14}}</string>
                 <key>offset</key>
                 <string>{0,-1}</string>
                 <key>rotated</key>
@@ -111,28 +72,28 @@
             <key>fgtWall</key>
             <dict>
                 <key>frame</key>
-                <string>{{36,324},{32,128}}</string>
+                <string>{{484,157},{16,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{32,128}}</string>
+                <string>{{0,0},{16,128}}</string>
                 <key>sourceSize</key>
-                <string>{32,128}</string>
+                <string>{16,128}</string>
             </dict>
             <key>fgtWall2</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,324},{32,128}}</string>
+                <string>{{484,27},{16,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{32,128}}</string>
+                <string>{{0,0},{16,128}}</string>
                 <key>sourceSize</key>
-                <string>{32,128}</string>
+                <string>{16,128}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -144,7 +105,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:16f7728543bde78a7cc044485030ee66$</string>
+            <string>$TexturePacker:SmartUpdate:68fac97301fbc64c3b4b91c307f2fd85$</string>
             <key>textureFileName</key>
             <string>image.pvr.ccz</string>
         </dict>

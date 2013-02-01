@@ -85,19 +85,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "AdventureOfApes/PlayerSpriteA.mm"
-         timestampString = "380798104.95371"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
-         landmarkName = "-applyForce:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameScene.mm"
          timestampString = "381223054.927438"
          startingColumnNumber = "9223372036854775807"
@@ -111,19 +98,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "AdventureOfApes/PlayerSpriteA.mm"
-         timestampString = "380855862.67539"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "104"
-         endingLineNumber = "104"
-         landmarkName = "-update:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameScene.mm"
          timestampString = "381224340.086275"
          startingColumnNumber = "9223372036854775807"
@@ -131,6 +105,19 @@
          startingLineNumber = "98"
          endingLineNumber = "98"
          landmarkName = "-initThePlayer"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "AdventureOfApes/GameScene.mm"
+         timestampString = "381395993.044586"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "330"
+         endingLineNumber = "330"
+         landmarkName = "-gameOverCheck:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

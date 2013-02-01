@@ -26,7 +26,7 @@
 
         self.life=3;
         
-        self.maxRadius=340.0;//最大半径
+        self.maxRadius=300.0;//最大半径
         
         self.minRadius=30.0;//最小半径
         

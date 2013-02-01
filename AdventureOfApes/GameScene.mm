@@ -114,7 +114,7 @@
     if (nearGuanjian==nil) {//如果找不到最近的挂件
         return;
     }
-    
+    player.cirleWithGuanjian=nearGuanjian; //玩家围绕该挂件转圈
     NSArray *touchs = [touches allObjects];
     if (touches.count>=2) { //同时两点不支持
         return;
@@ -318,13 +318,24 @@
 
 //游戏结束类型检查
 -(void)gameOverCheck:(ccTime)delta{
+    BodyNode *winGuanjian=(BodyNode *)[groundShape getChildByTag:2];//胜利挂件tag=2
     switch (gameOverType) {
         case winType:
-           
+            if (player.isCircle&&winGuanjian==player.cirleWithGuanjian) {//如果玩家正在胜利挂件上旋转
+                ropeJoint->SetMotorSpeed(player.speed);
+                NSLog(@"%f",player.speed);
+                if (player.speed<30.0) {//玩家速度增加到30
+                     player.speed=player.speed+4.0*delta;
+                }else{  
+                   
+                }
+               
+            }
+            
             //[self unscheduleAllSelectors];
             break;
         case lifeOverType:
-            NSLog(@"生命值为0");
+           // NSLog(@"生命值为0");
             
             //[self unscheduleAllSelectors];
             break;

@@ -19,7 +19,7 @@
 @synthesize minRadius;
 @synthesize tailName;
 @synthesize isCircle;
-
+@synthesize cirleWithGuanjian;
 
 -(void)dealloc{
     [tailName release];
