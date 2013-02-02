@@ -13,49 +13,24 @@
 @implementation InputLayer
 
 
--(id)init{
 
-    if (self=[super init]) {
-        
-//        CCMenuItemSprite *backItem=[CCMenuItemSprite itemFromNormalSprite:[CCSprite spriteWithFile:@"backBtn.png"]
-//                                                          selectedSprite:[CCSprite spriteWithFile:@"backBtn.png"] disabledSprite:[CCSprite spriteWithFile:@"backBtn.png"]
-//                                                                  target:self selector:@selector(backBtnTouched:)];
-//        
-//      
-//
-//        CCMenu *menu = [CCMenu menuWithItems:backItem,nil];
-//        
-//          menu.position=ccp(30, 290.0);
-//               
-//        [self addChild:menu];
-        
-        
-//        CCLabelBMFont *scoreBMFont=[CCLabelBMFont labelWithString:@"0" fntFile:@"26sizefont.fnt"];
-//        [self addChild:scoreBMFont z:0 tag:scoreTag];
-//        scoreBMFont.position = ccp(430,290);
-//        
-//        CCLabelBMFont *timeBMFont=[CCLabelBMFont labelWithString:@"200" fntFile:@"26sizefont.fnt"];
-//        [self addChild:timeBMFont z:0 tag:timeTag];
-//        timeBMFont.position = ccp(240,300);
-        
-        
-    }
 
-    return  self;
-}
-
--(void) backBtnTouched: (id) sender
+-(void)pauseBtnTouch:(id)sender
 {
+    
+    CCLayer *gameScene=(CCLayer *)[self parent];
+    if ([gameScene getChildByTag:pauseLayerTag]) {
+        return;
+    }
+    
+    CCLayer *pauseLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"pauseLayer.ccb"];
+    [gameScene addChild:pauseLayer z:1 tag:pauseLayerTag];
+    id moveToCenter=[CCMoveTo actionWithDuration:0.3 position:ccp(0, 2)];
+    [pauseLayer runAction:moveToCenter];
 
-    //[[CCDirector sharedDirector] replaceScene:[SecondStageSelectScene scene]];
 }
 
 
-
--(void)dealloc{
-    [super dealloc]; 
-
-}
 
 
 

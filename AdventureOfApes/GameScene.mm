@@ -326,7 +326,8 @@
                 NSLog(@"%f",player.speed);
                 if (player.speed<60.0) {//玩家速度增加到60
                      player.speed=player.speed+10.0*delta;
-                }else{  
+                }else{
+                   
                     NSLog(@"胜利");
                 }
                

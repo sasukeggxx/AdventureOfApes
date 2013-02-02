@@ -19,6 +19,7 @@ typedef enum {
     inputLayerTag,
     ParallaxSceneTagRibbon,
     ropeTag,
+    pauseLayerTag,
 }GameSceneObjectTag;
 
 typedef enum {
@@ -28,6 +29,14 @@ typedef enum {
     scoreTag,
     
 }InputLayerObjectTag;
+
+
+//typedef enum {
+//
+//    
+//
+//}pauseLayerObjectTag;
+
 
 
 typedef enum {
