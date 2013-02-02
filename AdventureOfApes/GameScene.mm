@@ -137,7 +137,7 @@
         b2BodyDef ropeBodyDef;
         
         ropeBodyDef.type = b2_dynamicBody;              
-        CCSprite *sprite=[CCSprite spriteWithFile:@"fgtRope3.png"  rect:CGRectMake(0, 0, actualDistance, 4)];
+        CCSprite *sprite=[CCSprite spriteWithFile:@"fgtRope.png"  rect:CGRectMake(0, 0, actualDistance, 4)];
         
         sprite.anchorPoint=ccp(0.0, 0.5);
         sprite.position=nearGuanjian.position;
@@ -324,10 +324,10 @@
             if (player.isCircle&&winGuanjian==player.cirleWithGuanjian) {//如果玩家正在胜利挂件上旋转
                 ropeJoint->SetMotorSpeed(player.speed);
                 NSLog(@"%f",player.speed);
-                if (player.speed<30.0) {//玩家速度增加到30
-                     player.speed=player.speed+4.0*delta;
+                if (player.speed<60.0) {//玩家速度增加到60
+                     player.speed=player.speed+10.0*delta;
                 }else{  
-                   
+                    NSLog(@"胜利");
                 }
                
             }
