@@ -54,7 +54,7 @@
 			<array>
 				<dict>
 					<key>density</key>
-					<real>0.1</real>
+					<real>0.05</real>
 					<key>friction</key>
 					<real>0</real>
 					<key>restitution</key>
@@ -93,7 +93,7 @@
 					<key>friction</key>
 					<real>0</real>
 					<key>restitution</key>
-					<real>1</real>
+					<real>0</real>
 					<key>filter_categoryBits</key>
 					<integer>4</integer>
 					<key>filter_groupIndex</key>
@@ -130,7 +130,7 @@
 					<key>friction</key>
 					<real>0</real>
 					<key>restitution</key>
-					<real>1</real>
+					<real>0</real>
 					<key>filter_categoryBits</key>
 					<integer>8</integer>
 					<key>filter_groupIndex</key>

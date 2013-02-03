@@ -9,6 +9,7 @@
 #import "InputLayer.h"
 #import "SecondStageSelectScene.h"
 #import "GameObjectTag.h"
+#import "GameScene.h"
 
 @implementation InputLayer
 
@@ -18,10 +19,12 @@
 -(void)pauseBtnTouch:(id)sender
 {
     
-    CCLayer *gameScene=(CCLayer *)[self parent];
+    GameScene *gameScene=(GameScene *)[self parent];
     if ([gameScene getChildByTag:pauseLayerTag]) {
         return;
     }
+    [gameScene setIsPaused:YES];//暂停
+    [gameScene unschedule:@selector(countDownTime:)];
     
     CCLayer *pauseLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"pauseLayer.ccb"];
     [gameScene addChild:pauseLayer z:1 tag:pauseLayerTag];

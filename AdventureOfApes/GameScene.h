@@ -39,8 +39,12 @@
     CCLayer *inputLayer;
     CCLayer *gameObjectLayer;
     GameOverType gameOverType;
+    
+    BOOL isPaused;//是否暂停
 
 }
+
+@property (nonatomic,assign) BOOL isPaused;
 
 +(id)scene;
 -(void)initTheWorld;

@@ -17,6 +17,7 @@
 
 @implementation GameScene
 
+@synthesize isPaused;
 
 +(id)scene{
     CCScene *scene=[CCScene node];
@@ -104,7 +105,7 @@
 
 //处理玩家的左右点击 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-
+    
     CGPoint screenCenter=[GameUtil screenCenter];
     BodyNode *guanjian0=(BodyNode *)[groundShape getChildByTag:0];
     BodyNode *guanjian1=(BodyNode *)[groundShape getChildByTag:1];
@@ -165,14 +166,16 @@
         // Define the dynamic body fixture.
         b2FixtureDef fixtureDef;
         fixtureDef.shape = &dynamicBox;
-        fixtureDef.density = 0.05f;
+        fixtureDef.density = 0.5f;
         fixtureDef.friction = 0.0f;
         fixtureDef.restitution = 0.0f;
         ropeBody->CreateFixture(&fixtureDef);
-                
+        
+      
         playerJointDef.Initialize(player.body, ropeBody, player.body->GetWorldCenter());
         playerJoint=(b2RevoluteJoint *)world->CreateJoint(&playerJointDef);
-            
+        
+        
         ropeJointDef.Initialize(nearGuanjian.body, ropeBody, nearGuanjian.body->GetWorldCenter());
         ropeJoint=(b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
         ropeJointDef.maxMotorTorque = 10.0f;
@@ -226,11 +229,15 @@
 
 //处理每帧的物理变化
 -(void) update:(ccTime)delta{
-    
-    float capedDelta=fminf(delta, 0.08f);//安全上限
+    float timeStamp;
+    if(isPaused){//如果暂停了
+        timeStamp=0.0;
+    }else{
+        timeStamp=fminf(delta, 0.08f);//安全上限
+    }
 	int32 velocityIterations = 8;
 	int32 positionIterations = 1;
-	world->Step(capedDelta, velocityIterations, positionIterations);
+	world->Step(timeStamp, velocityIterations, positionIterations);
 	
 	// for each body, get its assigned sprite and update the sprite's position
 	for (b2Body* body = world->GetBodyList(); body != nil; body = body->GetNext())

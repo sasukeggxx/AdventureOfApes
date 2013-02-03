@@ -558,7 +558,7 @@
 							<key>spriteFileNormal</key>
 							<string>pauseBtn.png</string>
 							<key>spriteFileSelected</key>
-							<string>pauseBtn.png</string>
+							<string>pauseBtnDown.png</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>target</key>
