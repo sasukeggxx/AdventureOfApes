@@ -16,7 +16,4 @@
 +(id) createGroundWithWorld:(b2World*)world;
 -(id) initGroundWithWorld:(b2World*)world;
 
-
-
-
 @end

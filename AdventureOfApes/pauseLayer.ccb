@@ -433,7 +433,7 @@
 							<key>scaleY</key>
 							<real>1</real>
 							<key>selector</key>
-							<string></string>
+							<string>pauseMenuTouch:</string>
 							<key>spriteFileDisabled</key>
 							<string>pauseMenu.png</string>
 							<key>spriteFileNormal</key>
@@ -443,7 +443,7 @@
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>target</key>
-							<integer>0</integer>
+							<integer>1</integer>
 							<key>visible</key>
 							<true/>
 							<key>zOrder</key>

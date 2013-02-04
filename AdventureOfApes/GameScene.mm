@@ -127,6 +127,9 @@
     
    
     if (firstTouchLocation.x>screenCenter.x) {//如果点击右边
+//        CCSprite *redSign=[CCSprite spriteWithSpriteFrameName:@"fgtSign"]; //挂件上红色标记
+//        
+//        [nearGuanjian addChild:redSign z:1 tag:1];
         
         float duibian=abs(player.position.y-nearGuanjian.position.y) ;  //三角对边
         
@@ -138,7 +141,7 @@
         b2BodyDef ropeBodyDef;
         
         ropeBodyDef.type = b2_dynamicBody;              
-        CCSprite *sprite=[CCSprite spriteWithFile:@"fgtRope.png"  rect:CGRectMake(0, 0, actualDistance, 4)];
+        CCSprite *sprite=[CCSprite spriteWithFile:@"fgtRope.png"  rect:CGRectMake(0, 0, actualDistance, 5)];
         
         sprite.anchorPoint=ccp(0.0, 0.5);
         sprite.position=nearGuanjian.position;
@@ -161,7 +164,7 @@
         // Define another box shape for our dynamic body.
         b2PolygonShape dynamicBox;
    
-        dynamicBox.SetAsBox(actualDistance/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f,[GameUtil toMeters:ccp(actualDistance*0.5, 0.0)],0.0);
+        dynamicBox.SetAsBox(actualDistance/PTM_RATIO * 0.5f, 4.0/PTM_RATIO * 0.5f,[GameUtil toMeters:ccp(actualDistance*0.5, 0.0)],0.0);//设置绳子质心位置为左端
         
         // Define the dynamic body fixture.
         b2FixtureDef fixtureDef;
@@ -443,8 +446,8 @@
 
 -(void)dealloc{
    
-    world->DestroyBody(ropeBody);
-    world->DestroyBody(player.body);
+    delete world;
+    world=NULL;
     
     delete listener;
     listener=NULL;
@@ -452,20 +455,19 @@
     delete debugDraw;
     debugDraw=NULL;
     
-    delete world;
-    world=NULL;
+    
 
-    [player release];
-    
-    [groundShape release];
-    
-    [bgLayer release];
-    
-    [nearGuanjian release];
-    
-    [inputLayer release];
-    
-    [gameObjectLayer release];
+//    [player release];
+//    
+//    [groundShape release];
+//    
+//    [bgLayer release];
+//    
+//    [nearGuanjian release];
+//    
+//    [inputLayer release];
+//    
+//    [gameObjectLayer release];
     
     [super dealloc];
     CCLOG(@"GameScene called dealloc");
