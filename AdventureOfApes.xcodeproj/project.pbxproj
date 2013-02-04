@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AD086EF416B0CC7B008833F6 /* Tomato.m in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF316B0CC7B008833F6 /* Tomato.m */; };
-		AD0AF74A169E70910049D168 /* CCRoundBy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0AF749169E70910049D168 /* CCRoundBy.m */; };
 		AD0DDF3C16AFC0FF005E0029 /* Banana.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0DDF3B16AFC0FF005E0029 /* Banana.m */; };
 		AD0DDF4016AFC14B005E0029 /* Fruit.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD0DDF3F16AFC14B005E0029 /* Fruit.mm */; };
 		AD0DDF4416AFC58B005E0029 /* fgtCara.png in Resources */ = {isa = PBXBuildFile; fileRef = AD0DDF4116AFC58B005E0029 /* fgtCara.png */; };
@@ -27,7 +26,6 @@
 		AD48765B16B677EF006B2943 /* fgtRope.png in Resources */ = {isa = PBXBuildFile; fileRef = AD48765A16B677EF006B2943 /* fgtRope.png */; };
 		AD782A0016BBB34200F3A777 /* GameObjectLayer2.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD7829FE16BBB34200F3A777 /* GameObjectLayer2.ccb */; };
 		AD782A0116BBB34200F3A777 /* GameObjectLayer3.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD7829FF16BBB34200F3A777 /* GameObjectLayer3.ccb */; };
-		AD86A2B216A4FE1A00078113 /* RopeSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD86A2B116A4FE1A00078113 /* RopeSprite.mm */; };
 		AD9127C916B27B0E00926B21 /* tails.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9127C816B27B0D00926B21 /* tails.png */; };
 		AD97AAD816BA5A8D0074CED0 /* MenuScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD97AAD716BA5A8D0074CED0 /* MenuScene.mm */; };
 		AD97AB1716BA5D0B0074CED0 /* bat.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97AADA16BA5D0B0074CED0 /* bat.png */; };
@@ -293,8 +291,6 @@
 		AD086EF216B0CC7B008833F6 /* Tomato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tomato.h; sourceTree = "<group>"; };
 		AD086EF316B0CC7B008833F6 /* Tomato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tomato.m; sourceTree = "<group>"; };
 		AD0AF73B169E60B30049D168 /* GameObjectTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameObjectTag.h; sourceTree = "<group>"; };
-		AD0AF748169E70910049D168 /* CCRoundBy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRoundBy.h; sourceTree = "<group>"; };
-		AD0AF749169E70910049D168 /* CCRoundBy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRoundBy.m; sourceTree = "<group>"; };
 		AD0DDF3A16AFC0FF005E0029 /* Banana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Banana.h; sourceTree = "<group>"; };
 		AD0DDF3B16AFC0FF005E0029 /* Banana.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Banana.m; sourceTree = "<group>"; };
 		AD0DDF3E16AFC14B005E0029 /* Fruit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fruit.h; sourceTree = "<group>"; };
@@ -323,8 +319,6 @@
 		AD48765A16B677EF006B2943 /* fgtRope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgtRope.png; sourceTree = "<group>"; };
 		AD7829FE16BBB34200F3A777 /* GameObjectLayer2.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameObjectLayer2.ccb; sourceTree = "<group>"; };
 		AD7829FF16BBB34200F3A777 /* GameObjectLayer3.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameObjectLayer3.ccb; sourceTree = "<group>"; };
-		AD86A2B016A4FE1A00078113 /* RopeSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RopeSprite.h; sourceTree = "<group>"; };
-		AD86A2B116A4FE1A00078113 /* RopeSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RopeSprite.mm; sourceTree = "<group>"; };
 		AD9127C816B27B0D00926B21 /* tails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tails.png; sourceTree = "<group>"; };
 		AD97AAD616BA5A8D0074CED0 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		AD97AAD716BA5A8D0074CED0 /* MenuScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MenuScene.mm; sourceTree = "<group>"; };
@@ -1496,8 +1490,6 @@
 		AD9DD878169AA434002A28BB /* util */ = {
 			isa = PBXGroup;
 			children = (
-				AD0AF748169E70910049D168 /* CCRoundBy.h */,
-				AD0AF749169E70910049D168 /* CCRoundBy.m */,
 				AD43578D169BACC2000374E3 /* GameUtil.h */,
 				AD43578E169BACC2000374E3 /* GameUtil.mm */,
 				AD0AF73B169E60B30049D168 /* GameObjectTag.h */,
@@ -1511,8 +1503,6 @@
 				AD0DDF4716AFD548005E0029 /* impl */,
 				ADE56DC416A4E4CF00D91211 /* Player.h */,
 				ADE56DC516A4E4CF00D91211 /* Player.mm */,
-				AD86A2B016A4FE1A00078113 /* RopeSprite.h */,
-				AD86A2B116A4FE1A00078113 /* RopeSprite.mm */,
 				AD0DDF3E16AFC14B005E0029 /* Fruit.h */,
 				AD0DDF3F16AFC14B005E0029 /* Fruit.mm */,
 			);
@@ -1866,9 +1856,7 @@
 				AD4359B3169C02E7000374E3 /* CreateGroundInWorld.mm in Sources */,
 				AD4359B4169C02E7000374E3 /* CCSpritePartInWorld.mm in Sources */,
 				AD362D8B169D41F400A2E26A /* PlayerSpriteA.mm in Sources */,
-				AD0AF74A169E70910049D168 /* CCRoundBy.m in Sources */,
 				ADE56DC616A4E4CF00D91211 /* Player.mm in Sources */,
-				AD86A2B216A4FE1A00078113 /* RopeSprite.mm in Sources */,
 				ADEEC07716A938DE005AD266 /* InputLayer.mm in Sources */,
 				AD0DDF3C16AFC0FF005E0029 /* Banana.m in Sources */,
 				AD0DDF4016AFC14B005E0029 /* Fruit.mm in Sources */,

@@ -77,7 +77,7 @@
     
     [self schedule:@selector(applyForce:)];
     
-    body->SetLinearVelocity(b2Vec2(7, 0));//偏移速度
+    body->SetLinearVelocity(b2Vec2(7, 0));//偏移速度冲量
     
     
 }
@@ -96,24 +96,7 @@
     
 }
 
--(void) update:(ccTime)delta{
-        
-    
-    
-    
-   
-
-   
-
-}
 
 
-
-
--(void)dealloc{
-
-    [super dealloc];
-
-}
 
 @end

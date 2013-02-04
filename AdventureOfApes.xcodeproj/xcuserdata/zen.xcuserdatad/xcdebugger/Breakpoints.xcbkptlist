@@ -73,38 +73,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "381223054.927438"
+         timestampString = "381642272.123362"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
-         landmarkName = "-init"
+         startingLineNumber = "448"
+         endingLineNumber = "448"
+         landmarkName = "-dealloc"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "381224340.086275"
+         filePath = "AdventureOfApes/libs/Box2D/Dynamics/b2Fixture.cpp"
+         timestampString = "381641704.29377"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "98"
-         endingLineNumber = "98"
-         landmarkName = "-initThePlayer"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "381633869.942769"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "333"
-         endingLineNumber = "333"
-         landmarkName = "-gameOverCheck:"
+         startingLineNumber = "65"
+         endingLineNumber = "65"
+         landmarkName = "b2Fixture::Destroy(b2BlockAllocator* allocator)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

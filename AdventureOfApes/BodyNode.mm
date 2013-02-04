@@ -55,8 +55,7 @@
 -(void) dealloc
 {
     // remove the body from the world
-    body->GetWorld()->DestroyBody(body);
-    
+
 	[super dealloc];
 }
 

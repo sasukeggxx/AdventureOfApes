@@ -12,7 +12,6 @@
 #import "GLES-Render.h"
 #import "ContactListener.h"
 #import "PlayerSpriteA.h"
-#import "RopeSprite.h"
 #import "CreateGroundInWorld.h"
 #import "GameObjectTag.h"
 

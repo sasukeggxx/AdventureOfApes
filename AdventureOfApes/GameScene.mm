@@ -10,7 +10,6 @@
 #import "BodyNode.h"
 #import "GameUtil.h"
 #import "CCBReader.h"
-#import "CCRoundBy.h"
 #import "InputLayer.h"
 #import "Banana.h"
 
@@ -54,7 +53,7 @@
         
         [self initTheWorld];//初始化世界
         
-       // [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
+        [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
         
         groundShape=[CreateGroundInWorld createGroundWithWorld:world];
 
@@ -64,7 +63,7 @@
         [self initThePlayer];
         
         [self scheduleUpdate];
-        
+
         [self schedule:@selector(countDownTime:) interval:1.0];// 倒计时
         
         [self schedule:@selector(lifeCheck:)];  //生命值检查
