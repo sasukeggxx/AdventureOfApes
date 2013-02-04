@@ -33,7 +33,7 @@
             <key>fgtBoy</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,324},{32,32}}</string>
+                <string>{{423,589},{32,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -95,6 +95,175 @@
                 <key>sourceSize</key>
                 <string>{16,128}</string>
             </dict>
+            <key>pauseAudio</key>
+            <dict>
+                <key>frame</key>
+                <string>{{466,554},{33,33}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{33,33}}</string>
+                <key>sourceSize</key>
+                <string>{33,33}</string>
+            </dict>
+            <key>pauseBg</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,324},{349,262}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{349,262}}</string>
+                <key>sourceSize</key>
+                <string>{349,262}</string>
+            </dict>
+            <key>pauseBlank</key>
+            <dict>
+                <key>frame</key>
+                <string>{{353,324},{191,68}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{191,68}}</string>
+                <key>sourceSize</key>
+                <string>{191,68}</string>
+            </dict>
+            <key>pauseBtn</key>
+            <dict>
+                <key>frame</key>
+                <string>{{388,589},{31,33}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{5,4},{31,33}}</string>
+                <key>sourceSize</key>
+                <string>{41,41}</string>
+            </dict>
+            <key>pauseBtnDown</key>
+            <dict>
+                <key>frame</key>
+                <string>{{353,517},{41,41}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{41,41}}</string>
+                <key>sourceSize</key>
+                <string>{41,41}</string>
+            </dict>
+            <key>pauseContiue </key>
+            <dict>
+                <key>frame</key>
+                <string>{{423,451},{64,47}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{64,47}}</string>
+                <key>sourceSize</key>
+                <string>{64,47}</string>
+            </dict>
+            <key>pauseMenu</key>
+            <dict>
+                <key>frame</key>
+                <string>{{423,402},{64,47}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{64,47}}</string>
+                <key>sourceSize</key>
+                <string>{64,47}</string>
+            </dict>
+            <key>pauseMonkey</key>
+            <dict>
+                <key>frame</key>
+                <string>{{423,500},{62,52}}</string>
+                <key>offset</key>
+                <string>{0,-6}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1,12},{62,52}}</string>
+                <key>sourceSize</key>
+                <string>{64,64}</string>
+            </dict>
+            <key>pauseNoAudio</key>
+            <dict>
+                <key>frame</key>
+                <string>{{431,554},{33,33}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{33,33}}</string>
+                <key>sourceSize</key>
+                <string>{33,33}</string>
+            </dict>
+            <key>pauseNoVibration</key>
+            <dict>
+                <key>frame</key>
+                <string>{{353,560},{33,33}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{33,33}}</string>
+                <key>sourceSize</key>
+                <string>{33,33}</string>
+            </dict>
+            <key>pauseReplay</key>
+            <dict>
+                <key>frame</key>
+                <string>{{423,353},{64,47}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{64,47}}</string>
+                <key>sourceSize</key>
+                <string>{64,47}</string>
+            </dict>
+            <key>pauseTOP</key>
+            <dict>
+                <key>frame</key>
+                <string>{{423,324},{67,27}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{67,27}}</string>
+                <key>sourceSize</key>
+                <string>{67,27}</string>
+            </dict>
+            <key>pauseVibration</key>
+            <dict>
+                <key>frame</key>
+                <string>{{396,554},{33,33}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{33,33}}</string>
+                <key>sourceSize</key>
+                <string>{33,33}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -103,9 +272,9 @@
             <key>realTextureFileName</key>
             <string>image.pvr.ccz</string>
             <key>size</key>
-            <string>{512,512}</string>
+            <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:68fac97301fbc64c3b4b91c307f2fd85$</string>
+            <string>$TexturePacker:SmartUpdate:8b36d6a8a0d468d5e33fe8c84aefa14a$</string>
             <key>textureFileName</key>
             <string>image.pvr.ccz</string>
         </dict>

@@ -26,7 +26,7 @@
 					</array>
 					<key>blendFunc</key>
 					<array>
-						<integer>1</integer>
+						<integer>770</integer>
 						<integer>771</integer>
 					</array>
 					<key>color</key>
@@ -70,7 +70,9 @@
 					<key>scaleY</key>
 					<real>1</real>
 					<key>spriteFile</key>
-					<string>fgtBg.png</string>
+					<string>fgtBg</string>
+					<key>spriteFramesFile</key>
+					<string>image.plist</string>
 					<key>tag</key>
 					<integer>-1</integer>
 					<key>visible</key>

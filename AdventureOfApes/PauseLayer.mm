@@ -9,6 +9,7 @@
 #import "PauseLayer.h"
 #import "GameScene.h"
 #import "SecondStageSelectScene.h"
+#import "GameScene.h"
 
 @implementation PauseLayer
 
@@ -36,7 +37,15 @@
 
 //点击菜单按钮返回小关
 -(void)pauseMenuTouch:(id)sender{
-    NSLog(@"ok");
+    
     [[CCDirector sharedDirector] replaceScene:[SecondStageSelectScene scene]];
 }
+
+
+-(void)pauseReplayTouch:(id)sender{
+    
+    [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
+}
+
+
 @end

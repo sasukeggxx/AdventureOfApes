@@ -35,66 +35,6 @@
 							</array>
 							<key>contentSize</key>
 							<array>
-								<real>54</real>
-								<real>27</real>
-							</array>
-							<key>customClass</key>
-							<string></string>
-							<key>fontFile</key>
-							<string>26sizefont.fnt</string>
-							<key>isExpanded</key>
-							<true/>
-							<key>isRelativeAnchorPoint</key>
-							<true/>
-							<key>lockedScaleRatio</key>
-							<true/>
-							<key>memberVarAssignmentName</key>
-							<string></string>
-							<key>memberVarAssignmentType</key>
-							<integer>0</integer>
-							<key>opacity</key>
-							<integer>255</integer>
-							<key>position</key>
-							<array>
-								<real>94.40234375</real>
-								<real>119.54296875</real>
-							</array>
-							<key>rotation</key>
-							<real>0.0</real>
-							<key>scaleX</key>
-							<real>1</real>
-							<key>scaleY</key>
-							<real>1</real>
-							<key>string</key>
-							<string>Top</string>
-							<key>tag</key>
-							<integer>-1</integer>
-							<key>visible</key>
-							<true/>
-							<key>zOrder</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<dict>
-						<key>children</key>
-						<array/>
-						<key>class</key>
-						<string>CCLabelBMFont</string>
-						<key>properties</key>
-						<dict>
-							<key>anchorPoint</key>
-							<array>
-								<real>0.5</real>
-								<real>0.5</real>
-							</array>
-							<key>color</key>
-							<array>
-								<integer>255</integer>
-								<integer>255</integer>
-								<integer>255</integer>
-							</array>
-							<key>contentSize</key>
-							<array>
 								<real>95</real>
 								<real>27</real>
 							</array>
@@ -149,7 +89,7 @@
 							</array>
 							<key>blendFunc</key>
 							<array>
-								<integer>1</integer>
+								<integer>770</integer>
 								<integer>771</integer>
 							</array>
 							<key>color</key>
@@ -193,7 +133,78 @@
 							<key>scaleY</key>
 							<real>1</real>
 							<key>spriteFile</key>
-							<string>pauseBlank.png</string>
+							<string>pauseBlank</string>
+							<key>spriteFramesFile</key>
+							<string>image.plist</string>
+							<key>tag</key>
+							<integer>-1</integer>
+							<key>visible</key>
+							<true/>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>children</key>
+						<array/>
+						<key>class</key>
+						<string>CCSprite</string>
+						<key>properties</key>
+						<dict>
+							<key>anchorPoint</key>
+							<array>
+								<real>0.5</real>
+								<real>0.5</real>
+							</array>
+							<key>blendFunc</key>
+							<array>
+								<integer>770</integer>
+								<integer>771</integer>
+							</array>
+							<key>color</key>
+							<array>
+								<integer>255</integer>
+								<integer>255</integer>
+								<integer>255</integer>
+							</array>
+							<key>contentSize</key>
+							<array>
+								<real>67</real>
+								<real>27</real>
+							</array>
+							<key>customClass</key>
+							<string></string>
+							<key>flipX</key>
+							<false/>
+							<key>flipY</key>
+							<false/>
+							<key>isExpanded</key>
+							<true/>
+							<key>isRelativeAnchorPoint</key>
+							<true/>
+							<key>lockedScaleRatio</key>
+							<true/>
+							<key>memberVarAssignmentName</key>
+							<string></string>
+							<key>memberVarAssignmentType</key>
+							<integer>0</integer>
+							<key>opacity</key>
+							<integer>255</integer>
+							<key>position</key>
+							<array>
+								<real>87.71875</real>
+								<real>120.359375</real>
+							</array>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scaleX</key>
+							<real>1</real>
+							<key>scaleY</key>
+							<real>1</real>
+							<key>spriteFile</key>
+							<string>pauseTOP</string>
+							<key>spriteFramesFile</key>
+							<string>image.plist</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>visible</key>
@@ -214,7 +225,7 @@
 					</array>
 					<key>blendFunc</key>
 					<array>
-						<integer>1</integer>
+						<integer>770</integer>
 						<integer>771</integer>
 					</array>
 					<key>color</key>
@@ -258,7 +269,9 @@
 					<key>scaleY</key>
 					<real>1</real>
 					<key>spriteFile</key>
-					<string>pauseBg.png</string>
+					<string>pauseBg</string>
+					<key>spriteFramesFile</key>
+					<string>image.plist</string>
 					<key>tag</key>
 					<integer>-1</integer>
 					<key>visible</key>
@@ -315,11 +328,13 @@
 							<key>selector</key>
 							<string></string>
 							<key>spriteFileDisabled</key>
-							<string>pauseVibration.png</string>
+							<string>pauseVibration</string>
 							<key>spriteFileNormal</key>
-							<string>pauseVibration.png</string>
+							<string>pauseVibration</string>
 							<key>spriteFileSelected</key>
-							<string>pauseVibration.png</string>
+							<string>pauseVibration</string>
+							<key>spriteFramesFile</key>
+							<string>image.plist</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>target</key>
@@ -375,11 +390,13 @@
 							<key>selector</key>
 							<string></string>
 							<key>spriteFileDisabled</key>
-							<string>pauseAudio.png</string>
+							<string>pauseAudio</string>
 							<key>spriteFileNormal</key>
-							<string>pauseAudio.png</string>
+							<string>pauseAudio</string>
 							<key>spriteFileSelected</key>
-							<string>pauseAudio.png</string>
+							<string>pauseAudio</string>
+							<key>spriteFramesFile</key>
+							<string>image.plist</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>target</key>
@@ -435,11 +452,13 @@
 							<key>selector</key>
 							<string>pauseMenuTouch:</string>
 							<key>spriteFileDisabled</key>
-							<string>pauseMenu.png</string>
+							<string>pauseMenu</string>
 							<key>spriteFileNormal</key>
-							<string>pauseMenu.png</string>
+							<string>pauseMenu</string>
 							<key>spriteFileSelected</key>
-							<string>pauseMonkey.png</string>
+							<string>pauseMonkey</string>
+							<key>spriteFramesFile</key>
+							<string>image.plist</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>target</key>
@@ -493,17 +512,19 @@
 							<key>scaleY</key>
 							<real>1</real>
 							<key>selector</key>
-							<string></string>
+							<string>pauseReplayTouch:</string>
 							<key>spriteFileDisabled</key>
-							<string>pauseReplay.png</string>
+							<string>pauseReplay</string>
 							<key>spriteFileNormal</key>
-							<string>pauseReplay.png</string>
+							<string>pauseReplay</string>
 							<key>spriteFileSelected</key>
-							<string>pauseMonkey.png</string>
+							<string>pauseMonkey</string>
+							<key>spriteFramesFile</key>
+							<string>image.plist</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>target</key>
-							<integer>0</integer>
+							<integer>1</integer>
 							<key>visible</key>
 							<true/>
 							<key>zOrder</key>
@@ -555,11 +576,13 @@
 							<key>selector</key>
 							<string>pauseContiueTouch:</string>
 							<key>spriteFileDisabled</key>
-							<string>pauseContiue .png</string>
+							<string>pauseContiue </string>
 							<key>spriteFileNormal</key>
-							<string>pauseContiue .png</string>
+							<string>pauseContiue </string>
 							<key>spriteFileSelected</key>
-							<string>pauseMonkey.png</string>
+							<string>pauseMonkey</string>
+							<key>spriteFramesFile</key>
+							<string>image.plist</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>target</key>
