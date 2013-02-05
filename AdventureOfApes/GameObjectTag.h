@@ -21,6 +21,7 @@ typedef enum {
     ropeTag,
     pauseLayerTag,
     winLayerTag,
+    faiureLayerTag,
 }GameSceneObjectTag;
 
 typedef enum {

@@ -63,6 +63,18 @@
     
 }
 
+-(void)initTheParticleTail{
+   
+    CCParticleSystem* system=[CCParticleSystemQuad particleWithFile:@"tailParticle.plist"];
+    system.positionType = kCCPositionTypeFree;
+    system.anchorPoint=ccp(0, 0);
+    system.position=self.position;
+    [self addChild:system z:-1];
+
+
+}
+
+
 //设置精灵在屏幕出现的位置
 -(void) setSpriteStartPosition
 {

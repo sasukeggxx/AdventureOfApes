@@ -53,7 +53,7 @@
         
         [self initTheWorld];//初始化世界
         
-        [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
+        //[GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
         
         groundShape=[CreateGroundInWorld createGroundWithWorld:world];
 
@@ -92,11 +92,10 @@
 }
 
 
-
-
 -(void)initThePlayer{
     player=[PlayerSpriteA addToWorld:world];
     [player initTheTailWithLayer:self];
+    //[player initTheParticleTail];
     [self addChild:player];
 
 }
@@ -126,9 +125,6 @@
     
    
     if (firstTouchLocation.x>screenCenter.x) {//如果点击右边
-//        CCSprite *redSign=[CCSprite spriteWithSpriteFrameName:@"fgtSign"]; //挂件上红色标记
-//        
-//        [nearGuanjian addChild:redSign z:1 tag:1];
         
         float duibian=abs(player.position.y-nearGuanjian.position.y) ;  //三角对边
         
@@ -200,8 +196,6 @@
     
 }
    
-
-    
 
 
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -286,7 +280,7 @@
 
     }
     
-    //如果水果吃完了,只剩3个木桩了.游戏win
+    //如果水果吃完了,只剩3个木桩了.游戏win,星星粒子效果
     if (gameObjectLayer.children.count<=3) {
         CCParticleSystem* system=[CCParticleSystemQuad particleWithFile:@"treeParticle.plist"];
         system.positionType = kCCPositionTypeFree;
@@ -335,7 +329,7 @@
                 NSLog(@"%f",player.speed);
                 if (player.speed<60.0) {//玩家速度增加到60
                      player.speed=player.speed+0.5;
-                }else{
+                }else{ //加载胜利界面
                     
                     self.isPaused=YES;
                     [self unschedule:@selector(countDownTime:)];
@@ -351,13 +345,28 @@
             //[self unscheduleAllSelectors];
             break;
         case lifeOverType:
-           // NSLog(@"生命值为0");
-            
-            //[self unscheduleAllSelectors];
+           {
+             self.isPaused=YES;
+             [self unschedule:@selector(countDownTime:)];
+             [self unschedule:_cmd];
+             CCLayer *faiureLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"failureLayer.ccb"];
+             [self addChild:faiureLayer z:1 tag:faiureLayerTag];
+             id moveToCenter=[CCMoveTo actionWithDuration:0.2 position:CGPointZero];
+             [faiureLayer runAction:moveToCenter];
+           }
+
             break;
         case timeUpType:
-            NSLog(@"时间到");
-            //[self unscheduleAllSelectors];
+           {
+            self.isPaused=YES;
+            [self unschedule:@selector(countDownTime:)];
+            [self unschedule:_cmd];
+            CCLayer *faiureLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"failureLayer.ccb"];
+            [self addChild:faiureLayer z:1 tag:faiureLayerTag];
+            id moveToCenter=[CCMoveTo actionWithDuration:0.2 position:CGPointZero];
+            [faiureLayer runAction:moveToCenter];
+           }
+            
             break;
         default:
             break;
@@ -459,20 +468,6 @@
     
     delete debugDraw;
     debugDraw=NULL;
-    
-    
-
-//    [player release];
-//    
-//    [groundShape release];
-//    
-//    [bgLayer release];
-//    
-//    [nearGuanjian release];
-//    
-//    [inputLayer release];
-//    
-//    [gameObjectLayer release];
     
     [super dealloc];
     CCLOG(@"GameScene called dealloc");

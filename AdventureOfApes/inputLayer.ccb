@@ -226,13 +226,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>16</real>
-						<real>27</real>
+						<real>9</real>
+						<real>33</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
 					<key>fontFile</key>
-					<string>26sizefont.fnt</string>
+					<string>18fontsize.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -286,13 +286,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>16</real>
-						<real>27</real>
+						<real>9</real>
+						<real>33</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
 					<key>fontFile</key>
-					<string>26sizefont.fnt</string>
+					<string>18fontsize.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -346,13 +346,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>19</real>
-						<real>27</real>
+						<real>13</real>
+						<real>33</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
 					<key>fontFile</key>
-					<string>26sizefont.fnt</string>
+					<string>18fontsize.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -406,13 +406,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>19</real>
-						<real>27</real>
+						<real>13</real>
+						<real>33</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
 					<key>fontFile</key>
-					<string>26sizefont.fnt</string>
+					<string>18fontsize.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -466,13 +466,13 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>19</real>
-						<real>27</real>
+						<real>13</real>
+						<real>33</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
 					<key>fontFile</key>
-					<string>26sizefont.fnt</string>
+					<string>18fontsize.fnt</string>
 					<key>isExpanded</key>
 					<true/>
 					<key>isRelativeAnchorPoint</key>
@@ -487,8 +487,8 @@
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>451.234375</real>
-						<real>305.69140625</real>
+						<real>457.3203125</real>
+						<real>304.99609375</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -542,8 +542,8 @@
 							<integer>0</integer>
 							<key>position</key>
 							<array>
-								<real>86.29296875</real>
-								<real>1.52734375</real>
+								<real>94.234375</real>
+								<real>0.05078125</real>
 							</array>
 							<key>rotation</key>
 							<real>0.0</real>
@@ -554,11 +554,13 @@
 							<key>selector</key>
 							<string>pauseBtnTouch:</string>
 							<key>spriteFileDisabled</key>
-							<string>pauseBtn.png</string>
+							<string>pauseBtn</string>
 							<key>spriteFileNormal</key>
-							<string>pauseBtn.png</string>
+							<string>pauseBtn</string>
 							<key>spriteFileSelected</key>
-							<string>pauseBtnDown.png</string>
+							<string>pauseBtnDown</string>
+							<key>spriteFramesFile</key>
+							<string>image.plist</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>target</key>

@@ -104,13 +104,13 @@
 							</array>
 							<key>contentSize</key>
 							<array>
-								<real>95</real>
-								<real>27</real>
+								<real>65</real>
+								<real>33</real>
 							</array>
 							<key>customClass</key>
 							<string></string>
 							<key>fontFile</key>
-							<string>26sizefont.fnt</string>
+							<string>18fontsize.fnt</string>
 							<key>isExpanded</key>
 							<true/>
 							<key>isRelativeAnchorPoint</key>
@@ -751,8 +751,8 @@
 			<integer>1</integer>
 			<key>position</key>
 			<array>
-				<real>0.9453125</real>
-				<real>320.9296875</real>
+				<real>0.0</real>
+				<real>320</real>
 			</array>
 			<key>rotation</key>
 			<real>0.0</real>

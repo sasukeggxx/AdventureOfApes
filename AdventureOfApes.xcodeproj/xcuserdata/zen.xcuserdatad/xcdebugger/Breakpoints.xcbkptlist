@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/PlayerSpriteA.mm"
-         timestampString = "380798104.95371"
+         timestampString = "381746586.121615"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "71"
-         endingLineNumber = "71"
+         startingLineNumber = "83"
+         endingLineNumber = "83"
          landmarkName = "-setSpriteStartPosition"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,12 +73,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AdventureOfApes/GameScene.mm"
-         timestampString = "381723154.071926"
+         timestampString = "381746523.43509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "454"
-         endingLineNumber = "454"
-         landmarkName = "-dealloc"
+         startingLineNumber = "456"
+         endingLineNumber = "456"
+         landmarkName = "-initTheWorld"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

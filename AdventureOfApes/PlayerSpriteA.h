@@ -23,5 +23,5 @@
 -(void)setSpriteStartPosition;
 -(id)initwithWorld:(b2World *) world;
 -(void)initTheTailWithLayer:(CCLayer *)layer;
-
+-(void)initTheParticleTail;
 @end
