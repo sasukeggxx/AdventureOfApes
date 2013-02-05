@@ -20,6 +20,7 @@ typedef enum {
     ParallaxSceneTagRibbon,
     ropeTag,
     pauseLayerTag,
+    winLayerTag,
 }GameSceneObjectTag;
 
 typedef enum {

@@ -334,10 +334,16 @@
                 ropeJoint->SetMotorSpeed(player.speed);
                 NSLog(@"%f",player.speed);
                 if (player.speed<60.0) {//玩家速度增加到60
-                     player.speed=player.speed+10.0*delta;
+                     player.speed=player.speed+0.5;
                 }else{
-                   
-                    NSLog(@"胜利");
+                    
+                    self.isPaused=YES;
+                    [self unschedule:@selector(countDownTime:)];
+                    [self unschedule:_cmd];
+                     CCLayer *winLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"winLayer.ccb"];
+                    [self addChild:winLayer z:1 tag:winLayerTag];
+                    id moveToCenter=[CCMoveTo actionWithDuration:0.2 position:CGPointZero];
+                    [winLayer runAction:moveToCenter];
                 }
                
             }

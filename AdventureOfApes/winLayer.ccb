@@ -62,8 +62,8 @@
 					<integer>127</integer>
 					<key>position</key>
 					<array>
-						<real>-3.15234375</real>
-						<real>-0.3671875</real>
+						<real>1.4609375</real>
+						<real>2.04296875</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -104,7 +104,7 @@
 							</array>
 							<key>contentSize</key>
 							<array>
-								<real>95</real>
+								<real>76</real>
 								<real>27</real>
 							</array>
 							<key>customClass</key>
@@ -125,17 +125,17 @@
 							<integer>255</integer>
 							<key>position</key>
 							<array>
-								<real>190.09765625</real>
-								<real>117.0546875</real>
+								<real>194.75390625</real>
+								<real>212.390625</real>
 							</array>
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scaleX</key>
-							<real>1</real>
+							<real>0.97406250238418579</real>
 							<key>scaleY</key>
-							<real>1</real>
+							<real>0.97406250238418579</real>
 							<key>string</key>
-							<string>23312</string>
+							<string>1231</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>visible</key>
@@ -169,8 +169,8 @@
 							</array>
 							<key>contentSize</key>
 							<array>
-								<real>191</real>
-								<real>68</real>
+								<real>50</real>
+								<real>92</real>
 							</array>
 							<key>customClass</key>
 							<string></string>
@@ -192,17 +192,17 @@
 							<integer>255</integer>
 							<key>position</key>
 							<array>
-								<real>174.390625</real>
-								<real>185.41796875</real>
+								<real>74.6796875</real>
+								<real>104.90625</real>
 							</array>
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scaleX</key>
-							<real>1</real>
+							<real>0.86316406726837158</real>
 							<key>scaleY</key>
-							<real>1</real>
+							<real>0.86316406726837158</real>
 							<key>spriteFile</key>
-							<string>pauseBlank</string>
+							<string>victoryMonkey</string>
 							<key>spriteFramesFile</key>
 							<string>image.plist</string>
 							<key>tag</key>
@@ -238,8 +238,8 @@
 							</array>
 							<key>contentSize</key>
 							<array>
-								<real>67</real>
-								<real>27</real>
+								<real>50</real>
+								<real>92</real>
 							</array>
 							<key>customClass</key>
 							<string></string>
@@ -261,17 +261,86 @@
 							<integer>255</integer>
 							<key>position</key>
 							<array>
-								<real>87.71875</real>
-								<real>120.359375</real>
+								<real>167.9453125</real>
+								<real>106.03125</real>
 							</array>
 							<key>rotation</key>
 							<real>0.0</real>
 							<key>scaleX</key>
-							<real>1</real>
+							<real>0.88832032680511475</real>
 							<key>scaleY</key>
-							<real>1</real>
+							<real>0.88832032680511475</real>
 							<key>spriteFile</key>
-							<string>pauseTOP</string>
+							<string>victoryMonkey</string>
+							<key>spriteFramesFile</key>
+							<string>image.plist</string>
+							<key>tag</key>
+							<integer>-1</integer>
+							<key>visible</key>
+							<true/>
+							<key>zOrder</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>children</key>
+						<array/>
+						<key>class</key>
+						<string>CCSprite</string>
+						<key>properties</key>
+						<dict>
+							<key>anchorPoint</key>
+							<array>
+								<real>0.5</real>
+								<real>0.5</real>
+							</array>
+							<key>blendFunc</key>
+							<array>
+								<integer>770</integer>
+								<integer>771</integer>
+							</array>
+							<key>color</key>
+							<array>
+								<integer>255</integer>
+								<integer>255</integer>
+								<integer>255</integer>
+							</array>
+							<key>contentSize</key>
+							<array>
+								<real>70</real>
+								<real>94</real>
+							</array>
+							<key>customClass</key>
+							<string></string>
+							<key>flipX</key>
+							<false/>
+							<key>flipY</key>
+							<false/>
+							<key>isExpanded</key>
+							<true/>
+							<key>isRelativeAnchorPoint</key>
+							<true/>
+							<key>lockedScaleRatio</key>
+							<true/>
+							<key>memberVarAssignmentName</key>
+							<string></string>
+							<key>memberVarAssignmentType</key>
+							<integer>0</integer>
+							<key>opacity</key>
+							<integer>255</integer>
+							<key>position</key>
+							<array>
+								<real>269.984375</real>
+								<real>109.12109375</real>
+							</array>
+							<key>rotation</key>
+							<real>0.0</real>
+							<key>scaleX</key>
+							<real>0.90488278865814209</real>
+							<key>scaleY</key>
+							<real>0.90488278865814209</real>
+							<key>spriteFile</key>
+							<string>victoryOrangutan</string>
 							<key>spriteFramesFile</key>
 							<string>image.plist</string>
 							<key>tag</key>
@@ -299,130 +368,6 @@
 									</array>
 									<key>contentSize</key>
 									<array>
-										<real>33</real>
-										<real>33</real>
-									</array>
-									<key>customClass</key>
-									<string></string>
-									<key>isEnabled</key>
-									<true/>
-									<key>isExpanded</key>
-									<true/>
-									<key>isRelativeAnchorPoint</key>
-									<true/>
-									<key>lockedScaleRatio</key>
-									<true/>
-									<key>memberVarAssignmentName</key>
-									<string></string>
-									<key>memberVarAssignmentType</key>
-									<integer>0</integer>
-									<key>position</key>
-									<array>
-										<real>87.07421875</real>
-										<real>62.89453125</real>
-									</array>
-									<key>rotation</key>
-									<real>0.0</real>
-									<key>scaleX</key>
-									<real>1</real>
-									<key>scaleY</key>
-									<real>1</real>
-									<key>selector</key>
-									<string></string>
-									<key>spriteFileDisabled</key>
-									<string>pauseVibration</string>
-									<key>spriteFileNormal</key>
-									<string>pauseVibration</string>
-									<key>spriteFileSelected</key>
-									<string>pauseVibration</string>
-									<key>spriteFramesFile</key>
-									<string>image.plist</string>
-									<key>tag</key>
-									<integer>-1</integer>
-									<key>target</key>
-									<integer>0</integer>
-									<key>visible</key>
-									<true/>
-									<key>zOrder</key>
-									<integer>0</integer>
-								</dict>
-							</dict>
-							<dict>
-								<key>children</key>
-								<array/>
-								<key>class</key>
-								<string>CCMenuItemImage</string>
-								<key>properties</key>
-								<dict>
-									<key>anchorPoint</key>
-									<array>
-										<real>0.5</real>
-										<real>0.5</real>
-									</array>
-									<key>contentSize</key>
-									<array>
-										<real>33</real>
-										<real>33</real>
-									</array>
-									<key>customClass</key>
-									<string></string>
-									<key>isEnabled</key>
-									<true/>
-									<key>isExpanded</key>
-									<true/>
-									<key>isRelativeAnchorPoint</key>
-									<true/>
-									<key>lockedScaleRatio</key>
-									<true/>
-									<key>memberVarAssignmentName</key>
-									<string></string>
-									<key>memberVarAssignmentType</key>
-									<integer>0</integer>
-									<key>position</key>
-									<array>
-										<real>88.0234375</real>
-										<real>8.390625</real>
-									</array>
-									<key>rotation</key>
-									<real>0.0</real>
-									<key>scaleX</key>
-									<real>1</real>
-									<key>scaleY</key>
-									<real>1</real>
-									<key>selector</key>
-									<string></string>
-									<key>spriteFileDisabled</key>
-									<string>pauseAudio</string>
-									<key>spriteFileNormal</key>
-									<string>pauseAudio</string>
-									<key>spriteFileSelected</key>
-									<string>pauseAudio</string>
-									<key>spriteFramesFile</key>
-									<string>image.plist</string>
-									<key>tag</key>
-									<integer>-1</integer>
-									<key>target</key>
-									<integer>0</integer>
-									<key>visible</key>
-									<true/>
-									<key>zOrder</key>
-									<integer>0</integer>
-								</dict>
-							</dict>
-							<dict>
-								<key>children</key>
-								<array/>
-								<key>class</key>
-								<string>CCMenuItemImage</string>
-								<key>properties</key>
-								<dict>
-									<key>anchorPoint</key>
-									<array>
-										<real>0.5</real>
-										<real>0.5</real>
-									</array>
-									<key>contentSize</key>
-									<array>
 										<real>64</real>
 										<real>47</real>
 									</array>
@@ -442,8 +387,8 @@
 									<integer>0</integer>
 									<key>position</key>
 									<array>
-										<real>-139.19140625</real>
-										<real>-47.859375</real>
+										<real>75.0546875</real>
+										<real>46.2421875</real>
 									</array>
 									<key>rotation</key>
 									<real>0.0</real>
@@ -452,7 +397,7 @@
 									<key>scaleY</key>
 									<real>1</real>
 									<key>selector</key>
-									<string>pauseMenuTouch:</string>
+									<string></string>
 									<key>spriteFileDisabled</key>
 									<string>pauseMenu</string>
 									<key>spriteFileNormal</key>
@@ -464,7 +409,7 @@
 									<key>tag</key>
 									<integer>-1</integer>
 									<key>target</key>
-									<integer>1</integer>
+									<integer>0</integer>
 									<key>visible</key>
 									<true/>
 									<key>zOrder</key>
@@ -504,8 +449,8 @@
 									<integer>0</integer>
 									<key>position</key>
 									<array>
-										<real>-37.05859375</real>
-										<real>-48.1796875</real>
+										<real>176.19140625</real>
+										<real>46.8046875</real>
 									</array>
 									<key>rotation</key>
 									<real>0.0</real>
@@ -514,7 +459,7 @@
 									<key>scaleY</key>
 									<real>1</real>
 									<key>selector</key>
-									<string>pauseReplayTouch:</string>
+									<string></string>
 									<key>spriteFileDisabled</key>
 									<string>pauseReplay</string>
 									<key>spriteFileNormal</key>
@@ -526,7 +471,7 @@
 									<key>tag</key>
 									<integer>-1</integer>
 									<key>target</key>
-									<integer>1</integer>
+									<integer>0</integer>
 									<key>visible</key>
 									<true/>
 									<key>zOrder</key>
@@ -566,8 +511,8 @@
 									<integer>0</integer>
 									<key>position</key>
 									<array>
-										<real>63.40234375</real>
-										<real>-44.75</real>
+										<real>282.421875</real>
+										<real>45.55078125</real>
 									</array>
 									<key>rotation</key>
 									<real>0.0</real>
@@ -576,11 +521,11 @@
 									<key>scaleY</key>
 									<real>1</real>
 									<key>selector</key>
-									<string>pauseContiueTouch:</string>
+									<string></string>
 									<key>spriteFileDisabled</key>
-									<string>pauseContiue </string>
+									<string>victoryNext</string>
 									<key>spriteFileNormal</key>
-									<string>pauseContiue </string>
+									<string>victoryNext</string>
 									<key>spriteFileSelected</key>
 									<string>pauseMonkey</string>
 									<key>spriteFramesFile</key>
@@ -588,7 +533,7 @@
 									<key>tag</key>
 									<integer>-1</integer>
 									<key>target</key>
-									<integer>1</integer>
+									<integer>0</integer>
 									<key>visible</key>
 									<true/>
 									<key>zOrder</key>
@@ -623,15 +568,15 @@
 							<key>lockedScaleRatio</key>
 							<true/>
 							<key>memberVarAssignmentName</key>
-							<string>pauseMenuSp</string>
+							<string></string>
 							<key>memberVarAssignmentType</key>
-							<integer>1</integer>
+							<integer>0</integer>
 							<key>mouseEnabled</key>
 							<integer>1</integer>
 							<key>position</key>
 							<array>
-								<real>215</real>
-								<real>100</real>
+								<real>0.0</real>
+								<real>0.0</real>
 							</array>
 							<key>rotation</key>
 							<real>0.0</real>
@@ -672,8 +617,8 @@
 					</array>
 					<key>contentSize</key>
 					<array>
-						<real>349</real>
-						<real>262</real>
+						<real>352</real>
+						<real>300</real>
 					</array>
 					<key>customClass</key>
 					<string></string>
@@ -688,15 +633,15 @@
 					<key>lockedScaleRatio</key>
 					<true/>
 					<key>memberVarAssignmentName</key>
-					<string>pauseBgSp</string>
+					<string></string>
 					<key>memberVarAssignmentType</key>
-					<integer>1</integer>
+					<integer>0</integer>
 					<key>opacity</key>
 					<integer>255</integer>
 					<key>position</key>
 					<array>
-						<real>232.38671875</real>
-						<real>187.51171875</real>
+						<real>243.48828125</real>
+						<real>189.18359375</real>
 					</array>
 					<key>rotation</key>
 					<real>0.0</real>
@@ -705,7 +650,7 @@
 					<key>scaleY</key>
 					<real>1</real>
 					<key>spriteFile</key>
-					<string>pauseBg</string>
+					<string>victoryBg</string>
 					<key>spriteFramesFile</key>
 					<string>image.plist</string>
 					<key>tag</key>
@@ -734,7 +679,7 @@
 				<real>320</real>
 			</array>
 			<key>customClass</key>
-			<string>PauseLayer</string>
+			<string></string>
 			<key>isExpanded</key>
 			<true/>
 			<key>isRelativeAnchorPoint</key>
@@ -751,8 +696,8 @@
 			<integer>1</integer>
 			<key>position</key>
 			<array>
-				<real>0.9453125</real>
-				<real>320.9296875</real>
+				<real>-1.16796875</real>
+				<real>317.65234375</real>
 			</array>
 			<key>rotation</key>
 			<real>0.0</real>

@@ -22,15 +22,13 @@
 
 //点击继续按钮
 -(void)pauseContiueTouch:(id)sender{
+    CGSize size=[[CCDirector sharedDirector] winSize];
     GameScene *gameScene=(GameScene *)[self parent];
     [gameScene setIsPaused:NO];
     [gameScene schedule:@selector(countDownTime:) interval:1.0];
     
-    id moveToOut=[CCMoveTo actionWithDuration:0.3 position:ccp(0, 267)];
+    id moveToOut=[CCMoveTo actionWithDuration:0.2 position:ccp(0, size.height)];
     [self runAction:moveToOut];
-     NSLog(@"%d",[self numberOfRunningActions]);
-    
-    [self removeFromParentAndCleanup:YES];
 
 }
 

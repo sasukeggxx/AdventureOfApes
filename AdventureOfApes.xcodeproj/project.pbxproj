@@ -24,6 +24,10 @@
 		AD4359B3169C02E7000374E3 /* CreateGroundInWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4359B0169C02E7000374E3 /* CreateGroundInWorld.mm */; };
 		AD4359B4169C02E7000374E3 /* CCSpritePartInWorld.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4359B2169C02E7000374E3 /* CCSpritePartInWorld.mm */; };
 		AD48765B16B677EF006B2943 /* fgtRope.png in Resources */ = {isa = PBXBuildFile; fileRef = AD48765A16B677EF006B2943 /* fgtRope.png */; };
+		AD4BA70916C09B9C00C39B40 /* image.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD4BA70716C09B9C00C39B40 /* image.plist */; };
+		AD4BA70A16C09B9C00C39B40 /* image.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = AD4BA70816C09B9C00C39B40 /* image.pvr.ccz */; };
+		AD4BA70D16C09C7A00C39B40 /* WinLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD4BA70C16C09C7A00C39B40 /* WinLayer.mm */; };
+		AD4BA70F16C0A0B100C39B40 /* winLayer.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD4BA70E16C0A0B100C39B40 /* winLayer.ccb */; };
 		AD782A0016BBB34200F3A777 /* GameObjectLayer2.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD7829FE16BBB34200F3A777 /* GameObjectLayer2.ccb */; };
 		AD782A0116BBB34200F3A777 /* GameObjectLayer3.ccb in Resources */ = {isa = PBXBuildFile; fileRef = AD7829FF16BBB34200F3A777 /* GameObjectLayer3.ccb */; };
 		AD9127C916B27B0E00926B21 /* tails.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9127C816B27B0D00926B21 /* tails.png */; };
@@ -249,8 +253,6 @@
 		AD9DD866169AA3FB002A28BB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD865169AA3FB002A28BB /* RootViewController.m */; };
 		AD9DD869169AA3FB002A28BB /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD868169AA3FB002A28BB /* HelloWorldLayer.mm */; };
 		AD9DD86C169AA3FB002A28BB /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD9DD86B169AA3FB002A28BB /* GLES-Render.mm */; };
-		AD9F235316BF9E1200379837 /* image.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD9F235116BF9E1000379837 /* image.plist */; };
-		AD9F235416BF9E1200379837 /* image.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = AD9F235216BF9E1100379837 /* image.pvr.ccz */; };
 		AD9F517F16AA8A47000E41F8 /* 26sizefont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AD9F517B16AA8A47000E41F8 /* 26sizefont.fnt */; };
 		AD9F518016AA8A47000E41F8 /* 26sizefont.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9F517C16AA8A47000E41F8 /* 26sizefont.png */; };
 		ADE56DC616A4E4CF00D91211 /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADE56DC516A4E4CF00D91211 /* Player.mm */; };
@@ -298,6 +300,11 @@
 		AD4359B1169C02E7000374E3 /* CCSpritePartInWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSpritePartInWorld.h; sourceTree = "<group>"; };
 		AD4359B2169C02E7000374E3 /* CCSpritePartInWorld.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCSpritePartInWorld.mm; sourceTree = "<group>"; };
 		AD48765A16B677EF006B2943 /* fgtRope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgtRope.png; sourceTree = "<group>"; };
+		AD4BA70716C09B9C00C39B40 /* image.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image.plist; sourceTree = "<group>"; };
+		AD4BA70816C09B9C00C39B40 /* image.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = image.pvr.ccz; sourceTree = "<group>"; };
+		AD4BA70B16C09C7A00C39B40 /* WinLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinLayer.h; sourceTree = "<group>"; };
+		AD4BA70C16C09C7A00C39B40 /* WinLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WinLayer.mm; sourceTree = "<group>"; };
+		AD4BA70E16C0A0B100C39B40 /* winLayer.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = winLayer.ccb; sourceTree = "<group>"; };
 		AD7829FE16BBB34200F3A777 /* GameObjectLayer2.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameObjectLayer2.ccb; sourceTree = "<group>"; };
 		AD7829FF16BBB34200F3A777 /* GameObjectLayer3.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameObjectLayer3.ccb; sourceTree = "<group>"; };
 		AD9127C816B27B0D00926B21 /* tails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tails.png; sourceTree = "<group>"; };
@@ -685,8 +692,6 @@
 		AD9DD86A169AA3FB002A28BB /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		AD9DD86B169AA3FB002A28BB /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		AD9DD86D169AA3FB002A28BB /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		AD9F235116BF9E1000379837 /* image.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image.plist; sourceTree = "<group>"; };
-		AD9F235216BF9E1100379837 /* image.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = image.pvr.ccz; sourceTree = "<group>"; };
 		AD9F517B16AA8A47000E41F8 /* 26sizefont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 26sizefont.fnt; sourceTree = "<group>"; };
 		AD9F517C16AA8A47000E41F8 /* 26sizefont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 26sizefont.png; sourceTree = "<group>"; };
 		ADE56DC416A4E4CF00D91211 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -914,8 +919,9 @@
 		AD9DD69D169AA3F9002A28BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AD9F235116BF9E1000379837 /* image.plist */,
-				AD9F235216BF9E1100379837 /* image.pvr.ccz */,
+				AD4BA70E16C0A0B100C39B40 /* winLayer.ccb */,
+				AD4BA70716C09B9C00C39B40 /* image.plist */,
+				AD4BA70816C09B9C00C39B40 /* image.pvr.ccz */,
 				ADF29F2E16BCB73E00622BEC /* pauseLayer.ccb */,
 				AD7829FE16BBB34200F3A777 /* GameObjectLayer2.ccb */,
 				AD7829FF16BBB34200F3A777 /* GameObjectLayer3.ccb */,
@@ -1426,6 +1432,8 @@
 				ADEEC07616A938DE005AD266 /* InputLayer.mm */,
 				ADF29EEC16BCA96500622BEC /* PauseLayer.h */,
 				ADF29EED16BCA96500622BEC /* PauseLayer.mm */,
+				AD4BA70B16C09C7A00C39B40 /* WinLayer.h */,
+				AD4BA70C16C09C7A00C39B40 /* WinLayer.mm */,
 			);
 			name = layer;
 			sourceTree = "<group>";
@@ -1626,8 +1634,9 @@
 				AD782A0016BBB34200F3A777 /* GameObjectLayer2.ccb in Resources */,
 				AD782A0116BBB34200F3A777 /* GameObjectLayer3.ccb in Resources */,
 				ADF29F3816BCB74200622BEC /* pauseLayer.ccb in Resources */,
-				AD9F235316BF9E1200379837 /* image.plist in Resources */,
-				AD9F235416BF9E1200379837 /* image.pvr.ccz in Resources */,
+				AD4BA70916C09B9C00C39B40 /* image.plist in Resources */,
+				AD4BA70A16C09B9C00C39B40 /* image.pvr.ccz in Resources */,
+				AD4BA70F16C0A0B100C39B40 /* winLayer.ccb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1791,6 +1800,7 @@
 				AD97AB6B16BA5FB10074CED0 /* BigStageSelectScene.mm in Sources */,
 				AD97AB6C16BA5FB10074CED0 /* SecondStageSelectScene.mm in Sources */,
 				ADF29EEE16BCA96500622BEC /* PauseLayer.mm in Sources */,
+				AD4BA70D16C09C7A00C39B40 /* WinLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

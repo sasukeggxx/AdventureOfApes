@@ -20,15 +20,20 @@
 {
     
     GameScene *gameScene=(GameScene *)[self parent];
-    if ([gameScene getChildByTag:pauseLayerTag]) {
-        return;
-    }
     [gameScene setIsPaused:YES];//暂停
     [gameScene unschedule:@selector(countDownTime:)];
     
+    if ([gameScene getChildByTag:pauseLayerTag]) { //如果pauselayer存在则只移动
+        CCLayer *pauseLayer=(CCLayer *)[gameScene getChildByTag:pauseLayerTag];
+        id moveToCenter=[CCMoveTo actionWithDuration:0.2 position:CGPointZero];
+        [pauseLayer runAction:moveToCenter];
+        return;
+    }
+    
+    
     CCLayer *pauseLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"pauseLayer.ccb"];
     [gameScene addChild:pauseLayer z:1 tag:pauseLayerTag];
-    id moveToCenter=[CCMoveTo actionWithDuration:0.3 position:ccp(0, 2)];
+    id moveToCenter=[CCMoveTo actionWithDuration:0.2 position:CGPointZero];
     [pauseLayer runAction:moveToCenter];
 
 }
