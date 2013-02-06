@@ -12,8 +12,14 @@
 @interface SecondStageSelectScene : CCLayer <UIScrollViewDelegate>{
     UIPageControl *pagecontrol;
     UIScrollView *scrollview;
-    BOOL *buttonState;
     float height;
+    NSMutableArray *smallState;
+    NSMutableArray *smallCup;
+    int buttonState;
+    int smallCupNumber;
+//    int i;
 }
 +(id)scene;
+-(void)processMap:(NSDictionary*)dic;
+-(CCLayer*) runRecipe;
 @end

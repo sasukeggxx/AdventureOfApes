@@ -22,9 +22,13 @@
     if (self=[super init]) {
         
         CGSize size = [[CCDirector sharedDirector] winSize];
-        CCSprite *bg = [CCSprite spriteWithFile:@"bg.png"];
+        CCSprite *bg = [CCSprite spriteWithFile:@"menuBg.png"];
         bg.position = ccp(size.width/2,size.height/2);
         [self addChild:bg z:-1];
+        
+        CCSprite *bg1 = [CCSprite spriteWithFile:@"menuBg1.png"];
+        bg1.position = ccp(size.width-bg1.contentSize.width/2+6,size.height*0.1-5);
+        [self addChild:bg1 z:2];
         
         CCMenuItem *storyModeItem = [CCMenuItemImage itemFromNormalImage:
                                      @"storyMode.png"selectedImage:@"sstoryMode.png"disabledImage:nil target:self selector:@selector(storyModeItemTouched:)];
@@ -39,7 +43,7 @@
         CCSprite *settingBgSprite = [CCSprite spriteWithFile:@"settingBg.png"];
         [self addChild:settingBgSprite z:3];
         settingBgSprite.position = ccp (size.width*0.92,size.height*0.1);
-        
+    
         CCMenuItem *settingItem = [CCMenuItemImage itemFromNormalImage:@"set.png" selectedImage:nil target:self selector: @selector(settingItemTouched:)];
         CCMenu *settingMenu = [CCMenu menuWithItems:
                                    settingItem, nil]; 
@@ -57,14 +61,41 @@
         mode =1;
         
         
-        CCMenuItem *faceBookItem = [CCMenuItemImage itemFromNormalImage:@"faceBookURL.png" selectedImage:@"sfaceBookURL.png" target:self selector: @selector(openFaceBookURL:)];
-        CCMenuItem *twitterItem = [CCMenuItemImage itemFromNormalImage:@"twitterURL.png" selectedImage:@"stwitterURL.png" target:self selector: @selector(openTwitterURL:)];
+        CCMenuItem *faceBookItem = [CCMenuItemImage itemFromNormalImage:@"faceBook.png" selectedImage:@"sfaceBook.png" target:self selector: @selector(openFaceBookURL:)];
+        CCMenuItem *twitterItem = [CCMenuItemImage itemFromNormalImage:@"twinter.png" selectedImage:@"stwinter.png" target:self selector: @selector(openTwitterURL:)];
         CCMenu *URLMenu = [CCMenu menuWithItems:
                                faceBookItem,twitterItem, nil];
         [URLMenu alignItemsHorizontallyWithPadding:13];
         URLMenu.position=ccp(142,20);
         [self addChild:URLMenu z:3];
     
+        settingSprite =[CCSprite spriteWithFile:@"settingFrame.png"];
+        settingSprite.position=ccp(size.width*0.92,-size.height*0.15);
+        [self addChild:settingSprite z:1 tag:88];
+        
+        shakeOnItem = [CCMenuItemImage itemFromNormalImage:@"shakeOn.png" selectedImage:nil
+                                                    target:self selector:nil];
+        shakeOffItem = [CCMenuItemImage itemFromNormalImage:@"shakeoff.png" selectedImage:nil                                                           target:self selector:nil];
+        CCMenuItemToggle *shakeToggle = [CCMenuItemToggle itemWithTarget:self selector:@selector(shakeButtonTapped:) items:shakeOnItem,shakeOffItem,nil];
+        
+        
+        soundOnItem = [CCMenuItemImage itemFromNormalImage:@"soundOn.png" selectedImage:nil
+                                                    target:self selector:nil];
+        soundOffItem = [CCMenuItemImage itemFromNormalImage:@"soundOff.png" selectedImage:nil                                                           target:self selector:nil];
+        
+        CCMenuItemToggle *soundToggle = [CCMenuItemToggle itemWithTarget:self selector:@selector(soundButtonTapped:) items:soundOnItem,soundOffItem,nil];
+        
+        languageChItem = [CCMenuItemImage itemFromNormalImage:@"languageChina.png" selectedImage:nil
+                                                       target:self selector:nil];
+        languageEnItem = [CCMenuItemImage itemFromNormalImage:@"languageEn.png" selectedImage:nil                                                           target:self selector:nil];
+        
+        CCMenuItemToggle *languageToggle = [CCMenuItemToggle itemWithTarget:self selector:@selector(soundButtonTapped:) items:languageChItem,languageEnItem,nil];
+        CCMenu *toggleMenu = [CCMenu menuWithItems:
+                              shakeToggle,soundToggle,languageToggle,
+                              nil];
+        [toggleMenu alignItemsVerticallyWithPadding:1];
+        toggleMenu.position=ccp(settingSprite.contentSize.width/2,settingSprite.contentSize.height/2);
+        [settingSprite addChild:toggleMenu z:11];
     }
     
     return self;
@@ -92,39 +123,9 @@
 		case 0:
         
         {
-            settingSprite =[CCSprite spriteWithFile:@"settingFrame.png"];
-            settingSprite.position=ccp(screenSize.width*0.92,screenSize.height*0.15);
-            [self addChild:settingSprite z:1 tag:88];
-            
-            
-            shakeOnItem = [CCMenuItemImage itemFromNormalImage:@"shakeOn.png" selectedImage:nil
-                                                        target:self selector:nil];
-            shakeOffItem = [CCMenuItemImage itemFromNormalImage:@"shakeoff.png" selectedImage:nil                                                           target:self selector:nil];
-            CCMenuItemToggle *shakeToggle = [CCMenuItemToggle itemWithTarget:self selector:@selector(shakeButtonTapped:) items:shakeOnItem,shakeOffItem,nil];
-            
-            
-            soundOnItem = [CCMenuItemImage itemFromNormalImage:@"soundOn.png" selectedImage:nil
-                                                        target:self selector:nil];
-            soundOffItem = [CCMenuItemImage itemFromNormalImage:@"soundOff.png" selectedImage:nil                                                           target:self selector:nil];
-            
-            CCMenuItemToggle *soundToggle = [CCMenuItemToggle itemWithTarget:self selector:@selector(soundButtonTapped:) items:soundOnItem,soundOffItem,nil];
-            
-            languageChItem = [CCMenuItemImage itemFromNormalImage:@"languageChina.png" selectedImage:nil
-                                                        target:self selector:nil];
-            languageEnItem = [CCMenuItemImage itemFromNormalImage:@"languageEn.png" selectedImage:nil                                                           target:self selector:nil];
-            
-            CCMenuItemToggle *languageToggle = [CCMenuItemToggle itemWithTarget:self selector:@selector(soundButtonTapped:) items:languageChItem,languageEnItem,nil];
-            CCMenu *toggleMenu = [CCMenu menuWithItems:
-                                  shakeToggle,soundToggle,languageToggle,
-                                  nil];
-            [toggleMenu alignItemsVerticallyWithPadding:2];
-            
-            toggleMenu.position=ccp(settingSprite.contentSize.width/2,settingSprite.contentSize.height/2);
-            [settingSprite addChild:toggleMenu z:11];
-            
             
             [node runAction:[CCRepeat actionWithAction:rotateBy times:2]];
-            CCMoveTo *moveIn = [CCMoveTo actionWithDuration:0.5 position:ccp(screenSize.width*0.92, screenSize.height*0.5)];
+            CCMoveTo *moveIn = [CCMoveTo actionWithDuration:0.5 position:ccp(screenSize.width*0.92, screenSize.height*0.44)];
             CCEaseIn *easeMoveIn = [CCEaseIn actionWithAction:moveIn rate:0.5];
             [settingSprite runAction:[CCSequence actions:easeMoveIn,nil]];
             
@@ -133,19 +134,14 @@
 		case 1:
         {
             [node runAction:[CCRepeat actionWithAction:[rotateBy reverse] times:2]];
-            CCMoveTo *moveOut = [CCMoveTo actionWithDuration:0.5 position:ccp(screenSize.width*0.92, screenSize.height*0.15)];
-            //CCEaseInOut *easeMoveOut = [CCEaseInOut actionWithAction:moveOut rate:1];
-            CCCallFunc *func = [CCCallFunc actionWithTarget:self selector:@selector(removeSettingSprite:)];
-            [settingSprite runAction:[CCSequence actions:moveOut,func, nil]];
+            CCMoveTo *moveOut = [CCMoveTo actionWithDuration:0.5 position:ccp(screenSize.width*0.92, -screenSize.height*0.15)];
+            CCEaseInOut *easeMoveOut = [CCEaseInOut actionWithAction:moveOut rate:1];
+            [settingSprite runAction:[CCSequence actions:easeMoveOut, nil]];
         }
 			break;
 	}
     
     
-}
--(void)removeSettingSprite:(id)sender
-{
-    [self removeChildByTag:88 cleanup:YES];
 }
 
 -(void) shakeButtonTapped: (id) sender

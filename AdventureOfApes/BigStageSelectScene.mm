@@ -33,8 +33,7 @@
         
         //添加大关森林
         CCSprite  *forestSprite = [CCSprite spriteWithFile:@"forest.png"];
-        //CCSprite  *forestSpriteLock = [CCSprite spriteWithFile:@"forestLock.png"];
-        CCMenuItemSprite *forestItem = [CCMenuItemSprite itemFromNormalSprite:forestSprite selectedSprite:nil disabledSprite:nil target:self selector:@selector(btnCall:)];
+        CCSprite *sforestSprite = [CCSprite spriteWithFile:@"sforest.png"];        CCMenuItemSprite *forestItem = [CCMenuItemSprite itemFromNormalSprite:forestSprite selectedSprite:sforestSprite disabledSprite:nil target:self selector:@selector(skip:)];
         forestMenu = [CCMenu menuWithItems:
                       forestItem,nil];
         forestMenu.position=ccp(size.width*0.33,size.height*0.63);
@@ -42,17 +41,17 @@
         
         //添加大关洞穴
         CCSprite  *caveSprite = [CCSprite spriteWithFile:@"cave.png"];
-        CCSprite *caveSpriteLock = [CCSprite spriteWithFile:@"caveLock.png"];
-        CCMenuItemSprite *caveItem = [CCMenuItemSprite itemFromNormalSprite:caveSprite selectedSprite:nil disabledSprite:caveSpriteLock target:self selector:@selector(btnCall:)];
+        CCSprite *scaveSprite =  [CCSprite spriteWithFile:@"scave.png"];        CCSprite *caveSpriteLock = [CCSprite spriteWithFile:@"caveLock.png"];
+        CCMenuItemSprite *caveItem = [CCMenuItemSprite itemFromNormalSprite:caveSprite selectedSprite:scaveSprite disabledSprite:caveSpriteLock target:self selector:@selector(skip:)];
         caveItem.isEnabled=NO;
         caveMenu = [CCMenu menuWithItems:caveItem, nil];
         caveMenu.position =ccp(size.width*0.36,size.height*0.31);
-        [self addChild:caveMenu z:1 tag:103];
-       
+        [self addChild:caveMenu z:2 tag:103];
+        
         //添加大关火山
         CCSprite  *volcanoSprite = [CCSprite spriteWithFile:@"volcano.png"];
-        CCSprite *volcanoSpriteLock = [CCSprite spriteWithFile:@"volcaLock.png"];
-        CCMenuItemSprite *volcanoItem = [CCMenuItemSprite itemFromNormalSprite:volcanoSprite selectedSprite:nil disabledSprite:volcanoSpriteLock target:self selector:@selector(btnCall:)];
+        CCSprite *svolcanoSprite = [CCSprite spriteWithFile:@"svolcano.png"];        CCSprite *volcanoSpriteLock = [CCSprite spriteWithFile:@"volcaLock.png"];
+        CCMenuItemSprite *volcanoItem = [CCMenuItemSprite itemFromNormalSprite:volcanoSprite selectedSprite:svolcanoSprite disabledSprite:volcanoSpriteLock target:self selector:@selector(skip:)];
         volcanoItem.isEnabled=NO;
         volcanoMenu = [CCMenu menuWithItems:volcanoItem, nil];
         volcanoMenu.position =ccp(size.width*0.78,size.height*0.52);
@@ -61,10 +60,11 @@
         
         //添加返回按钮
         CCSprite  *backSprite = [CCSprite spriteWithFile:@"back.png"];
-        CCMenuItemSprite *backItem = [CCMenuItemSprite itemFromNormalSprite:backSprite  selectedSprite:nil target:self selector:@selector(backCall:)];
+        CCSprite *sbackSprite = [CCSprite spriteWithFile:@"sback.png"];
+        CCMenuItemSprite *backItem = [CCMenuItemSprite itemFromNormalSprite:backSprite  selectedSprite:sbackSprite target:self selector:@selector(backCall:)];
         backMenu = [CCMenu menuWithItems:
                         backItem,nil];
-        backMenu.position = ccp(backSprite.contentSize.width/2,size.height-backSprite.contentSize.height/2);
+         backMenu.position=ccp(backSprite.contentSize.width/2,size.height-backSprite.contentSize.height/2);
         [self addChild:backMenu z:1];
         
         //添加角色选择按钮
@@ -239,6 +239,7 @@
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"monkey.wav"];//add 
    
+    
     if(canTouch)
     {
     canTouch = NO;//角色选择不能触摸
@@ -250,33 +251,40 @@
     CGSize size = [[CCDirector sharedDirector] winSize];
     CCLayerColor *bgcol1=[CCLayerColor layerWithColor:ccc4(0,0,0,155)];//背景色
     [self addChild:bgcol1 z:3 tag:100];
-     
-    CCSprite * roleBgBg = [CCSprite spriteWithFile:@"roleBgBg.png"];
-    roleBgBg.position = ccp(size.width/2,size.height/2);
-    [self addChild:roleBgBg z:4];
-    //添加四个角色
-    CCSprite * roleBg = [CCSprite spriteWithFile:@"roleBg.png"];
-    roleBg.position = ccp(roleBg.contentSize.width,roleBg.contentSize.height/2);
-    [roleBgBg addChild:roleBg z:1];
+    
+    
         
+    CCSprite * roleBg = [CCSprite spriteWithFile:@"roleBg.png"];
+    roleBg.position = ccp(size.width/2,size.height+roleBg.contentSize.height);
+    [bgcol1 addChild:roleBg z:4];
+    
+    CCSprite * roleBgFrame = [CCSprite spriteWithFile:@"roleBgFrame.png"];
+    roleBgFrame.position = ccp(roleBg.contentSize.width/2,size.height*0.52);
+    [roleBg addChild:roleBgFrame z:5];
+        
+        //添加四个角色
     CCSprite  *gagaSprite = [CCSprite spriteWithFile:@"gaga.png"];
     CCMenuItemSprite *gagaItem = [CCMenuItemSprite itemFromNormalSprite:gagaSprite  selectedSprite:nil target:self selector:@selector(selectButtonTouched:)];
         
-    CCSprite  *ladySprite = [CCSprite spriteWithFile:@"tollgate-STONE.png"];
+    CCSprite  *ladySprite = [CCSprite spriteWithFile:@"roleLock.png"];
     CCMenuItemSprite *ladyItem = [CCMenuItemSprite itemFromNormalSprite:ladySprite  selectedSprite:nil target:self selector:@selector(selectButtonTouched:)];
     
-    CCSprite  *ehehSprite = [CCSprite spriteWithFile:@"tollgate-STONE.png"];
+    CCSprite  *ehehSprite = [CCSprite spriteWithFile:@"roleLock.png"];
     CCMenuItemSprite *ehehItem = [CCMenuItemSprite itemFromNormalSprite:ehehSprite
                                                          selectedSprite:nil target:self selector:@selector(selectButtonTouched:)];
-    CCSprite  *spiderSprite = [CCSprite spriteWithFile:@"tollgate-STONE.png"];
+    CCSprite  *spiderSprite = [CCSprite spriteWithFile:@"roleLock.png"];
     CCMenuItemSprite *spiderItem = [CCMenuItemSprite itemFromNormalSprite:spiderSprite
                                                          selectedSprite:nil target:self selector:@selector(selectButtonTouched:)];
     CCMenu *selectionMenu = [CCMenu menuWithItems:
                                  gagaItem,ladyItem,ehehItem,spiderItem, nil];
-    [roleBgBg addChild:selectionMenu z:10 tag:200];
+    [roleBg addChild:selectionMenu z:10 tag:200];
     [selectionMenu alignItemsHorizontallyWithPadding:0];
-    selectionMenu.position=ccp(size.width/2, size.height/2);
-    
+   selectionMenu.position=ccp(roleBg.contentSize.width/2,size.height+roleBg.contentSize.height);
+    selectionMenu.position=ccp(roleBg.contentSize.width/2, roleBg.contentSize.height/2);
+        
+    CCMoveTo *moveIn = [CCMoveTo actionWithDuration:0.2  position:ccp(size.width/2,size.height/2-60)];
+    CCMoveTo *moveto = [CCMoveTo actionWithDuration:0.1  position:ccp(size.width/2,size.height/2)];
+    [roleBg runAction:[CCSequence actions:moveIn,moveto, nil]];
     }
     else{
         
@@ -292,15 +300,7 @@
     backMenu.isTouchEnabled = NO;//设置返回按钮能点击
     canTouch = YES;//设置角色按钮能点击
 }
-//点击btn图标
--(void)btnCall:(CCNode*)node{
-    
-    CCScaleTo *scaleBy = [CCScaleTo actionWithDuration:0.2 scale:0.6f];
-    CCCallFunc *func = [CCCallFunc actionWithTarget:self selector:@selector(skip:)];
-    [node runAction:[CCSequence actions:scaleBy,func, nil]];
-}
 
-//
 -(void)skip:(id)sender{
    
     [[CCDirector sharedDirector]replaceScene:[CCTransitionFade transitionWithDuration:0.2 scene:[SecondStageSelectScene scene]]];
