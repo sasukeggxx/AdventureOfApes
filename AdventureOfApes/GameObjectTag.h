@@ -34,10 +34,10 @@ typedef enum {
 
 
 //typedef enum {
-//
-//    
-//
-//}pauseLayerObjectTag;
+//   winScoreTag,
+//   winTimeTag,
+//   winLifeTag,
+//}winLayerObjectTag;
 
 
 

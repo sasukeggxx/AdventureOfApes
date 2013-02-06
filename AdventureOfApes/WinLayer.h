@@ -10,7 +10,12 @@
 #import "cocos2d.h"
 
 @interface WinLayer : CCLayer {
-    
+    CCLabelBMFont *scoreLab;
+    CCLabelBMFont *timeLab;
+    CCLabelBMFont *lifeLab;
 }
+@property (nonatomic,retain) CCLabelBMFont *scoreLab;
+@property (nonatomic,retain) CCLabelBMFont *timeLab;
+@property (nonatomic,retain) CCLabelBMFont *lifeLab;
 
 @end

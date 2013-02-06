@@ -12,6 +12,7 @@
 #import "CCBReader.h"
 #import "InputLayer.h"
 #import "Banana.h"
+#import "WinLayer.h"
 
 
 @implementation GameScene
@@ -270,7 +271,7 @@
                         if (actualDistance<maxCollisionDistance) {
             
                             [gameObjectLayer removeChild:fruit cleanup:YES];
-                             score=score+10;
+                             score=score+100;
                             CCLabelBMFont *scoreLabel=(CCLabelBMFont *)[inputLayer getChildByTag:scoreTag];
                             scoreLabel.string=[NSString stringWithFormat:@"%d",score];
                             
@@ -334,7 +335,13 @@
                     self.isPaused=YES;
                     [self unschedule:@selector(countDownTime:)];
                     [self unschedule:_cmd];
-                     CCLayer *winLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"winLayer.ccb"];
+                     WinLayer *winLayer=(WinLayer *)[CCBReader nodeGraphFromFile:@"winLayer.ccb"];
+                    winLayer.scoreLab.string=[NSString stringWithFormat:@"%d",score]; //传递分值
+                    CCLabelBMFont *timeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:timeTag];
+                    winLayer.timeLab.string=timeLabel.string;
+                    CCLabelBMFont *lifeLabel=(CCLabelBMFont *)[inputLayer getChildByTag:lifeTag];
+                    winLayer.lifeLab.string=lifeLabel.string;
+                    
                     [self addChild:winLayer z:1 tag:winLayerTag];
                     id moveToCenter=[CCMoveTo actionWithDuration:0.2 position:CGPointZero];
                     [winLayer runAction:moveToCenter];

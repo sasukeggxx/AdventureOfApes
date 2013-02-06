@@ -614,66 +614,6 @@
 							</array>
 							<key>contentSize</key>
 							<array>
-								<real>52</real>
-								<real>33</real>
-							</array>
-							<key>customClass</key>
-							<string></string>
-							<key>fontFile</key>
-							<string>18fontsize.fnt</string>
-							<key>isExpanded</key>
-							<true/>
-							<key>isRelativeAnchorPoint</key>
-							<true/>
-							<key>lockedScaleRatio</key>
-							<true/>
-							<key>memberVarAssignmentName</key>
-							<string></string>
-							<key>memberVarAssignmentType</key>
-							<integer>0</integer>
-							<key>opacity</key>
-							<integer>255</integer>
-							<key>position</key>
-							<array>
-								<real>195.7109375</real>
-								<real>205.81640625</real>
-							</array>
-							<key>rotation</key>
-							<real>0.0</real>
-							<key>scaleX</key>
-							<real>1</real>
-							<key>scaleY</key>
-							<real>1</real>
-							<key>string</key>
-							<string>3213</string>
-							<key>tag</key>
-							<integer>-1</integer>
-							<key>visible</key>
-							<true/>
-							<key>zOrder</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<dict>
-						<key>children</key>
-						<array/>
-						<key>class</key>
-						<string>CCLabelBMFont</string>
-						<key>properties</key>
-						<dict>
-							<key>anchorPoint</key>
-							<array>
-								<real>0.5</real>
-								<real>0.5</real>
-							</array>
-							<key>color</key>
-							<array>
-								<integer>255</integer>
-								<integer>255</integer>
-								<integer>255</integer>
-							</array>
-							<key>contentSize</key>
-							<array>
 								<real>45</real>
 								<real>33</real>
 							</array>
@@ -718,7 +658,7 @@
 						<key>children</key>
 						<array/>
 						<key>class</key>
-						<string>CCLabelBMFont</string>
+						<string>CCSprite</string>
 						<key>properties</key>
 						<dict>
 							<key>anchorPoint</key>
@@ -726,65 +666,10 @@
 								<real>0.5</real>
 								<real>0.5</real>
 							</array>
-							<key>color</key>
+							<key>blendFunc</key>
 							<array>
-								<integer>255</integer>
-								<integer>255</integer>
-								<integer>255</integer>
-							</array>
-							<key>contentSize</key>
-							<array>
-								<real>33</real>
-								<real>33</real>
-							</array>
-							<key>customClass</key>
-							<string></string>
-							<key>fontFile</key>
-							<string>18fontsize.fnt</string>
-							<key>isExpanded</key>
-							<true/>
-							<key>isRelativeAnchorPoint</key>
-							<true/>
-							<key>lockedScaleRatio</key>
-							<true/>
-							<key>memberVarAssignmentName</key>
-							<string></string>
-							<key>memberVarAssignmentType</key>
-							<integer>0</integer>
-							<key>opacity</key>
-							<integer>255</integer>
-							<key>position</key>
-							<array>
-								<real>225.1484375</real>
-								<real>156.59765625</real>
-							</array>
-							<key>rotation</key>
-							<real>0.0</real>
-							<key>scaleX</key>
-							<real>1</real>
-							<key>scaleY</key>
-							<real>1</real>
-							<key>string</key>
-							<string>left:</string>
-							<key>tag</key>
-							<integer>-1</integer>
-							<key>visible</key>
-							<true/>
-							<key>zOrder</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<dict>
-						<key>children</key>
-						<array/>
-						<key>class</key>
-						<string>CCLabelBMFont</string>
-						<key>properties</key>
-						<dict>
-							<key>anchorPoint</key>
-							<array>
-								<real>0.5</real>
-								<real>0.5</real>
+								<integer>770</integer>
+								<integer>771</integer>
 							</array>
 							<key>color</key>
 							<array>
@@ -795,12 +680,14 @@
 							<key>contentSize</key>
 							<array>
 								<real>26</real>
-								<real>33</real>
+								<real>26</real>
 							</array>
 							<key>customClass</key>
 							<string></string>
-							<key>fontFile</key>
-							<string>18fontsize.fnt</string>
+							<key>flipX</key>
+							<false/>
+							<key>flipY</key>
+							<false/>
 							<key>isExpanded</key>
 							<true/>
 							<key>isRelativeAnchorPoint</key>
@@ -815,8 +702,8 @@
 							<integer>255</integer>
 							<key>position</key>
 							<array>
-								<real>140.77734375</real>
-								<real>156.3359375</real>
+								<real>225.83203125</real>
+								<real>157.34765625</real>
 							</array>
 							<key>rotation</key>
 							<real>0.0</real>
@@ -824,8 +711,10 @@
 							<real>1</real>
 							<key>scaleY</key>
 							<real>1</real>
-							<key>string</key>
-							<string>30</string>
+							<key>spriteFile</key>
+							<string>playerAvatar</string>
+							<key>spriteFramesFile</key>
+							<string>image.plist</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>visible</key>
@@ -854,7 +743,7 @@
 							</array>
 							<key>contentSize</key>
 							<array>
-								<real>13</real>
+								<real>9</real>
 								<real>33</real>
 							</array>
 							<key>customClass</key>
@@ -875,8 +764,8 @@
 							<integer>255</integer>
 							<key>position</key>
 							<array>
-								<real>264.92578125</real>
-								<real>155.90234375</real>
+								<real>248.88671875</real>
+								<real>156.47265625</real>
 							</array>
 							<key>rotation</key>
 							<real>0.0</real>
@@ -885,7 +774,7 @@
 							<key>scaleY</key>
 							<real>1</real>
 							<key>string</key>
-							<string>3</string>
+							<string>x</string>
 							<key>tag</key>
 							<integer>-1</integer>
 							<key>visible</key>
@@ -955,6 +844,186 @@
 					<string>image.plist</string>
 					<key>tag</key>
 					<integer>-1</integer>
+					<key>visible</key>
+					<true/>
+					<key>zOrder</key>
+					<integer>1</integer>
+				</dict>
+			</dict>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>class</key>
+				<string>CCLabelBMFont</string>
+				<key>properties</key>
+				<dict>
+					<key>anchorPoint</key>
+					<array>
+						<real>0.5</real>
+						<real>0.5</real>
+					</array>
+					<key>color</key>
+					<array>
+						<integer>255</integer>
+						<integer>255</integer>
+						<integer>255</integer>
+					</array>
+					<key>contentSize</key>
+					<array>
+						<real>52</real>
+						<real>33</real>
+					</array>
+					<key>customClass</key>
+					<string></string>
+					<key>fontFile</key>
+					<string>18fontsize.fnt</string>
+					<key>isExpanded</key>
+					<true/>
+					<key>isRelativeAnchorPoint</key>
+					<true/>
+					<key>lockedScaleRatio</key>
+					<true/>
+					<key>memberVarAssignmentName</key>
+					<string>scoreLab</string>
+					<key>memberVarAssignmentType</key>
+					<integer>1</integer>
+					<key>opacity</key>
+					<integer>255</integer>
+					<key>position</key>
+					<array>
+						<real>251.0546875</real>
+						<real>246.96875</real>
+					</array>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scaleX</key>
+					<real>1</real>
+					<key>scaleY</key>
+					<real>1</real>
+					<key>string</key>
+					<string>3213</string>
+					<key>tag</key>
+					<integer>0</integer>
+					<key>visible</key>
+					<true/>
+					<key>zOrder</key>
+					<integer>1</integer>
+				</dict>
+			</dict>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>class</key>
+				<string>CCLabelBMFont</string>
+				<key>properties</key>
+				<dict>
+					<key>anchorPoint</key>
+					<array>
+						<real>0.5</real>
+						<real>0.5</real>
+					</array>
+					<key>color</key>
+					<array>
+						<integer>255</integer>
+						<integer>255</integer>
+						<integer>255</integer>
+					</array>
+					<key>contentSize</key>
+					<array>
+						<real>26</real>
+						<real>33</real>
+					</array>
+					<key>customClass</key>
+					<string></string>
+					<key>fontFile</key>
+					<string>18fontsize.fnt</string>
+					<key>isExpanded</key>
+					<true/>
+					<key>isRelativeAnchorPoint</key>
+					<true/>
+					<key>lockedScaleRatio</key>
+					<true/>
+					<key>memberVarAssignmentName</key>
+					<string>timeLab</string>
+					<key>memberVarAssignmentType</key>
+					<integer>1</integer>
+					<key>opacity</key>
+					<integer>255</integer>
+					<key>position</key>
+					<array>
+						<real>198.2890625</real>
+						<real>192.75390625</real>
+					</array>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scaleX</key>
+					<real>1</real>
+					<key>scaleY</key>
+					<real>1</real>
+					<key>string</key>
+					<string>30</string>
+					<key>tag</key>
+					<integer>1</integer>
+					<key>visible</key>
+					<true/>
+					<key>zOrder</key>
+					<integer>1</integer>
+				</dict>
+			</dict>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>class</key>
+				<string>CCLabelBMFont</string>
+				<key>properties</key>
+				<dict>
+					<key>anchorPoint</key>
+					<array>
+						<real>0.5</real>
+						<real>0.5</real>
+					</array>
+					<key>color</key>
+					<array>
+						<integer>255</integer>
+						<integer>255</integer>
+						<integer>255</integer>
+					</array>
+					<key>contentSize</key>
+					<array>
+						<real>13</real>
+						<real>33</real>
+					</array>
+					<key>customClass</key>
+					<string></string>
+					<key>fontFile</key>
+					<string>18fontsize.fnt</string>
+					<key>isExpanded</key>
+					<true/>
+					<key>isRelativeAnchorPoint</key>
+					<true/>
+					<key>lockedScaleRatio</key>
+					<true/>
+					<key>memberVarAssignmentName</key>
+					<string>lifeLab</string>
+					<key>memberVarAssignmentType</key>
+					<integer>1</integer>
+					<key>opacity</key>
+					<integer>255</integer>
+					<key>position</key>
+					<array>
+						<real>333.8125</real>
+						<real>195.75</real>
+					</array>
+					<key>rotation</key>
+					<real>0.0</real>
+					<key>scaleX</key>
+					<real>1</real>
+					<key>scaleY</key>
+					<real>1</real>
+					<key>string</key>
+					<string>3</string>
+					<key>tag</key>
+					<integer>2</integer>
 					<key>visible</key>
 					<true/>
 					<key>zOrder</key>

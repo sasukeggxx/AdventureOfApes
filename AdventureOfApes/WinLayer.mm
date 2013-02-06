@@ -12,8 +12,15 @@
 
 @implementation WinLayer
 
+@synthesize scoreLab;
+@synthesize timeLab;
+@synthesize lifeLab;
 
-
+-(void)didLoadFromCCB
+{
+    
+    
+}
 
 //点击菜单按钮返回小关
 -(void)victoryMenuTouch:(id)sender{
