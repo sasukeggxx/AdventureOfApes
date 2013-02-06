@@ -54,7 +54,7 @@
         
         [self initTheWorld];//初始化世界
         
-        //[GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
+        [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
         
         groundShape=[CreateGroundInWorld createGroundWithWorld:world];
 
