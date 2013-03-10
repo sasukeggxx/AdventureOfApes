@@ -26,9 +26,9 @@
         bg.position = ccp(size.width/2,size.height/2);
         [self addChild:bg z:-1];
         
-        CCSprite *bg1 = [CCSprite spriteWithFile:@"menuBg1.png"];
-        bg1.position = ccp(size.width-bg1.contentSize.width/2+6,size.height*0.1-5);
-        [self addChild:bg1 z:2];
+//        CCSprite *bg1 = [CCSprite spriteWithFile:@"menuBg1.png"];
+//        bg1.position = ccp(size.width-bg1.contentSize.width/2+6,size.height*0.1-5);
+//        [self addChild:bg1 z:2];
         
         CCMenuItem *storyModeItem = [CCMenuItemImage itemFromNormalImage:
                                      @"storyMode.png"selectedImage:@"sstoryMode.png"disabledImage:nil target:self selector:@selector(storyModeItemTouched:)];
