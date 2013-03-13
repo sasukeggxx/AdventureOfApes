@@ -103,6 +103,7 @@
             {
                 [button setEnabled:YES];
                 [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"small%d.png",i+1]]forState:UIControlStateNormal];
+                [button setTag:i+1];//设置下标
                 
             }
             smallCupNumber = [[smallCup objectAtIndex:i]intValue];
@@ -198,8 +199,8 @@ NSString* getActualPath(NSString *file)
 
 //点击btn图标
 -(void)btnCall:(id)sender{
-    
-    [[CCDirector sharedDirector]replaceScene:[CCTransitionFade transitionWithDuration:0.2 scene:[GameScene scene]]];
+    NSInteger stageNum=[sender tag];
+    [[CCDirector sharedDirector]replaceScene:[CCTransitionFade transitionWithDuration:0.2 scene:[GameScene sceneWithNum:stageNum]]];
     
 }
 

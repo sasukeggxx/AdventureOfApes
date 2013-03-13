@@ -266,7 +266,7 @@
 		ADB4122C16C0F388002587A3 /* 18fontsize.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB4122A16C0F388002587A3 /* 18fontsize.png */; };
 		ADB4123316C10186002587A3 /* tailParticle.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADB4123216C10186002587A3 /* tailParticle.plist */; };
 		ADE56DC616A4E4CF00D91211 /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADE56DC516A4E4CF00D91211 /* Player.mm */; };
-		ADED6C2216B11D10001D5443 /* GameObjectLayer.ccb in Resources */ = {isa = PBXBuildFile; fileRef = ADED6C2116B11D10001D5443 /* GameObjectLayer.ccb */; };
+		ADED6C2216B11D10001D5443 /* GameObjectLayer1.ccb in Resources */ = {isa = PBXBuildFile; fileRef = ADED6C2116B11D10001D5443 /* GameObjectLayer1.ccb */; };
 		ADED6C3816B12A44001D5443 /* CCBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = ADED6C3716B12A44001D5443 /* CCBReader.m */; };
 		ADEDF78916B8C3DA00E29C46 /* treeParticle.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEDF78816B8C3DA00E29C46 /* treeParticle.plist */; };
 		ADEEC07716A938DE005AD266 /* InputLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ADEEC07616A938DE005AD266 /* InputLayer.mm */; };
@@ -716,7 +716,7 @@
 		ADB4123216C10186002587A3 /* tailParticle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tailParticle.plist; sourceTree = "<group>"; };
 		ADE56DC416A4E4CF00D91211 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		ADE56DC516A4E4CF00D91211 /* Player.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Player.mm; sourceTree = "<group>"; };
-		ADED6C2116B11D10001D5443 /* GameObjectLayer.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameObjectLayer.ccb; sourceTree = "<group>"; };
+		ADED6C2116B11D10001D5443 /* GameObjectLayer1.ccb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameObjectLayer1.ccb; sourceTree = "<group>"; };
 		ADED6C3616B12A44001D5443 /* CCBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBReader.h; sourceTree = "<group>"; };
 		ADED6C3716B12A44001D5443 /* CCBReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBReader.m; sourceTree = "<group>"; };
 		ADEDF78816B8C3DA00E29C46 /* treeParticle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = treeParticle.plist; sourceTree = "<group>"; };
@@ -931,6 +931,9 @@
 				ADA7703216C22CDF002A4CB0 /* fgtdeath.png */,
 				AD37162616C2073000109357 /* fgtObj.png */,
 				AD37162716C2073100109357 /* fgtPear.png */,
+				ADED6C2116B11D10001D5443 /* GameObjectLayer1.ccb */,
+				AD7829FE16BBB34200F3A777 /* GameObjectLayer2.ccb */,
+				AD7829FF16BBB34200F3A777 /* GameObjectLayer3.ccb */,
 				AD37161416C204D700109357 /* GameObjectLayer4.ccb */,
 				AD37161516C204D800109357 /* GameObjectLayer5.ccb */,
 				AD37161616C204DA00109357 /* GameObjectLayer6.ccb */,
@@ -950,12 +953,9 @@
 				AD4BA71416C0AD2E00C39B40 /* image.pvr.ccz */,
 				AD4BA70E16C0A0B100C39B40 /* winLayer.ccb */,
 				ADF29F2E16BCB73E00622BEC /* pauseLayer.ccb */,
-				AD7829FE16BBB34200F3A777 /* GameObjectLayer2.ccb */,
-				AD7829FF16BBB34200F3A777 /* GameObjectLayer3.ccb */,
 				AD97EB0416BB6FF600D9C14A /* ground-shape.plist */,
 				ADEDF78816B8C3DA00E29C46 /* treeParticle.plist */,
 				AD48765A16B677EF006B2943 /* fgtRope.png */,
-				ADED6C2116B11D10001D5443 /* GameObjectLayer.ccb */,
 				AD0DDF4116AFC58B005E0029 /* fgtCara.png */,
 				AD0DDF4216AFC58B005E0029 /* fgtGrape.png */,
 				AD0DDF4316AFC58B005E0029 /* fgtTomato.png */,
@@ -1438,10 +1438,10 @@
 			children = (
 				AD37161116C2037100109357 /* SecondStageSelectScene.h */,
 				AD37161216C2037100109357 /* SecondStageSelectScene.mm */,
-				AD37160F16C2032800109357 /* MenuScene.mm */,
-				AD37160D16C2030900109357 /* BigStageSelectScene.mm */,
-				AD97AB6716BA5FB10074CED0 /* BigStageSelectScene.h */,
 				AD97AAD616BA5A8D0074CED0 /* MenuScene.h */,
+				AD37160F16C2032800109357 /* MenuScene.mm */,
+				AD97AB6716BA5FB10074CED0 /* BigStageSelectScene.h */,
+				AD37160D16C2030900109357 /* BigStageSelectScene.mm */,
 				AD43579A169BB28F000374E3 /* GameScene.h */,
 				AD43579B169BB28F000374E3 /* GameScene.mm */,
 			);
@@ -1583,7 +1583,7 @@
 				AD0DDF4416AFC58B005E0029 /* fgtCara.png in Resources */,
 				AD0DDF4516AFC58B005E0029 /* fgtGrape.png in Resources */,
 				AD0DDF4616AFC58B005E0029 /* fgtTomato.png in Resources */,
-				ADED6C2216B11D10001D5443 /* GameObjectLayer.ccb in Resources */,
+				ADED6C2216B11D10001D5443 /* GameObjectLayer1.ccb in Resources */,
 				AD48765B16B677EF006B2943 /* fgtRope.png in Resources */,
 				ADEDF78916B8C3DA00E29C46 /* treeParticle.plist in Resources */,
 				ADFCD03A16BA133A0064CF48 /* stageData.plist in Resources */,

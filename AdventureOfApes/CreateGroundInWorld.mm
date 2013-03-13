@@ -10,16 +10,19 @@
 #import "CCSpritePartInWorld.h"
 #import "CCBReader.h"
 #import "GameUtil.h"
+#import "GameScene.h"
 
 @implementation CreateGroundInWorld
 
-+(id) createGroundWithWorld:(b2World*)world{
+
+
++(id) createGroundWithWorld:(b2World*)world withStage:(int)stageIndex{
     
-    return [[[self alloc]initGroundWithWorld:world]autorelease];
+    return [[[self alloc]initGroundWithWorld:world withStage:stageIndex]autorelease];
 
 }
 
--(id) initGroundWithWorld:(b2World*)world
+-(id) initGroundWithWorld:(b2World*)world withStage:(int)stageIndex
 {
 	if ((self = [super initWithFile:@"image.pvr.ccz" capacity:10]))
 	{
@@ -55,7 +58,9 @@
 
         
         //tree tag区间 0~5
-        CCLayer *gameObjectLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"GameObjectLayer.ccb"];                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+        
+        NSString *stageStr=[NSString stringWithFormat:@"GameObjectLayer%d.ccb",stageIndex];
+        CCLayer *gameObjectLayer=(CCLayer *)[CCBReader nodeGraphFromFile:stageStr];                                                                                                                                                                                                                                                                                                                                                                                                                                                      
         for (int i=0; i<5; i++) {
              CCSprite *tree=(CCSprite *)[gameObjectLayer getChildByTag:i];
             if (tree!=nil) {

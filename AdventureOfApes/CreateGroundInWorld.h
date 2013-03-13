@@ -13,7 +13,9 @@
 @interface CreateGroundInWorld : CCSpriteBatchNode {
     
 }
-+(id) createGroundWithWorld:(b2World*)world;
--(id) initGroundWithWorld:(b2World*)world;
+
+
++(id) createGroundWithWorld:(b2World*)world withStage:(int)stageIndex;
+-(id) initGroundWithWorld:(b2World*)world withStage:(int)stageIndex;
 
 @end

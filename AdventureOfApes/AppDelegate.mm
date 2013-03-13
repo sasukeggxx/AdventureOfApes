@@ -105,7 +105,20 @@
 	[viewController setView:glView];
 	
 	// make the View Controller a child of the main window
-	[window addSubview: viewController.view];
+	//[window addSubview: viewController.view];
+    
+    
+    // Set RootViewController to window
+    if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
+    {
+        // warning: addSubView doesn't work on iOS6
+        [window addSubview: viewController.view];
+    }
+    else
+    {
+        // use this mehod on ios6
+        [window setRootViewController:viewController];
+    }
 	
 	[window makeKeyAndVisible];
 	

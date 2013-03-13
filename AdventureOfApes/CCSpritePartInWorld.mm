@@ -11,7 +11,7 @@
 
 
 @implementation CCSpritePartInWorld
-
+ 
 
 -(id) initWithWorld:(b2World*)world position:(CGPoint)pos name:(NSString *)name
 {

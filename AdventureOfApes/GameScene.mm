@@ -17,17 +17,17 @@
 
 @implementation GameScene
 
-@synthesize isPaused;
+@synthesize isPaused,stageIndex;
 
-+(id)scene{
++(id)sceneWithNum:(int) stageNum{
     CCScene *scene=[CCScene node];
-    CCLayer *layer=[GameScene node];
+    CCLayer *layer=[[[self alloc]initWithStageNum:stageNum]autorelease];
     [scene addChild:layer];
     return scene;
 
 }
 
--(id)init{
+-(id)initWithStageNum:(int)stageNum{
     if (self=[super init]) {
         
         gameOverType=notOverType;
@@ -44,7 +44,10 @@
         
         inputLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"inputLayer.ccb"];  //分值
         
-        gameObjectLayer=(CCLayer *)[CCBReader nodeGraphFromFile:@"GameObjectLayer.ccb"]; 
+        self.stageIndex=stageNum;
+        
+        gameObjectLayer=(CCLayer *)[CCBReader
+                                    nodeGraphFromFile:[NSString stringWithFormat:@"GameObjectLayer%d.ccb",stageIndex]];
         
         [self addChild:inputLayer z:0 tag:inputLayerTag];
         
@@ -54,9 +57,9 @@
         
         [self initTheWorld];//初始化世界
         
-        [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
+       // [GameUtil enableBox2dDebugDrawing:debugDraw withWorld:world];//debug 物理世界渲染
         
-        groundShape=[CreateGroundInWorld createGroundWithWorld:world];
+        groundShape=[CreateGroundInWorld createGroundWithWorld:world withStage:stageIndex];
 
         
         [self addChild:groundShape z:-2];
@@ -106,10 +109,14 @@
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     CGPoint screenCenter=[GameUtil screenCenter];
-    BodyNode *guanjian0=(BodyNode *)[groundShape getChildByTag:0];
-    BodyNode *guanjian1=(BodyNode *)[groundShape getChildByTag:1];
-    BodyNode *guanjian2=(BodyNode *)[groundShape getChildByTag:2];
-    NSMutableArray *array=[NSMutableArray arrayWithObjects:guanjian0,guanjian1,guanjian2,nil];
+    
+    NSMutableArray *array=[NSMutableArray arrayWithCapacity:5];
+    for (int i=0; i<5; i++) {
+         BodyNode *guanjian=(BodyNode *)[groundShape getChildByTag:i];
+        if (guanjian!=nil) {
+            [array addObject:guanjian];
+        }
+    }
     nearGuanjian=[GameUtil playerNearToBody:array withPlayer:player];
     if (nearGuanjian==nil) {//如果找不到最近的挂件
         return;
@@ -165,16 +172,16 @@
         // Define the dynamic body fixture.
         b2FixtureDef fixtureDef;
         fixtureDef.shape = &dynamicBox;
-        fixtureDef.density = 0.5f;
+        fixtureDef.density = 0.2f;
         fixtureDef.friction = 0.0f;
         fixtureDef.restitution = 0.0f;
         ropeBody->CreateFixture(&fixtureDef);
         
-      
+        b2RevoluteJointDef playerJointDef;//绳子末端关节
         playerJointDef.Initialize(player.body, ropeBody, player.body->GetWorldCenter());
         playerJoint=(b2RevoluteJoint *)world->CreateJoint(&playerJointDef);
         
-        
+         b2RevoluteJointDef ropeJointDef;
         ropeJointDef.Initialize(nearGuanjian.body, ropeBody, nearGuanjian.body->GetWorldCenter());
         ropeJoint=(b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
         ropeJointDef.maxMotorTorque = 10.0f;
