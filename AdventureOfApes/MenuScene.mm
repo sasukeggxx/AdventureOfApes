@@ -96,7 +96,11 @@
         [toggleMenu alignItemsVerticallyWithPadding:1];
         toggleMenu.position=ccp(settingSprite.contentSize.width/2,settingSprite.contentSize.height/2);
         [settingSprite addChild:toggleMenu z:11];
+        
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"bgMusic.mp3" loop:YES];
     }
+    
+  
     
     return self;
 }

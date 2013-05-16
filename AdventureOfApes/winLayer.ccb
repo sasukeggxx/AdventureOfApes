@@ -521,7 +521,7 @@
 									<key>scaleY</key>
 									<real>1</real>
 									<key>selector</key>
-									<string></string>
+									<string>victoryNextTouch:</string>
 									<key>spriteFileDisabled</key>
 									<string>victoryNext</string>
 									<key>spriteFileNormal</key>
@@ -533,7 +533,7 @@
 									<key>tag</key>
 									<integer>-1</integer>
 									<key>target</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>visible</key>
 									<true/>
 									<key>zOrder</key>
@@ -560,7 +560,7 @@
 							<key>customClass</key>
 							<string></string>
 							<key>isExpanded</key>
-							<false/>
+							<true/>
 							<key>isRelativeAnchorPoint</key>
 							<false/>
 							<key>keyboardEnabled</key>

@@ -25,10 +25,11 @@
 
     CreateGroundInWorld *groundShape;
     
+    b2RevoluteJointDef ropeJointDef;
     b2Body *ropeBody;
-     //绳子定位挂件关节
-    b2RevoluteJoint *ropeJoint;
     
+    //绳子定位挂件关节
+    b2RevoluteJoint *ropeJoint;
     b2RevoluteJoint *playerJoint;
     
     BodyNode *nearGuanjian;

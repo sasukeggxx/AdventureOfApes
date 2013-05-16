@@ -59,7 +59,7 @@
 				<key>monkeyCup</key>
 				<integer>2</integer>
 				<key>isLock</key>
-				<true/>
+				<false/>
 			</dict>
 			<dict>
 				<key>time</key>
@@ -73,7 +73,7 @@
 				<key>monkeyCup</key>
 				<integer>2</integer>
 				<key>isLock</key>
-				<true/>
+				<false/>
 			</dict>
 			<dict>
 				<key>time</key>

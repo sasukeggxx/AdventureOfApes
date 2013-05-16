@@ -21,8 +21,8 @@ void ContactListener::BeginContact(b2Contact* contact)
 	
 	if (bodyNodeA != NULL && bodyNodeB != NULL)
 	{
-		bodyNodeA.color = ccMAGENTA;
-		bodyNodeB.color = ccMAGENTA;
+//		bodyNodeA.color = ccMAGENTA;
+//		bodyNodeB.color = ccMAGENTA;
 	}
     
     //如过在旋转的时候碰撞墙壁则改变马达方向.
@@ -57,7 +57,7 @@ void ContactListener::EndContact(b2Contact* contact)
 	
 	if (spriteA != NULL && spriteB != NULL)
 	{
-		spriteA.color = ccWHITE;
-		spriteB.color = ccWHITE;
+//		spriteA.color = ccWHITE;
+//		spriteB.color = ccWHITE;
 	}
 }

@@ -181,11 +181,13 @@
         playerJointDef.Initialize(player.body, ropeBody, player.body->GetWorldCenter());
         playerJoint=(b2RevoluteJoint *)world->CreateJoint(&playerJointDef);
         
-         b2RevoluteJointDef ropeJointDef;
+        
+       
+        
         ropeJointDef.Initialize(nearGuanjian.body, ropeBody, nearGuanjian.body->GetWorldCenter());
         ropeJoint=(b2RevoluteJoint *)world->CreateJoint(&ropeJointDef);
         ropeJointDef.maxMotorTorque = 10.0f;
-        ropeJointDef.enableMotor = true;
+        ropeJointDef.enableMotor = true; 
         if (player.position.x<=nearGuanjian.position.x) {//如果玩家在挂件的左边做逆时针旋转
             ropeJoint->SetMotorSpeed(player.speed);
             [player setIsCircle:YES];
@@ -199,7 +201,7 @@
      
        
     }else if (firstTouchLocation.x<screenCenter.x){//如果点击左边则转向
-          ropeJoint->SetMotorSpeed(ropeJoint->GetMotorSpeed() * -1);          
+         // ropeJoint->SetMotorSpeed(ropeJoint->GetMotorSpeed() * -1);
     }
     
 }
@@ -307,6 +309,10 @@
 -(void) lifeCheck:(ccTime)delta{
     //判断玩家生命值
     if (player.position.y<-20) {//玩家死了,生命数减1
+        //播放死亡动画
+//        CCSprite *deadSp=[CCSprite spriteWithFile:@"fgtdeath.png"];
+//        [self addChild:deadSp];
+//        deadSp.position=ccp(player.position.x, 0);
         
         [player setSpriteStartPosition];
         
@@ -333,11 +339,8 @@
     switch (gameOverType) {
         case winType:
             if (player.isCircle&&winGuanjian==player.cirleWithGuanjian) {//如果玩家正在胜利挂件上旋转
-                ropeJoint->SetMotorSpeed(player.speed);
-                NSLog(@"%f",player.speed);
-                if (player.speed<60.0) {//玩家速度增加到60
-                     player.speed=player.speed+0.5;
-                }else{ //加载胜利界面
+                
+               
                     
                     self.isPaused=YES;
                     [self unschedule:@selector(countDownTime:)];
@@ -352,7 +355,7 @@
                     [self addChild:winLayer z:1 tag:winLayerTag];
                     id moveToCenter=[CCMoveTo actionWithDuration:0.2 position:CGPointZero];
                     [winLayer runAction:moveToCenter];
-                }
+                
                
             }
             

@@ -42,7 +42,7 @@
 
 -(void)pauseReplayTouch:(id)sender{
     
-    [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
+    [[CCDirector sharedDirector] replaceScene:[GameScene sceneWithNum:1]];
 }
 
 
